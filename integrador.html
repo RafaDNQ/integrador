@@ -11,17 +11,104 @@
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+
+        body {
             display: flex;
             flex-direction: column;
         }
 
-        .div1 {
+        /*==================================
+            Carrusel
+            ==================================*/
+
+        .carruselOfertas {
+            background-color: darkgreen;
+            height: 200px;
+            width: 80%;
+            display: flex;
+            min-width: 450px;
+            margin-top: 10%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .botonIzqCarru {
+            background-color: aquamarine;
+            height: 50%;
+            width: 10%;
+        }
+
+        .botonDerCarru {
+            background-color: aquamarine;
+            height: 50%;
+            width: 10%;
+            justify-self: right;
+
+        }
+
+        /*======================================
+        Mas vendidos
+        ======================================*/
+
+        .masVendidoPerros {
+            background-color: darkolivegreen;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: fit-content;
+            width: 90%;
+            min-width: 900px;
+
+        }
+
+        .contenedorTituloPerros {
+            display: flex;
+            background-color: rgba(66, 66, 66, 0.384);
+            padding: 5px;
+            border-radius: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
             
+        }
+
+        .contenedorArtPerro {
+            display: flex;
+            justify-content: space-evenly;
+            height: 70%;
+        }
+
+
+        .artPerro {
+            background-color: rgba(0, 0, 0, 0.538);
+            height: 300px;
+            width: 200px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .masVendidoGatos {
+            background-color: rgb(138, 173, 77);
+            height: 400px;
+            width: 90%;
+            min-width: 900px;
+        }
+
+
+        .tituloGatos {
+            align-items: flex-start;
+            justify-self: center;
+            background-color: rgba(66, 66, 66, 0.384);
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+
+        /*==========================================*/
+
+        .div1 {
             font-style: normal;
             height: 100px;
             border: double 5px black;
-
         }
 
         .footer {
@@ -30,14 +117,16 @@
             height: 100px;
         }
 
-        .main{
+        .main {
             background-color: rgb(167, 167, 167);
-            min-height: 1500px; /* temporal */
+            min-height: 1500px;
+            /* temporal */
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            align-items: center;
+            gap: 5%;
         }
-
     </style>
 </head>
 
@@ -48,13 +137,37 @@
     <div class="div1">
 
         <img src="img\petshop.jpg" alt="imagen 1" width="150" height="100">
-       
-            home
-            tienda
-        
+
+        home
+        tienda
+
     </div>
 
     <main class="main">
+        <div class="carruselOfertas">
+            <div class="botonIzqCarru"></div>
+            <div class="botonDerCarru"></div>
+        </div>
+
+        <div class="masVendidoPerros">´
+            <div class="contenedorTituloPerros">
+                <h2 class="tituloPerros">Nuestros mas vendidos para los perrunos</h2>
+
+            </div>
+            <div class="contenedorArtPerro">
+                <div class="artPerro"></div>
+                <div class="artPerro"></div>
+                <div class="artPerro"></div>
+                <div class="artPerro"></div>
+                
+            </div>
+
+
+
+        </div>
+        <div class="masVendidoGatos">
+            <h2 class="tituloGatos"> Nuestros mas vendidos para los gatetes</h2>
+        </div>
 
 
     </main>

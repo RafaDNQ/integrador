@@ -1,0 +1,145 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*==================================
+            Carrusel
+            ==================================*/
+
+        .carruselOfertas {
+            background-color: darkgreen;
+            height: 500px;
+            width: 80%;
+            display: flex;
+            min-width: 450px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .botonIzqCarru {
+            background-color: aquamarine;
+            height: 50%;
+            width: 10%;
+        }
+
+        .botonDerCarru {
+            background-color: aquamarine;
+            height: 50%;
+            width: 10%;
+            justify-self: right;
+
+        }
+
+        /*======================================
+        Mas vendidos
+        ======================================*/
+        /*=========Perros==================*/
+        .masVendidoPerros {
+            background-color: darkolivegreen;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: fit-content;
+            gap: 10px;
+            width: 90%;
+            min-width: 900px;
+
+        }
+
+        .tituloPerros {
+            background-color: rgba(0, 0, 0, 0.366);
+            justify-self: center;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .contenedorArtPerro {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 10px;
+            justify-content: space-evenly;
+            height: fit-content;
+        }
+
+
+        .artPerro {
+            background-color: rgba(0, 0, 0, 0.538);
+            height: 300px;
+            width: 200px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        /*============Gatos=========*/
+        .masVendidoGatos {
+            background-color: rgb(138, 173, 77);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: fit-content;
+            gap: 10px;
+            width: 90%;
+            min-width: 900px;
+        }
+        
+        .tituloGatos {
+            background-color: rgba(0, 0, 0, 0.366);
+            justify-self: center;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .contenedorArtGatos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 10px;
+            justify-content: space-evenly;
+            height: fit-content;
+
+        }
+
+        .artGato{
+            background-color: rgba(0, 0, 0, 0.538);
+            height: 300px;
+            width: 200px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+
+
+        /*==========================================*/
+
+        .div1 {
+            font-style: normal;
+            height: 100px;
+            border: double 5px black;
+        }
+
+        .footer {
+            background-color: rgb(223, 146, 116);
+            display: flex;
+            height: 100px;
+        }
+
+        .main {
+            background-color: rgb(167, 167, 167);
+            min-height: 1500px;
+            /* temporal */
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            align-items: center;
+            gap: 5%;
+            padding: 2%;
+        }

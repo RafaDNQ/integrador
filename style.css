@@ -1,7 +1,8 @@
-* {
+html * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -89,14 +90,121 @@ body {
     height: fit-content;
 }
 
-
+/*=================Articulo perro===============*/
 .artPerro {
     background-color: rgba(0, 0, 0, 0.538);
+    background-color: rgba(240, 248, 255, 0.449);
+    display: flex;
+    flex-direction: column;
     height: 300px;
     width: 200px;
     border-radius: 10px;
     padding: 5px;
 }
+
+.artPerroContImg {
+    display: flex;
+    height: 60%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.artPerroContImg img {
+    border-radius: 10px;
+
+}
+
+.artPerroCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40%;
+
+}
+
+.contprecio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* flex-grow: 2; */
+    height: 70%;
+    padding: 3px;
+}
+
+.contprecio span {
+    font-size: 16px;
+}
+
+.contComprar {
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+    /* flex-grow: 1; */
+}
+
+
+.contAcumular {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+
+.btn-flecha-izq {
+    color: black;
+    background-color: aliceblue;
+    border: none;
+    padding: 5px 10px;
+    height: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px 0 0 10px;
+}
+
+.btn-flecha-der {
+    color: black;
+    background-color: aliceblue;
+    border: none;
+    padding: 5px 10px;
+    height: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0 10px 10px 0;
+}
+
+.contenedorBoton {
+    width: 40%;
+}
+
+.botonComprar {
+    border: none;
+    background-color: aliceblue;
+    cursor: pointer;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#cantidad {
+    background-color: aliceblue;
+    width: 36px;
+    text-align: center;
+    border: none;
+    height: 100%;
+    font-size: 16px;
+    outline: none;
+    /* Quitamos las flechas por defecto del input number */
+    -moz-appearance: textfield;
+}
+
+#cantidad::-webkit-outer-spin-button,
+#cantidad::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
 
 /*============Gatos=========*/
 .masVendidoGatos {

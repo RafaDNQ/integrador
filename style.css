@@ -32,6 +32,13 @@ body {
     width: 10%;
 }
 
+.botonIzqCarru:hover {
+    background-color: #004753;
+    color: #ffffff;
+    box-shadow: 0px 10px 20px rgba(0, 102, 109, 0.25);
+    /* Sombra proyectada */
+}
+
 .botonDerCarru {
     display: flex;
     justify-content: center;
@@ -40,7 +47,13 @@ body {
     height: 50%;
     width: 10%;
     justify-self: right;
+}
 
+.botonDerCarru:hover {
+    background-color: #004753;
+    color: #ffffff;
+    box-shadow: 0px 10px 20px rgba(0, 102, 109, 0.25);
+    /* Sombra proyectada */
 }
 
 /*======================================
@@ -135,22 +148,27 @@ body {
     height: 100px;
     border: double 5px black;
 }
-.barra{
-  background-color: white; 
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+
+.barra {
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-.barra li{
-  display: inline-block;
-  font-size: 18px;
-  padding: 15px;
+
+.barra li {
+    display: inline-block;
+    font-size: 18px;
+    padding: 15px;
 }
-.barra li:hover{
-    transform: translateY(-8px) scale(1.03); /* Eleva y agranda el div */
+
+.barra li:hover {
+    transform: translateY(-8px) scale(1.03);
+    /* Eleva y agranda el div */
     background-color: #2b2d42;
     color: #ffffff;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25); /* Sombra proyectada */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    /* Sombra proyectada */
 }
 
 .footer {

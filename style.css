@@ -10,6 +10,18 @@ body {
     flex-direction: column;
 }
 
+.main {
+    background-color: #f2f5fa;
+    min-height: 1500px;
+    /* temporal */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    gap: 10rem;
+    padding: 2%;
+}
+
 /*==================================
             Carrusel
             ==================================*/
@@ -60,9 +72,9 @@ body {
 /*======================================
         Mas vendidos
         ======================================*/
-/*=========Perros==================*/
-.masVendidoPerros {
-    background-color: darkolivegreen;
+/*========= contenedor global de tarjeta ==================*/
+.masVendido {
+
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -73,25 +85,39 @@ body {
 
 }
 
-.tituloPerros {
-    background-color: rgba(0, 0, 0, 0.366);
-    justify-self: center;
-    border-radius: 10px;
-    padding: 5px;
+
+/* ===================Titulo tarjeta=================== */
+
+.contenedorTituloTarjeta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
 }
 
-.contenedorArtPerro {
+.tituloTarjeta {
+    color: #0d315c;
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+    width: fit-content;
+}
+
+/*=================Tarjetas de articulos===============*/
+
+.contenedorArticulo {
+    background-color: rgba(252, 197, 0, 0.582);
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     padding: 8px;
-    border-radius: 10px;
+    border-radius: 20px;
     justify-content: space-evenly;
     height: fit-content;
 }
 
-/*=================Articulo perro===============*/
-.artPerro {
+.articuloTarjeta {
     background-color: rgba(0, 0, 0, 0.538);
     background-color: rgba(240, 248, 255, 0.449);
     display: flex;
@@ -102,18 +128,18 @@ body {
     padding: 5px;
 }
 
-.artPerroContImg {
+.articuloContenedorImg {
     display: flex;
     height: 60%;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-.artPerroContImg img {
+.articuloContenedorImg img {
     border-radius: 10px;
 
 }
 
-.artPerroCont {
+.articuloContenedor {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -161,6 +187,12 @@ body {
     border-radius: 10px 0 0 10px;
 }
 
+.btn-flecha-izq:hover{
+    background-color: #dde5ec;
+
+
+}
+
 .btn-flecha-der {
     color: black;
     background-color: aliceblue;
@@ -170,6 +202,13 @@ body {
     cursor: pointer;
     font-size: 16px;
     border-radius: 0 10px 10px 0;
+    overflow: hidden;
+}
+
+.btn-flecha-der:hover{
+    background-color: #dde5ec;
+
+
 }
 
 .contenedorBoton {
@@ -184,9 +223,16 @@ body {
     height: 100%;
     width: 100%;
     border-radius: 10px;
+    overflow: hidden;
 }
 
-#cantidad {
+.botonComprar:hover {
+    background-color: #dde5ec;
+
+
+}
+
+.input-cantidad {
     background-color: aliceblue;
     width: 36px;
     text-align: center;
@@ -204,49 +250,94 @@ body {
     margin: 0;
 }
 
+/*======================================
+  Mas vendidos End
+  ======================================*/
 
+/*======================================
+  Sección Newsletter
+  ======================================*/
+.seccionNewsletter {
+    background-color: var(--ocean-deep, #2364aa);
+    color: #ffffff;
+    padding: 40px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/*============Gatos=========*/
-.masVendidoGatos {
-    background-color: rgb(138, 173, 77);
+.contenidoNewsletter {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    height: fit-content;
-    gap: 10px;
-    width: 90%;
-    min-width: 900px;
+    gap: 20px;
+    align-items: center;
 }
 
-.tituloGatos {
-    background-color: rgba(0, 0, 0, 0.366);
-    justify-self: center;
-    border-radius: 10px;
-    padding: 5px;
+.textoNewsletter h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
 }
 
-.contenedorArtGatos {
+.textoNewsletter p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.formNewsletter {
+    width: 100%;
+    max-width: 550px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
-    padding: 8px;
-    border-radius: 10px;
-    justify-content: space-evenly;
-    height: fit-content;
-
 }
 
-.artGato {
-    background-color: rgba(0, 0, 0, 0.538);
-    height: 300px;
-    width: 200px;
-    border-radius: 10px;
-    padding: 5px;
+.grupoInput {
+    display: flex;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.inputEmail {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.botonSuscripcion {
+    background-color: var(--school-bus-yellow, #fec601);
+    color: #1a1a1a;
+    font-weight: bold;
+    border: none;
+    padding: 14px 24px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.botonSuscripcion:hover {
+    background-color: #e5b300;
+}
+
+.leyendaCupon {
+    font-size: 0.8rem;
+    opacity: 0.8;
 }
 
 
 
-/*==========================================*/
+/*======================================
+  Sección Newsletter End
+  ======================================*/
+
+
 
 .div1 {
     position: sticky;
@@ -283,16 +374,4 @@ body {
     background-color: rgb(223, 146, 116);
     display: flex;
     height: 100px;
-}
-
-.main {
-    background-color: rgb(167, 167, 167);
-    min-height: 1500px;
-    /* temporal */
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    gap: 5%;
-    padding: 2%;
 }

@@ -17,7 +17,6 @@ body {
     flex-grow: 1;
     align-items: center;
     gap: 10rem;
-    padding: 2%;
 }
 
 /*==================================
@@ -25,42 +24,76 @@ body {
             ==================================*/
 
 .carruselOfertas {
-    background-color: darkgreen;
-    height: 500px;
-    width: 80%;
+    margin-top: 10rem;
+    height: 30rem;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+
 }
 
-.botonIzqCarru {
+.contImgCarru {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.imagenCarrusel {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+
+}
+
+.contIzqCarru,
+.contDerCarru {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
-    height: 50%;
-    width: 10%;
+    background-color: var(--tropical-teal, #73bfb8ff);
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    z-index: 2;
+    position: absolute;
+    top: 45%;
+    /* transform: translateY(-50%); */
 }
 
-.botonIzqCarru:hover {
-    background-color: #004753;
+.contIzqCarru {
+    left: 20px;
+}
+
+.btnCarruIzq, .btnCarruDer{
+    border: none;
+    background-color: #0d315c00;
+    cursor: pointer;
+}
+
+.contDerCarru  {
+    right: 20px;
+}
+
+
+.contIzqCarru:hover {
     color: #ffffff;
     box-shadow: 0px 10px 20px rgba(0, 102, 109, 0.25);
+    transform: translateY(-2px) scale(1.03);
+    
     /* Sombra proyectada */
 }
 
-.botonDerCarru {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: aquamarine;
-    height: 50%;
-    width: 10%;
-    justify-self: right;
-}
 
-.botonDerCarru:hover {
-    background-color: #004753;
+
+.contDerCarru:hover {
+    transform: translateY(-2px) scale(1.03);
     color: #ffffff;
     box-shadow: 0px 10px 20px rgba(0, 102, 109, 0.25);
     /* Sombra proyectada */
@@ -68,11 +101,61 @@ body {
 
 /* ================== end carrusel ================== */
 
+/* ================== Banner Envios ================= */
+
+.contenedorEnvios{
+    display: flex;
+    width: 100%;
+    height: 10rem;
+    background-color: var(--ocean-deep, #2364aa);
+    justify-content: center;
+}
+
+.contcontEnvios{
+    display: flex;
+    width: 80%;
+    height: 100%;
+}
+
+.contenedorEnvios .envDiv{
+    display: flex;
+    flex: 25%;
+    align-items: center;
+}
+
+.envDivLogo{
+    height: 100px;
+    width: 100px;
+    clip-path: circle(50%);
+    background-color: var(--school-bus-yellow, #fec701);
+}
+
+.envDivLogo img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    scale: 0.7;
+    
+}
+
+.envDivTexto{
+    display: flex;
+    height: 100%;
+    width: 60%;
+    text-align: left;
+    align-items: center;
+    margin-left: 1.2rem;
+    color: white;
+}
+
+
+
 /* ===========================
                 Seccion marcas
         =============================*/
-                
-.marcasDestacadas{
+
+.marcasDestacadas {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -81,9 +164,10 @@ body {
     align-items: center;
     gap: 2rem;
     background-color: var(--school-bus-yellow, #fec701);
+    
 }
 
-.contenedorTituloMarcas{
+.contenedorTituloMarcas {
     justify-self: flex-start;
     height: fit-content;
     background-color: var(--ocean-deep, #2364aa);
@@ -92,23 +176,25 @@ body {
     padding: 1rem;
 }
 
-.contenedorTituloMarcas h2{
+.contenedorTituloMarcas h2 {
     color: white;
     font-size: 2.3rem;
 }
 
-.contenedorMarcas{
+.contenedorMarcas {
     width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: fit-content;
     margin-bottom: 10px;
 }
 
-.marcaTarjeta{
-    background-color: #004753;
-    height: 170px;
-    width: 230px;
+.marcaTarjeta {
+    height: 150px;
+    width: 220px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 
@@ -149,10 +235,15 @@ body {
     width: fit-content;
 }
 
+.titulo {
+    text-align: center;
+}
+
 /*=================Tarjetas de articulos===============*/
 
 .contenedorArticulo {
-    background-color: rgba(252, 197, 0, 0.582);
+    /* background-color: rgba(252, 197, 0, 0.582); */
+    background-color: var(--school-bus-yellow, #fec701);
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -174,14 +265,20 @@ body {
 }
 
 .articuloContenedorImg {
+    align-self: center;
     display: flex;
     height: 60%;
+    width: 100%;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+
 }
 
 .articuloContenedorImg img {
-    border-radius: 10px;
-
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .articuloContenedor {
@@ -233,7 +330,7 @@ body {
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.btn-flecha-izq:hover{
+.btn-flecha-izq:hover {
     background-color: #dde5ec;
 
 
@@ -252,7 +349,7 @@ body {
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.btn-flecha-der:hover{
+.btn-flecha-der:hover {
     background-color: #dde5ec;
 }
 
@@ -325,7 +422,7 @@ body {
     align-items: center;
 }
 
-.contenedorNL{
+.contenedorNL {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -400,6 +497,7 @@ body {
     font-style: normal;
     height: 100px;
     border: double 5px black;
+    z-index: 100;
 }
 
 .barra {

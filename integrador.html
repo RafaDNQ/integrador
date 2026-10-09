@@ -29,31 +29,60 @@
 
     </div>
 
+    <!-- Main -->
+
     <main class="main">
+
+
+        <!-- Carrusel -->
         <div class="carruselOfertas">
-            <div class="botonIzqCarru">
-                <img src="./img/izq.png" alt="izq" height="50" width="50">
+
+            <div class="contImgCarru">
+
+                <div class="contIzqCarru">
+                    <button class="btnCarruIzq"><img src="./img/izq.png" alt="izq" height="50" width="50"></button>
+                </div>
+
+
+                <img class="imagenCarrusel" src="./img/Carrusel/PurinaBanner.jpg" alt="PurinaBanner">
+
+
+                <div class="contDerCarru">
+                    <button class="btnCarruDer"><img src="./img/der.png" alt="der" height="50" width="50"></button>
+                </div>
+
             </div>
-            <div class="botonDerCarru">
-                <img src="./img/der.png" alt="der" height="50" width="50">
-            </div>
+
+
         </div>
 
-        <section class="marcasDestacadas">
-                <div class="contenedorTituloMarcas">
-                    <h2>Conoce nuestras Marcas Destacadas</h2>
-                </div>
-                <div class="contenedorMarcas">
-                    <div class="marcaTarjeta" id="purina">
-                        <img src="" alt="" srcset="">
+        <!--  -->
+
+        <!-- Banner envios -->
+
+        <div class="contenedorEnvios">
+            <div class="contcontEnvios">
+                <div class="metodosPago envDiv">
+                    <div class="metodosPagoLogo envDivLogo"><img src="./img/bannerEnvios/entrega.png" alt="entrega"></div>
+                    <div class="metodosPagoTexto envDivTexto">
+                        <p>Envío Gratis en Compras + $40.000 <br>
+                            Envío en menos de 24 horas en AMBA</p>
                     </div>
-                    <div class="marcaTarjeta" id="royalCanin"></div>
-                    <div class="marcaTarjeta" id="monAmi"></div>
-                    <div class="marcaTarjeta" id="Old Prince"></div>
-                    <div class="marcaTarjeta" id="puppis"></div>
-                    <div class="marcaTarjeta" id="Eukanuba"></div>
                 </div>
-        </section>
+                <div class="enviosGratis envDiv">
+                    <div class="enviosGratisLogo envDivLogo"><img src="./img/bannerEnvios/detallista.png" alt="detallista"></div>
+                    <div class="retiroSucursalTexto envDivTexto">
+                        <p>¡Retirá GRATIS en sucursal! <br>
+                            Y obtené un 5% OFF adicional en tu compra.</p>
+                    </div>
+                </div>
+                <div class="retiroSucursal envDiv">
+                    <div class="retiroSucursalLogo envDivLogo"><img src="./img/bannerEnvios/pago-con-tarjetas-de-credito.png" alt="pago-con-tarjetas-de-credito"></div>
+                    <div class="retiroSucursalTexto envDivTexto">Ahorrá con nuestras <br>
+                        Promos Bancarias!</div>
+                </div>
+            </div>
+        </div>
 
 
         <!-- Contenedor articulos Perro -->
@@ -69,14 +98,15 @@
             <div class="contenedorArticulo">
 
                 <!-- Tarjeta perro -->
-                <div class="articuloTarjeta" id="artPerro1">
+                <div class="articuloTarjeta eukanubaProd" id="artPerro1">
                     <div class="articuloContenedorImg">
-                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="bolas-huesos-goma">
+                        <img src="./img/marcas/eukanuba/Eukanuba Cordero Perro Adulto Mediano X 15 Kg.png"
+                            alt="EukanubaPerroAdulto">
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
-                            <span class="titulo">Bolas hueso de goma</span>
-                            <span class="precio">$1400</span>
+                            <span class="titulo">Alimento Eukanuba Perro adulto mediano - 15kg</span>
+                            <span class="precio">$98000</span>
                         </div>
 
                         <div class="contComprar">
@@ -93,14 +123,14 @@
 
                 <!--  -->
 
-                <div class="articuloTarjeta" id="artPerro2">
+                <div class="articuloTarjeta genericoProd" id="artPerro2">
                     <div class="articuloContenedorImg">
-                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="bolas-huesos-goma">
+                        <img src="./img/cosas de perros/correa_retractil1.jpg" alt="correa_retractil1">
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
-                            <span class="titulo">Bolas hueso de goma</span>
-                            <span class="precio">$1400</span>
+                            <span class="titulo">Correa retractil</span>
+                            <span class="precio">$23000</span>
                         </div>
 
                         <div class="contComprar">
@@ -115,14 +145,14 @@
                     </div>
                 </div>
 
-                <div class="articuloTarjeta" id="artPerro3">
+                <div class="articuloTarjeta genericoProd" id="artPerro3">
                     <div class="articuloContenedorImg">
-                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="bolas-huesos-goma">
+                        <img src="./img/cosas de perros/par_de_sogas.jpg" alt="par_de_sogas">
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
-                            <span class="titulo">Bolas hueso de goma</span>
-                            <span class="precio">$1400</span>
+                            <span class="titulo">Soga para perro - juguete</span>
+                            <span class="precio">$9500</span>
                         </div>
 
                         <div class="contComprar">
@@ -241,14 +271,14 @@
 
             <div class="contenedorArticulo">
                 <!-- Tarjeta Gato -->
-                <div class="articuloTarjeta" id="artGato1">
+                <div class="articuloTarjeta purinaProPlanProd" id="artGato1">
                     <div class="articuloContenedorImg">
-                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                        <img src="./img/marcas/purinaProPlan/purina excellent - gato.png" alt="bolas-huesos-goma">
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
-                            <span class="titulo">Rascador para gatos</span>
-                            <span class="precio">$2500</span>
+                            <span class="titulo">Purina Excellent 15KG</span>
+                            <span class="precio">$116000</span>
                         </div>
 
                         <div class="contComprar">
@@ -266,14 +296,14 @@
 
                 <!-- -->
 
-                <div class="articuloTarjeta" id="artGato2">
+                <div class="articuloTarjeta genericoProd" id="artGato2">
                     <div class="articuloContenedorImg">
-                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                        <img src="./img/cosas de gatos/droga.jpg" alt="bola-catnip">
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
-                            <span class="titulo">Rascador para gatos</span>
-                            <span class="precio">$2500</span>
+                            <span class="titulo">Bola juguete catnip</span>
+                            <span class="precio">$14000</span>
                         </div>
 
                         <div class="contComprar">
@@ -407,8 +437,28 @@
         </div>
 
         <!-- Contenedor articulos gato end -->
-         
-        
+
+        <section class="marcasDestacadas">
+            <div class="contenedorTituloMarcas">
+                <h2>Conoce nuestras Marcas Destacadas</h2>
+            </div>
+            <div class="contenedorMarcas">
+                <div class="marcaTarjeta" id="purinaProPlan"><img src="./img/marcas/purinaProPlan/purinaProPlanLogo.png"
+                        alt="purinaProPlanLogo"></div>
+                <div class="marcaTarjeta" id="royalCanin"><img src="./img/marcas/royalCanin/royalCaninLogo.png"
+                        alt="royalCaninLogo">
+                </div>
+                <div class="marcaTarjeta" id="monAmi"><img src="./img/marcas/MonAmi/monAmiLogo.png" alt="monAmiLogo">
+                </div>
+                <div class="marcaTarjeta" id="Old Prince"><img src="./img/marcas/oldPrince/oldPrinceLogo.png"
+                        alt="OldPrinceLogo">
+                </div>
+                <div class="marcaTarjeta" id="puppis"><img src="./img/marcas/puppis/puppisLogo.png" alt="PuppisLogo">
+                </div>
+                <div class="marcaTarjeta" id="Eukanuba"><img src="./img/marcas/eukanuba/eukanubaLogo.png"
+                        alt="EukanubaLogo"></div>
+            </div>
+        </section>
 
 
         <section class="seccionNewsletter">

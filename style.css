@@ -48,7 +48,7 @@ body {
     width: 100%;
     object-fit: cover;
     object-position: center;
-    
+
 
 }
 
@@ -71,13 +71,14 @@ body {
     left: 20px;
 }
 
-.btnCarruIzq, .btnCarruDer{
+.btnCarruIzq,
+.btnCarruDer {
     border: none;
     background-color: #0d315c00;
     cursor: pointer;
 }
 
-.contDerCarru  {
+.contDerCarru {
     right: 20px;
 }
 
@@ -86,7 +87,7 @@ body {
     color: #ffffff;
     box-shadow: 0px 10px 20px rgba(0, 102, 109, 0.25);
     transform: translateY(-2px) scale(1.03);
-    
+
     /* Sombra proyectada */
 }
 
@@ -103,7 +104,7 @@ body {
 
 /* ================== Banner Envios ================= */
 
-.contenedorEnvios{
+.contenedorEnvios {
     display: flex;
     width: 100%;
     height: 10rem;
@@ -111,35 +112,35 @@ body {
     justify-content: center;
 }
 
-.contcontEnvios{
+.contcontEnvios {
     display: flex;
     width: 80%;
     height: 100%;
 }
 
-.contenedorEnvios .envDiv{
+.contenedorEnvios .envDiv {
     display: flex;
     flex: 25%;
     align-items: center;
 }
 
-.envDivLogo{
+.envDivLogo {
     height: 100px;
     width: 100px;
     clip-path: circle(50%);
     background-color: var(--school-bus-yellow, #fec701);
 }
 
-.envDivLogo img{
+.envDivLogo img {
     height: 100%;
     width: 100%;
     object-fit: contain;
     object-position: center;
     scale: 0.7;
-    
+
 }
 
-.envDivTexto{
+.envDivTexto {
     display: flex;
     height: 100%;
     width: 60%;
@@ -164,7 +165,7 @@ body {
     align-items: center;
     gap: 2rem;
     background-color: var(--school-bus-yellow, #fec701);
-    
+
 }
 
 .contenedorTituloMarcas {
@@ -264,6 +265,7 @@ body {
     padding: 5px;
 }
 
+
 .articuloContenedorImg {
     align-self: center;
     display: flex;
@@ -279,6 +281,13 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.articuloContenedorImg:hover {
+    background-color: #dde5ec;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+
 }
 
 .articuloContenedor {

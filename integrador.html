@@ -14,9 +14,7 @@
 </head>
 
 <body>
-    <script>
 
-    </script>
     <div class="div1">
 
         <ul class="barra">
@@ -63,21 +61,25 @@
         <div class="contenedorEnvios">
             <div class="contcontEnvios">
                 <div class="metodosPago envDiv">
-                    <div class="metodosPagoLogo envDivLogo"><img src="./img/bannerEnvios/entrega.png" alt="entrega"></div>
+                    <div class="metodosPagoLogo envDivLogo"><img src="./img/bannerEnvios/entrega.png" alt="entrega">
+                    </div>
                     <div class="metodosPagoTexto envDivTexto">
                         <p>Envío Gratis en Compras + $40.000 <br>
                             Envío en menos de 24 horas en AMBA</p>
                     </div>
                 </div>
                 <div class="enviosGratis envDiv">
-                    <div class="enviosGratisLogo envDivLogo"><img src="./img/bannerEnvios/detallista.png" alt="detallista"></div>
+                    <div class="enviosGratisLogo envDivLogo"><img src="./img/bannerEnvios/detallista.png"
+                            alt="detallista"></div>
                     <div class="retiroSucursalTexto envDivTexto">
                         <p>¡Retirá GRATIS en sucursal! <br>
                             Y obtené un 5% OFF adicional en tu compra.</p>
                     </div>
                 </div>
                 <div class="retiroSucursal envDiv">
-                    <div class="retiroSucursalLogo envDivLogo"><img src="./img/bannerEnvios/pago-con-tarjetas-de-credito.png" alt="pago-con-tarjetas-de-credito"></div>
+                    <div class="retiroSucursalLogo envDivLogo"><img
+                            src="./img/bannerEnvios/pago-con-tarjetas-de-credito.png"
+                            alt="pago-con-tarjetas-de-credito"></div>
                     <div class="retiroSucursalTexto envDivTexto">Ahorrá con nuestras <br>
                         Promos Bancarias!</div>
                 </div>
@@ -111,11 +113,12 @@
 
                         <div class="contComprar">
                             <div class="contAcumular">
-                                <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-izq" data-valor="-1">◄</button>
+                                
+                                <span id="valor-numero">0</span>
                                 <button class="btn-flecha-der">►</button>
                             </div>
-                            <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
+                            <div class="contenedorBoton" data-valor="1"><button type="button" class="botonComprar" id="botonComprar">
                                     Comprar</button></div>
                         </div>
                     </div>
@@ -321,7 +324,7 @@
 
                 <div class="articuloTarjeta" id="artGato3">
                     <div class="articuloContenedorImg">
-                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                        <img src="./img/cosas de gatos/cama_rascador1.jpg" alt="juguete-gato">
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
@@ -344,7 +347,7 @@
 
                 <div class="articuloTarjeta" id="artGato4">
                     <div class="articuloContenedorImg">
-                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                        <img src="./img/cosas de gatos/cama_rascador2.jpg" alt="juguete-gato">
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
@@ -367,7 +370,7 @@
 
                 <div class="articuloTarjeta" id="artGato5">
                     <div class="articuloContenedorImg">
-                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                        <img src="./img/cosas de gatos/racador1.jpg" alt="juguete-gato">
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
@@ -390,7 +393,7 @@
 
                 <div class="articuloTarjeta" id="artGato6">
                     <div class="articuloContenedorImg">
-                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                        <img src="./img/cosas de gatos/racador2.jpg" alt="juguete-gato">
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
@@ -413,7 +416,7 @@
 
                 <div class="articuloTarjeta" id="artGato7">
                     <div class="articuloContenedorImg">
-                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                        <img src="./img/cosas de gatos/rascador3.jpg" alt="juguete-gato">
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
@@ -495,6 +498,7 @@
     </footer>
 
 
+    <script src="script.js"></script>
 </body>
 
 </html>

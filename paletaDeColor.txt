@@ -43,3 +43,10 @@ $gradient-bottom-right: linear-gradient(135deg, #2364aaff, #3da5d9ff, #73bfb8ff,
 $gradient-top-left: linear-gradient(225deg, #2364aaff, #3da5d9ff, #73bfb8ff, #fec601ff, #ea7317ff);
 $gradient-bottom-left: linear-gradient(315deg, #2364aaff, #3da5d9ff, #73bfb8ff, #fec601ff, #ea7317ff);
 $gradient-radial: radial-gradient(#2364aaff, #3da5d9ff, #73bfb8ff, #fec601ff, #ea7317ff);
+
+
+
+background-color: var(--pumpkin-spice, #ea7317ff);
+background-color: var(--school-bus-yellow, #fec601);
+background-color: var(--ocean-deep, #2364aa);
+background-color: var(--tropical-teal, #73bfb8ff);

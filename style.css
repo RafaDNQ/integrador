@@ -12,8 +12,6 @@ body {
 
 .main {
     background-color: #f2f5fa;
-    min-height: 1500px;
-    /* temporal */
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -31,7 +29,6 @@ body {
     height: 500px;
     width: 80%;
     display: flex;
-    min-width: 450px;
     align-items: center;
     justify-content: space-between;
 }
@@ -69,6 +66,56 @@ body {
     /* Sombra proyectada */
 }
 
+/* ================== end carrusel ================== */
+
+/* ===========================
+                Seccion marcas
+        =============================*/
+                
+.marcasDestacadas{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--school-bus-yellow, #fec701);
+}
+
+.contenedorTituloMarcas{
+    justify-self: flex-start;
+    height: fit-content;
+    background-color: var(--ocean-deep, #2364aa);
+    border-radius: 50px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.contenedorTituloMarcas h2{
+    color: white;
+    font-size: 2.3rem;
+}
+
+.contenedorMarcas{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.marcaTarjeta{
+    background-color: #004753;
+    height: 170px;
+    width: 230px;
+}
+
+
+
+
+
+
 /*======================================
         Mas vendidos
         ======================================*/
@@ -81,8 +128,6 @@ body {
     height: fit-content;
     gap: 10px;
     width: 90%;
-    min-width: 900px;
-
 }
 
 
@@ -185,6 +230,7 @@ body {
     cursor: pointer;
     font-size: 16px;
     border-radius: 10px 0 0 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .btn-flecha-izq:hover{
@@ -203,12 +249,11 @@ body {
     font-size: 16px;
     border-radius: 0 10px 10px 0;
     overflow: hidden;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .btn-flecha-der:hover{
     background-color: #dde5ec;
-
-
 }
 
 .contenedorBoton {
@@ -224,13 +269,16 @@ body {
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .botonComprar:hover {
     background-color: #dde5ec;
-
-
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 }
+
+
 
 .input-cantidad {
     background-color: aliceblue;
@@ -275,6 +323,12 @@ body {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+}
+
+.contenedorNL{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .textoNewsletter h2 {

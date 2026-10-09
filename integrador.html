@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
@@ -12,7 +18,7 @@
 
     </script>
     <div class="div1">
-  
+
         <ul class="barra">
             <img src="img\petshop.jpg" alt="imagen 1" width="100" height="70">
             <li> Home </li>
@@ -33,44 +39,402 @@
             </div>
         </div>
 
-        <div class="masVendidoPerros">
-            <div class="contenedorTituloPerros">
-                <h2 class="tituloPerros">Nuestros mas vendidos para los perrunos</h2>
+        <section class="marcasDestacadas">
+                <div class="contenedorTituloMarcas">
+                    <h2>Conoce nuestras Marcas Destacadas</h2>
+                </div>
+                <div class="contenedorMarcas">
+                    <div class="marcaTarjeta" id="purina">
+                        <img src="" alt="" srcset="">
+                    </div>
+                    <div class="marcaTarjeta" id="royalCanin"></div>
+                    <div class="marcaTarjeta" id="monAmi"></div>
+                    <div class="marcaTarjeta" id="Old Prince"></div>
+                    <div class="marcaTarjeta" id="puppis"></div>
+                    <div class="marcaTarjeta" id="Eukanuba"></div>
+                </div>
+        </section>
+
+
+        <!-- Contenedor articulos Perro -->
+
+        <div class="masVendido masVendidoPerros">
+            <div class="contenedorTituloTarjeta">
+                <h2 class="tituloTarjeta">Nuestros mas vendidos para los perrunos</h2>
 
             </div>
-            <div class="contenedorArtPerro">
-                <div class="artPerro"></div>
-                <div class="artPerro"></div>
-                <div class="artPerro"></div>
-                <div class="artPerro"></div>
-                <div class="artPerro"></div>
-                <div class="artPerro"></div>
-                <div class="artPerro"></div>
-                <div class="artPerro"></div>
+
+
+
+            <div class="contenedorArticulo">
+
+                <!-- Tarjeta perro -->
+                <div class="articuloTarjeta" id="artPerro1">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="bolas-huesos-goma">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Bolas hueso de goma</span>
+                            <span class="precio">$1400</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
+                                    Comprar</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  -->
+
+                <div class="articuloTarjeta" id="artPerro2">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="bolas-huesos-goma">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Bolas hueso de goma</span>
+                            <span class="precio">$1400</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
+                                    Comprar</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articuloTarjeta" id="artPerro3">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="bolas-huesos-goma">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Bolas hueso de goma</span>
+                            <span class="precio">$1400</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
+                                    Comprar</button></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="articuloTarjeta" id="artPerro4">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="bolas-huesos-goma">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Bolas hueso de goma</span>
+                            <span class="precio">$1400</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
+                                    Comprar</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articuloTarjeta" id="artPerro5">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="bolas-huesos-goma">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Bolas hueso de goma</span>
+                            <span class="precio">$1400</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
+                                    Comprar</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articuloTarjeta" id="artPerro6">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="bolas-huesos-goma">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Bolas hueso de goma</span>
+                            <span class="precio">$1400</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
+                                    Comprar</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articuloTarjeta" id="artPerro7">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="bolas-huesos-goma">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Bolas hueso de goma</span>
+                            <span class="precio">$1400</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
+                                    Comprar</button></div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-
-
-
         </div>
-        <div class="masVendidoGatos">
-            <div class="contenedorTitGatos">
-                <h2 class="tituloGatos"> Nuestros mas vendidos para los gatetes</h2>
-            </div>
-            <div class="contenedorArtGatos">
-                <div class="artGato"></div>
-                <div class="artGato"></div>
-                <div class="artGato"></div>
-                <div class="artGato"></div>
-                <div class="artGato"></div>
-                <div class="artGato"></div>
-                <div class="artGato"></div>
-                <div class="artGato"></div>
 
+        <!-- Contenedor articulos Perro end -->
+
+
+
+        <!-- Contenedor articulos gato -->
+        <div class="masVendido masVendidoGato">
+            <div class="contenedorTituloTarjeta">
+                <h2 class="tituloTarjeta">Nuestros más vendidos para los gatunos</h2>
+            </div>
+
+            <div class="contenedorArticulo">
+                <!-- Tarjeta Gato -->
+                <div class="articuloTarjeta" id="artGato1">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Rascador para gatos</span>
+                            <span class="precio">$2500</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton">
+                                <button type="button" class="botonComprar">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- -->
+
+                <div class="articuloTarjeta" id="artGato2">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Rascador para gatos</span>
+                            <span class="precio">$2500</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton">
+                                <button type="button" class="botonComprar">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articuloTarjeta" id="artGato3">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Rascador para gatos</span>
+                            <span class="precio">$2500</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton">
+                                <button type="button" class="botonComprar">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articuloTarjeta" id="artGato4">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Rascador para gatos</span>
+                            <span class="precio">$2500</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton">
+                                <button type="button" class="botonComprar">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articuloTarjeta" id="artGato5">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Rascador para gatos</span>
+                            <span class="precio">$2500</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton">
+                                <button type="button" class="botonComprar">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articuloTarjeta" id="artGato6">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Rascador para gatos</span>
+                            <span class="precio">$2500</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton">
+                                <button type="button" class="botonComprar">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="articuloTarjeta" id="artGato7">
+                    <div class="articuloContenedorImg">
+                        <img src="./img/cosas de gatos/juguete-gato.jpg" alt="juguete-gato">
+                    </div>
+                    <div class="articuloContenedor">
+                        <div class="contprecio">
+                            <span class="titulo">Rascador para gatos</span>
+                            <span class="precio">$2500</span>
+                        </div>
+
+                        <div class="contComprar">
+                            <div class="contAcumular">
+                                <button class="btn-flecha-izq">◄</button>
+                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <button class="btn-flecha-der">►</button>
+                            </div>
+                            <div class="contenedorBoton">
+                                <button type="button" class="botonComprar">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <!-- Contenedor articulos gato end -->
+         
+        
 
+
+        <section class="seccionNewsletter">
+            <div contenedorNL class="contenedorNL">
+                <div class="textoNL">
+                    <h2>¡Sumate a la comunidad perruna y gatuna! 🐾</h2>
+                    <p>Suscribite para recibir novedades, promociones exclusivas y obtené un <strong>3% OFF</strong> en
+                        tu primera compra.</p>
+                </div>
+                <form action="" class="formNL" id="formNL">
+                    <div class="grupoInput">
+                        <input type="email" placeholder="Ingresá tu email aquí..." required class="inputEmail">
+                        <button type="submit" class="botonSuscripcion">Conseguir mi 3% OFF</button>
+                    </div>
+                    <span class="leyendaCupon">* Te enviaremos el código del cupón a tu casilla de correo.</span>
+
+
+                </form>
+
+
+
+
+            </div>
+
+
+        </section>
     </main>
 
 

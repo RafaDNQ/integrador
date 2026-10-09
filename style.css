@@ -1,12 +1,23 @@
-* {
+html * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
+}
+
+.main {
+    background-color: #f2f5fa;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    gap: 10rem;
+    padding: 2%;
 }
 
 /*==================================
@@ -18,7 +29,6 @@ body {
     height: 500px;
     width: 80%;
     display: flex;
-    min-width: 450px;
     align-items: center;
     justify-content: space-between;
 }
@@ -56,89 +66,332 @@ body {
     /* Sombra proyectada */
 }
 
+/* ================== end carrusel ================== */
+
+/* ===========================
+                Seccion marcas
+        =============================*/
+                
+.marcasDestacadas{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--school-bus-yellow, #fec701);
+}
+
+.contenedorTituloMarcas{
+    justify-self: flex-start;
+    height: fit-content;
+    background-color: var(--ocean-deep, #2364aa);
+    border-radius: 50px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.contenedorTituloMarcas h2{
+    color: white;
+    font-size: 2.3rem;
+}
+
+.contenedorMarcas{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.marcaTarjeta{
+    background-color: #004753;
+    height: 170px;
+    width: 230px;
+}
+
+
+
+
+
+
 /*======================================
         Mas vendidos
         ======================================*/
-/*=========Perros==================*/
-.masVendidoPerros {
-    background-color: darkolivegreen;
+/*========= contenedor global de tarjeta ==================*/
+.masVendido {
+
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: fit-content;
     gap: 10px;
     width: 90%;
-    min-width: 900px;
+}
+
+
+/* ===================Titulo tarjeta=================== */
+
+.contenedorTituloTarjeta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 
 }
 
-.tituloPerros {
-    background-color: rgba(0, 0, 0, 0.366);
-    justify-self: center;
-    border-radius: 10px;
+.tituloTarjeta {
+    color: #0d315c;
+    font-size: 30px;
     padding: 5px;
+    text-align: center;
+    width: fit-content;
 }
 
-.contenedorArtPerro {
+/*=================Tarjetas de articulos===============*/
+
+.contenedorArticulo {
+    background-color: rgba(252, 197, 0, 0.582);
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     padding: 8px;
-    border-radius: 10px;
+    border-radius: 20px;
     justify-content: space-evenly;
     height: fit-content;
 }
 
-
-.artPerro {
+.articuloTarjeta {
     background-color: rgba(0, 0, 0, 0.538);
-    height: 300px;
-    width: 200px;
-    border-radius: 10px;
-    padding: 5px;
-}
-
-/*============Gatos=========*/
-.masVendidoGatos {
-    background-color: rgb(138, 173, 77);
+    background-color: rgba(240, 248, 255, 0.449);
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    height: fit-content;
-    gap: 10px;
-    width: 90%;
-    min-width: 900px;
-}
-
-.tituloGatos {
-    background-color: rgba(0, 0, 0, 0.366);
-    justify-self: center;
-    border-radius: 10px;
-    padding: 5px;
-}
-
-.contenedorArtGatos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 8px;
-    border-radius: 10px;
-    justify-content: space-evenly;
-    height: fit-content;
-
-}
-
-.artGato {
-    background-color: rgba(0, 0, 0, 0.538);
     height: 300px;
     width: 200px;
     border-radius: 10px;
     padding: 5px;
 }
 
+.articuloContenedorImg {
+    display: flex;
+    height: 60%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.articuloContenedorImg img {
+    border-radius: 10px;
+
+}
+
+.articuloContenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40%;
+
+}
+
+.contprecio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* flex-grow: 2; */
+    height: 70%;
+    padding: 3px;
+}
+
+.contprecio span {
+    font-size: 16px;
+}
+
+.contComprar {
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+    /* flex-grow: 1; */
+}
 
 
-/*==========================================*/
+.contAcumular {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+
+.btn-flecha-izq {
+    color: black;
+    background-color: aliceblue;
+    border: none;
+    padding: 5px 10px;
+    height: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px 0 0 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-flecha-izq:hover{
+    background-color: #dde5ec;
+
+
+}
+
+.btn-flecha-der {
+    color: black;
+    background-color: aliceblue;
+    border: none;
+    padding: 5px 10px;
+    height: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-flecha-der:hover{
+    background-color: #dde5ec;
+}
+
+.contenedorBoton {
+    width: 40%;
+}
+
+.botonComprar {
+    border: none;
+    background-color: aliceblue;
+    cursor: pointer;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.botonComprar:hover {
+    background-color: #dde5ec;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.input-cantidad {
+    background-color: aliceblue;
+    width: 36px;
+    text-align: center;
+    border: none;
+    height: 100%;
+    font-size: 16px;
+    outline: none;
+    /* Quitamos las flechas por defecto del input number */
+    -moz-appearance: textfield;
+}
+
+#cantidad::-webkit-outer-spin-button,
+#cantidad::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*======================================
+  Mas vendidos End
+  ======================================*/
+
+/*======================================
+  Sección Newsletter
+  ======================================*/
+.seccionNewsletter {
+    background-color: var(--ocean-deep, #2364aa);
+    color: #ffffff;
+    padding: 40px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenidoNewsletter {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contenedorNL{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.textoNewsletter h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.textoNewsletter p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.formNewsletter {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.grupoInput {
+    display: flex;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.inputEmail {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.botonSuscripcion {
+    background-color: var(--school-bus-yellow, #fec601);
+    color: #1a1a1a;
+    font-weight: bold;
+    border: none;
+    padding: 14px 24px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.botonSuscripcion:hover {
+    background-color: #e5b300;
+}
+
+.leyendaCupon {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+
+
+/*======================================
+  Sección Newsletter End
+  ======================================*/
+
+
 
 .div1 {
     position: sticky;
@@ -175,16 +428,4 @@ body {
     background-color: rgb(223, 146, 116);
     display: flex;
     height: 100px;
-}
-
-.main {
-    background-color: rgb(167, 167, 167);
-    min-height: 1500px;
-    /* temporal */
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    gap: 5%;
-    padding: 2%;
 }

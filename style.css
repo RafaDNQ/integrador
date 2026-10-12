@@ -32,48 +32,51 @@ body {
 }
 
 .contImgCarru {
-    display: flex;
-    width: 80%;
-    height: 100%;
     position: relative;
-    border-radius: 20px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
+    border-radius: 12px;
 }
 
 
 .imagenCarrusel {
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
-
-
+    opacity: 0; /* Ocultas por defecto */
+    transition: opacity 0.8s ease-in-out; /* Suavidad del intercambio */
 }
 
-.contIzqCarru,
-.contDerCarru {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--tropical-teal, #73bfb8ff);
-    height: 60px;
-    width: 60px;
-    border-radius: 10px;
-    z-index: 2;
+.imagenCarrusel.activa {
+    opacity: 1;
+}
+
+.contIzqCarru, .contDerCarru {
     position: absolute;
-    top: 45%;
-    /* transform: translateY(-50%); */
+    top: 50%;
+
+    z-index: 10;
 }
 
 .contIzqCarru {
     left: 20px;
 }
 
-.btnCarruIzq,
-.btnCarruDer {
+.btnCarruIzq, .btnCarruDer {
     border: none;
     background-color: #0d315c00;
     cursor: pointer;
+}
+
+.contIzqCarru button, .contDerCarru button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 
 .contDerCarru {

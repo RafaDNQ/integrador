@@ -17,7 +17,7 @@ tarjetas.forEach(tarjeta => {
     btnDisminuir.addEventListener('click', () => {
         let valorActual = parseInt(inputCantidad.value);
         let valorMinimo = parseInt(inputCantidad.getAttribute('min')) || 0;
-        
+
         if (valorActual > valorMinimo) {
             inputCantidad.value = valorActual - 1;
         }
@@ -47,12 +47,8 @@ const tiempoEspera = 4000; // 4 segundos
 // Función para cambiar de imagen usando clases
 function mostrarImagen(nuevoIndice) {
     imagenes[indiceActual].classList.remove('activa');
-    indiceActual = nuevoIndice;
-    if (indiceActual >= totalImagenes) {
-        indiceActual = 0;
-    } else if (indiceActual < 0) {
-        indiceActual = totalImagenes - 1;
-    }
+    
+    indiceActual = (nuevoIndice + totalImagenes) % totalImagenes;
 
     // Agregamos la clase 'activa' a la nueva imagen
     imagenes[indiceActual].classList.add('activa');
@@ -80,11 +76,16 @@ btnIzq.addEventListener('click', () => {
 
 // Control de Autoplay
 function iniciarAutoplay() {
+    detenerAutoplay(); //agregado para evitar stackeo de intervalos
     intervalo = setInterval(siguienteImagen, tiempoEspera);
+
 }
 
 function detenerAutoplay() {
-    clearInterval(intervalo);
+    if (intervalo) {
+        clearInterval(intervalo);
+        intervalo = null;
+    }
 }
 
 function reiniciarAutoplay() {
@@ -95,6 +96,8 @@ function reiniciarAutoplay() {
 // Pausar al poner el mouse encima
 carrusel.addEventListener('mouseenter', detenerAutoplay);
 carrusel.addEventListener('mouseleave', iniciarAutoplay);
+
+
 
 // Iniciar al cargar
 imagenes[0].classList.add('activa'); //Inicia como activada para evitar una imagen vacia por 4seg al entrar a la pagina

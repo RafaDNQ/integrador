@@ -23,21 +23,24 @@ body {
             ==================================*/
 
 .carruselOfertas {
-    border: black double;
-    border-radius: 12px;
     margin-top: 10rem;
+    height: auto;
     width: 100%;
+    max-width: 1200px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    aspect-ratio: 16/9; /* queda algo chica pero es la manera que encontre que no se recorten las imagenes que coloques*/
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 .contImgCarru {
-    position: relative;
+    display: flex;
+    height: 100%;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 12px;
+    position: relative;
 }
 
 
@@ -48,31 +51,43 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0; /* Ocultas por defecto */
-    transition: opacity 0.8s ease-in-out; /* Suavidad del intercambio */
+    object-position: center;
+    opacity: 0;
+    /* Ocultas por defecto */
+    transition: opacity 0.8s ease-in-out;
+    /* Suavidad del intercambio */
 }
 
 .imagenCarrusel.activa {
     opacity: 1;
 }
 
-.contIzqCarru, .contDerCarru {
+.contIzqCarru,
+.contDerCarru {
     position: absolute;
     top: 50%;
     z-index: 10;
+    /* background-color: white; */
+    border-radius: 10px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
 }
+
 
 .contIzqCarru {
     left: 20px;
 }
 
-.btnCarruIzq, .btnCarruDer {
+.btnCarruIzq,
+.btnCarruDer {
     border: none;
-    background-color: #0d315c00;
+    background-color: var(--tropical-teal, #73bfb8ff);
     cursor: pointer;
 }
 
-.contIzqCarru button, .contDerCarru button {
+.contIzqCarru button,
+.contDerCarru button {
     background: none;
     border: none;
     cursor: pointer;

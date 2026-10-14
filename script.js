@@ -46,7 +46,6 @@ const tiempoEspera = 4000; // 4 segundos
 
 // Función para cambiar de imagen usando clases
 function mostrarImagen(nuevoIndice) {
-
     imagenes[indiceActual].classList.remove('activa');
     indiceActual = nuevoIndice;
     if (indiceActual >= totalImagenes) {
@@ -98,4 +97,5 @@ carrusel.addEventListener('mouseenter', detenerAutoplay);
 carrusel.addEventListener('mouseleave', iniciarAutoplay);
 
 // Iniciar al cargar
+imagenes[0].classList.add('activa'); //Inicia como activada para evitar una imagen vacia por 4seg al entrar a la pagina
 iniciarAutoplay();

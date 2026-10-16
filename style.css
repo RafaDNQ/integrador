@@ -502,6 +502,36 @@ body {
     opacity: 0.8;
 }
 
+.invalido{
+    width: fit-content;
+    padding: 5px;
+    color: black;
+    text-align: center;
+    justify-self: center;
+    background-color: rgb(218, 37, 37);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.Subscripto{
+    height: fit-content;
+    width: 60%;
+    padding: 3px;
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    background-color: #e5b300;
+    /* border-radius: 30px; */
+        border-radius: 0px 0px 30px 30px;
+}
+
+.Subscripto h3{
+    margin-left: 1.3rem;
+}
+
+.Subscripto p{
+    margin-left: 1.3rem;
+}
+
 
 
 /*======================================
@@ -542,7 +572,7 @@ body {
     display: flex;
     flex: 25%;
     align-items: center;
-
+    justify-content: left;
 }
 
 .divContact p {

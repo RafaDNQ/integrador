@@ -37,12 +37,12 @@
 
             <!-- Contenedor que se va a deslizar -->
             <div class="contImgCarru">
-                
+
                 <img class="imagenCarrusel" src="./img/Carrusel/PurinaBanner.jpg" alt="PurinaBanner">
                 <img class="imagenCarrusel" src="./img/Carrusel/beepaw juguetes banner.jpg" alt="BoneloBanner">
                 <img class="imagenCarrusel" src="./img/Carrusel/oldPrinceNewProdBanner.jpg" alt="oldPrinceBanner">
                 <img class="imagenCarrusel" src="./img/Carrusel/eukanuba banner.jpg" alt="EukanubaBanner">
-                
+
             </div>
 
             <!-- Botones afuera para poder posicionarlos bien -->
@@ -471,17 +471,20 @@
                     <p>Suscribite para recibir novedades, promociones exclusivas y obtené un <strong>3% OFF</strong> en
                         tu primera compra.</p>
                 </div>
-                <form action="" class="formNL" id="formNL">
+                <form action="" class="formNL" id="formNL" novalidate>
                     <div class="grupoInput">
-                        <input type="email" placeholder="Ingresá tu email aquí..." required class="inputEmail">
-                        <button type="submit" class="botonSuscripcion">Conseguir mi 3% OFF</button>
+                        <input type="text" placeholder="Ingresá tu email aquí..." class="inputEmail">
+                        <button type="submit" id="submit" class="botonSuscripcion">Conseguir mi 3% OFF</button>
                     </div>
+                    <p id="errorEmail"></p>
+                    <div id="resumenNewsletter"></div>
+
                     <span class="leyendaCupon">* Te enviaremos el código del cupón a tu casilla de correo.</span>
 
 
                 </form>
 
-
+                
 
 
             </div>

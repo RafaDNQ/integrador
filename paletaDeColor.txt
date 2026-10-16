@@ -36,7 +36,7 @@ $pumpkin-spice: rgba(234, 115, 23, 1);
 /* SCSS Gradient */
 $gradient-top: linear-gradient(0deg, #2364aaff, #3da5d9ff, #73bfb8ff, #fec601ff, #ea7317ff);
 $gradient-right: linear-gradient(90deg, #2364aaff, #3da5d9ff, #73bfb8ff, #fec601ff, #ea7317ff);
-$gradient-bottom: linear-gradient(180deg, #2364aaff, #3da5d9ff, #73bfb8ff, #fec601ff, #ea7317ff);
+$gradient-bottom: linear-gradient(180deg, #2364aaff, #3da5d9ff, rgb(115, 191, 184), #fec601ff, #ea7317ff);
 $gradient-left: linear-gradient(270deg, #2364aaff, #3da5d9ff, #73bfb8ff, #fec601ff, #ea7317ff);
 $gradient-top-right: linear-gradient(45deg, #2364aaff, #3da5d9ff, #73bfb8ff, #fec601ff, #ea7317ff);
 $gradient-bottom-right: linear-gradient(135deg, #2364aaff, #3da5d9ff, #73bfb8ff, #fec601ff, #ea7317ff);

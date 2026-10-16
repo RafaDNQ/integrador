@@ -19,11 +19,42 @@ body {
 }
 
 /*==================================
+            Bienvenida
+            ==================================*/
+
+
+.bienvenidaTienda {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--ocean-deep, #2364aa);
+    width: 100%;
+    text-align: center;
+    margin-top: 4rem;
+    padding: 0 1rem 1rem;
+}
+
+.bienvenidaTienda h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.bienvenidaTienda h1 span {
+    color: var(--pumpkin-spice, #ea7317);
+}
+
+.bienvenidaTienda p {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 400;
+}
+
+/*==================================
             Carrusel
             ==================================*/
 
 .carruselOfertas {
-    margin-top: 10rem;
     height: auto;
     width: 100%;
     max-width: 1200px;
@@ -31,7 +62,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 16/9; /* queda algo chica pero es la manera que encontre que no se recorten las imagenes que coloques*/
+    aspect-ratio: 16/9;
+    /* queda algo chica pero es la manera que encontre que no se recorten las imagenes que coloques*/
     overflow: hidden;
     border-radius: 20px;
 }
@@ -407,11 +439,13 @@ body {
     outline: none;
     /* Quitamos las flechas por defecto del input number */
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 #cantidad::-webkit-outer-spin-button,
 #cantidad::-webkit-inner-spin-button {
     -webkit-appearance: none;
+    appearance: none;
     margin: 0;
 }
 
@@ -502,7 +536,7 @@ body {
     opacity: 0.8;
 }
 
-.invalido{
+.invalido {
     width: fit-content;
     padding: 5px;
     color: black;
@@ -512,7 +546,7 @@ body {
     border-radius: 0px 0px 20px 20px;
 }
 
-.Subscripto{
+.Subscripto {
     height: fit-content;
     width: 60%;
     padding: 3px;
@@ -521,14 +555,14 @@ body {
     margin-left: 3rem;
     background-color: #e5b300;
     /* border-radius: 30px; */
-        border-radius: 0px 0px 30px 30px;
+    border-radius: 0px 0px 30px 30px;
 }
 
-.Subscripto h3{
+.Subscripto h3 {
     margin-left: 1.3rem;
 }
 
-.Subscripto p{
+.Subscripto p {
     margin-left: 1.3rem;
 }
 

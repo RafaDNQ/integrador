@@ -175,3 +175,21 @@ formBoton.addEventListener('click', () => {
         }
     }
 });
+
+
+/* ===========================
+                Modal de login
+        =============================*/
+
+  const dialog = document.getElementById('loginModal');
+  const openLogin = document.getElementById('btnLogin');
+  const closeLogin = document.getElementById('closeLogin');
+
+  openLogin.addEventListener('click', () => {
+    dialog.showModal();
+  });
+
+  // Cerrar modal
+  closeLogin.addEventListener('click', () => {
+    dialog.close();
+  });

@@ -15,8 +15,12 @@
 
 <body>
 
+<<<<<<< Updated upstream
     <div class="div1">
 
+=======
+    <header class="div1">
+>>>>>>> Stashed changes
         <div class="barraImg"><img src="./img/logotipo/garritas2.png" alt="garritas logotipo"></div>
         <div class="barra">
             <ul>
@@ -32,12 +36,25 @@
                 <a href="">
                     <li> Login </li>
                 </a>
+                <button id="btnLogin" class="btnLogin">Login</button>
+
+                <dialog id="loginModal" class="loginModal">
+                        <h2>Login / Ingresar</h2>
+                        <form action="" novalidate class="LoginForm">
+                            <input type="text" placeholder="Ingresá tu email aquí..." class="LoginEmail">
+                            <input type="password" placeholder="***************" class="LoginPassword">
+                        </form>
+                        <div class="modalBotones">
+                            <button id="closeLogin" class="cancelar">Cancelar</button>
+                            <button id="ingresar" class="ingresar">Ingresar</button>
+                        </div>
+                </dialog>
             </ul>
         </div>
         <div id="carrito" class="carritoCompras">
             <img src="./img/nav/carrito-de-compras.png" alt="carritoComprasIcon">
         </div>
-    </div>
+    </header>
 
     <!-- Main -->
 
@@ -493,7 +510,9 @@
                         <input type="text" placeholder="Ingresá tu email aquí..." class="inputEmail">
                         <button type="submit" id="submit" class="botonSuscripcion">Conseguir mi 3% OFF</button>
                     </div>
-                    <p id="errorEmail"></p>
+                    <div class="divError">
+                        <p id="errorEmail"></p>
+                    </div>
                     <div id="resumenNewsletter"></div>
 
                     <span class="leyendaCupon">* Te enviaremos el código del cupón a tu casilla de correo.</span>

@@ -780,7 +780,10 @@ a {
     object-fit: contain;
 }
 
-/*  items articulos sueltos  */
+/* ===========================
+               ITEM ARTICULOS
+        =============================*/
+
 
 
 .divitemcolum {
@@ -867,7 +870,10 @@ a {
 
 }
 
-/*  sugeridos  */
+/* ===========================
+                SUGERIDOS
+        =============================*/
+
 
 .imagsugeridos {
     align-self: center;

@@ -842,7 +842,8 @@ a {
     align-items: center;
     width: 30%;
 }
-.itemarticulo{
+
+.itemarticulo {
     flex: 1;
 }
 
@@ -876,23 +877,20 @@ a {
 
 
 .imagsugeridos {
-    align-self: center;
     display: flex;
-    height: 250px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 10px;
-
-
+    transition: transform 0.5s ease-in-out; /* Animación suave al deslizar */
+    background-color: rgb(115, 191, 184);
+    
 }
 
 .imagsugeridos img {
-    width: 100%;
-    height: 100%;
+    /* Cada imagen ocupa el 25% del contenedor menos el espacio del gap, para que entren exactamente 4 */
+    width: calc(25% - 11.25px); 
+    flex-shrink: 0; /* Evita que las imágenes se reduzcan de tamaño a la fuerza */
+    height: 200px;   /* Altura fija para todas las imágenes */
     object-fit: cover;
-        padding: 10px;
-background-color: rgb(115, 191, 184);
+    border-radius: 8px;
+    margin: 5px;
 }
 
 .imagsugeridos img:hover {
@@ -901,6 +899,17 @@ background-color: rgb(115, 191, 184);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 
 }
+
+
+.carrusel-contenedor {
+    width: 100%;
+    max-width: 900px;
+    /* Ajusta según el ancho que quieras darle a tu sección */
+    overflow: hidden;
+    /* Oculta las imágenes que pasen del límite de 4 */
+     background-color: rgb(115, 191, 184);
+}
+
 /* ===========================
                 Modal de login
         =============================*/
@@ -929,7 +938,7 @@ background-color: rgb(115, 191, 184);
     gap: 1rem;
 }
 
-.LoginForm input{
+.LoginForm input {
     flex: 1;
     padding: 5px 5px;
     border: none;
@@ -939,14 +948,14 @@ background-color: rgb(115, 191, 184);
     cursor: text;
 }
 
-.modalBotones{
+.modalBotones {
     display: flex;
     justify-content: center;
     gap: 3.5rem;
-    
+
 }
 
-.modalBotones button{
+.modalBotones button {
     border: none;
     background-color: white;
     border-radius: 20px;

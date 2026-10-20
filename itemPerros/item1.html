@@ -3,37 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tienda</title>
     <link rel="stylesheet" href="../style.css">
+     <link rel="stylesheet" href="./style-perros.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
 </head>
 
+
+
+
 <body>
-    <div class="div1">
+    <header class="div1">
+        <div class="barraImg"><img src="../img/logotipo/garritas2.png" alt="garritas logotipo"></div>
+        <div class="barra">
+            <ul>
+                <a href="../integrador.html">
+                    <li> Home </li>
+                </a>
+                <a href="">
+                    <li> Catalogo </li>
+                </a>
+                <a href="">
+                    <li> Contacto </li>
+                </a>
+                <button id="btnLogin" class="btnLogin">Login</button>
 
-        <ul class="barra">
-            <img src="../img\petshop.jpg" alt="imagen 1" width="100" height="70">
-            <a href="../integrador.html">
-                <li>
-                    Home </li>
-            </a>
-            <li> Catalogo </li>
-            <li> Contacto </li>
-            <li> Login </li>
-        </ul>
+                <dialog id="loginModal" class="loginModal">
+                    <h2>Login / Ingresar</h2>
+                    <form action="" novalidate class="LoginForm">
+                        <input type="text" placeholder="Ingresá tu email aquí..." class="LoginEmail">
+                        <input type="password" placeholder="***************" class="LoginPassword">
+                    </form>
+                    <div class="modalBotones">
+                        <button id="closeLogin" class="cancelar">Cancelar</button>
+                        <button id="ingresar" class="ingresar">Ingresar</button>
+                    </div>
+                </dialog>
+            </ul>
+        </div>
+        <div id="carrito" class="carritoCompras">
+            <img src="../img/nav/carrito-de-compras.png" alt="carritoComprasIcon">
+        </div>
+    </header>
 
-    </div>
+
     <div class="contenedoritem">
 
         <div class="itemarticulo" id="artPerro1">
             <div class="itemarticuloContenedorImg">
                 <img src="../img/cosas de perros/bolas-huesos-goma.jpg" alt="correa_retractil1">
             </div>
-            
+
         </div>
         <div class="divitemcolum">
             <div class="itemdescripcion">
@@ -65,16 +90,17 @@
         </div>
 
     </div>
-
+<div class="carrusel-contenedor">
     <div class="imagsugeridos">
         <img src="../img/cosas de perros/carrea_cadena2.jpg" alt="">
         <img src="../img/cosas de perros/cepillo1.jpg" alt="">
         <img src="../img/cosas de perros/cepillo2.jpg" alt="">
         <img src="../img/cosas de perros/cepillo_cheto.jpg" alt="">
         <img src="../img/cosas de perros/correa_cadena1.jpg" alt="">
+        <!-- Puedes agregar más imágenes y el script las irá rotando de 4 en 4 -->
     </div>
+</div>
 
-    <br></br>
     <section class="marcasDestacadas">
         <div class="contenedorTituloMarcas">
             <h2>Conoce nuestras Marcas Destacadas</h2>
@@ -97,9 +123,6 @@
         </div>
     </section>
 
-    <div>
-        <br></br>
-    </div>
 
     <section class="seccionNewsletter">
         <div contenedorNL class="contenedorNL">
@@ -113,7 +136,9 @@
                     <input type="text" placeholder="Ingresá tu email aquí..." class="inputEmail">
                     <button type="submit" id="submit" class="botonSuscripcion">Conseguir mi 3% OFF</button>
                 </div>
-                <p id="errorEmail"></p>
+                <div class="divError">
+                    <p id="errorEmail"></p>
+                </div>
                 <div id="resumenNewsletter"></div>
 
                 <span class="leyendaCupon">* Te enviaremos el código del cupón a tu casilla de correo.</span>
@@ -128,6 +153,8 @@
 
 
     </section>
+    </main>
+
 
     <footer class="footer">
         <div class="contactoFooter divFooter">
@@ -149,7 +176,7 @@
 
         </div>
         <div class="footerLogo divFooter">
-            <img src="../img/petshop.jpg" alt="petshop.jpg">
+            <img src="../img/logotipo/garritasRectangular.pbg.jpg" alt="petshop.jpg">
         </div>
         <div class="redesFooter divFooter">
             <div class="redTexto divRedInner">
@@ -164,8 +191,9 @@
 
 
     </footer>
-
     <script src="../script.js"></script>
+    <script src="./scrip-perros.js"></script>
+
 
 </body>
 

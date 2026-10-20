@@ -487,22 +487,21 @@ a {
     gap: 2rem;
 }
 
-.textoNewsletter h2 {
+.textoNL h2 {
     font-size: 1.8rem;
     margin-bottom: 8px;
 }
 
-.textoNewsletter p {
+.textoNL p {
     font-size: 1rem;
     opacity: 0.9;
 }
 
-.formNewsletter {
+.formNL {
     width: 100%;
     max-width: 550px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .grupoInput {
@@ -541,6 +540,9 @@ a {
     opacity: 0.8;
 }
 
+.errorDiv {
+    display: flex;
+}
 
 .invalido {
     width: fit-content;
@@ -550,6 +552,7 @@ a {
     justify-self: center;
     background-color: rgb(218, 37, 37);
     border-radius: 0px 0px 20px 20px;
+    margin-bottom: 10px;
 }
 
 .Subscripto {
@@ -839,7 +842,8 @@ a {
     align-items: center;
     width: 30%;
 }
-.itemarticulo{
+
+.itemarticulo {
     flex: 1;
 }
 
@@ -885,8 +889,8 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-        padding: 10px;
-background-color: rgb(115, 191, 184);
+    padding: 10px;
+    background-color: rgb(115, 191, 184);
 }
 
 .imagsugeridos img:hover {
@@ -895,6 +899,7 @@ background-color: rgb(115, 191, 184);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 
 }
+
 /* ===========================
                 Modal de login
         =============================*/
@@ -908,6 +913,9 @@ background-color: rgb(115, 191, 184);
     border-radius: 30px;
     padding: 24px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 110px;
+    left: 40%;
 }
 
 
@@ -920,31 +928,95 @@ background-color: rgb(115, 191, 184);
 .LoginForm {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-.LoginForm input{
+.LoginForm input {
     flex: 1;
     padding: 5px 5px;
-    border: none;
     outline: none;
     font-size: 1rem;
     border-radius: 10px;
     cursor: text;
 }
 
-.modalBotones{
+.modalBotones {
     display: flex;
     justify-content: center;
     gap: 3.5rem;
-    
+    margin-top: 15px;
+    justify-self: flex-end;
+
 }
 
-.modalBotones button{
+.modalBotones button {
     border: none;
     background-color: white;
     border-radius: 20px;
     padding: 10px;
     font-size: 1rem;
     cursor: pointer;
+}
+
+.mensajeError {
+    display: none;
+    color: white;
+    background-color: #0d3a75;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 5px 7px 7px 5px;
+}
+
+.invalidoLogin {
+    border: 3px solid rgb(207, 16, 16);
+}
+
+.resumenLogin {
+    display: none;
+    background-color: #3da5d9ff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+::backdrop {
+    background-color: #1a1a1ab6;
+}
+
+.tituloModal {
+    text-align: center;
+    color: white;
+}
+
+.LoginPassword{
+    width: 303px;
+}
+
+/* ======== Mostrar contraseña ============ */
+
+.divContra {
+    display: flex;
+    height: 33px;
+}
+
+.iconosMostrar {
+    object-position: center;
+    cursor: pointer;
+}
+
+
+.mostrarIcono {
+    display: block;
+    height: 33px;
+    width: 33px;
+    object-fit: contain;
+    margin-left: 5px;
+}
+
+.ocultarIcono {
+    display: none;
+    height: 33px;
+    width: 33px;
+    object-fit: contain;
+    margin-left: 5px;
+
 }

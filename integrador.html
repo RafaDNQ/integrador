@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
@@ -31,16 +31,33 @@
                 <button id="btnLogin" class="btnLogin">Login</button>
 
                 <dialog id="loginModal" class="loginModal">
-                        <h2>Login / Ingresar</h2>
-                        <form action="" novalidate class="LoginForm">
-                            <input type="text" placeholder="Ingresá tu email aquí..." class="LoginEmail">
-                            <input type="password" placeholder="***************" class="LoginPassword">
-                        </form>
-                        <div class="modalBotones">
-                            <button id="closeLogin" class="cancelar">Cancelar</button>
-                            <button id="ingresar" class="ingresar">Ingresar</button>
+                    <h2 class="tituloModal">Login / Ingresar</h2>
+                    <form class="LoginForm" id="LoginForm" novalidate>
+                        <input type="text" placeholder="Ingresá tu email aquí..." class="LoginEmail" id="LoginEmail"
+                            required>
+                        <div class="divContra">
+                            <input type="password" placeholder="***************" class="LoginPassword"
+                                id="LoginPassword" required>
+                            <!-- Mostrar Contraseña -->
+                            <div class="iconosMostrar" id="iconosDiv">
+                                <img src="./img/nav/iconosMostrarModal/ojo.png" alt="mostrarIcono"
+                                    class="mostrarIcono" id="mostrarIcono">
+                                <img src="./img/nav/iconosMostrarModal/cerrar-ojo.png" alt="ocultarIcono"
+                                    class="ocultarIcono" id="ocultarIcono">
+                            </div>
+                            <!-- ============ -->
                         </div>
+                        <div class="modalBotones">
+                            <button type="button" id="closeLogin" class="cancelar">Cancelar</button>
+                            <button type="submit" id="ingresar" class="ingresar">Ingresar</button>
+                        </div>
+                    </form>
+                    <!-- Errores -->
+                    <p id="errorEmailLogin" class="mensajeError"></p>
+                    <p id="errorPasswordLogin" class="mensajeError"></p>
+                    <!-- ================= -->
                 </dialog>
+                <div id="resumenLogin" class="resumenLogin"></div>
             </ul>
         </div>
         <div id="carrito" class="carritoCompras">
@@ -129,7 +146,7 @@
                 <div class="articuloTarjeta genericoProd" id="artPerro1">
                     <div class="articuloContenedorImg">
                         <a href="./item/item1.html">
-                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="correa_retractil1">
+                            <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="correa_retractil1">
                         </a>
                     </div>
                     <div class="articuloContenedor">
@@ -497,12 +514,13 @@
                     <p>Suscribite para recibir novedades, promociones exclusivas y obtené un <strong>3% OFF</strong> en
                         tu primera compra.</p>
                 </div>
-                <form action="" class="formNL" id="formNL" novalidate>
+                <form class="formNL" id="formNL" novalidate>
                     <div class="grupoInput">
-                        <input type="text" placeholder="Ingresá tu email aquí..." class="inputEmail">
+                        <input type="text" placeholder="Ingresá tu email aquí..." class="inputEmail"
+                            id="emailNewsletter">
                         <button type="submit" id="submit" class="botonSuscripcion">Conseguir mi 3% OFF</button>
                     </div>
-                    <div class="divError">
+                    <div class="errirDiv">
                         <p id="errorEmail"></p>
                     </div>
                     <div id="resumenNewsletter"></div>

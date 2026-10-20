@@ -108,7 +108,7 @@ iniciarAutoplay();
         =============================*/
 
 const newsletter = document.getElementById("formNL");
-const email = document.querySelector(".inputEmail")
+const email = document.getElementById("emailNewsletter");
 const errorEmail = document.getElementById("errorEmail");
 const resumen = document.getElementById("resumenNewsletter");
 
@@ -121,14 +121,15 @@ newsletter.addEventListener("submit", function (event) {
 
     if (correo === "") {
         errorEmail.classList.add("invalido");
-        mostrarError("Es necesario colocar un email.")
+        mostrarError("Es necesario colocar un email.");
         resumen.classList.remove("Subscripto");
+        console.log("Entró en la validación de correo vacío");
         return;
     }
 
     if (correo.length < 5 || correo.length > 254) {
         errorEmail.classList.add("invalido");
-        mostrarError("El correo debe contener entre 5 a 254 caracteres.")
+        mostrarError("El correo debe contener entre 5 a 254 caracteres.");
         resumen.classList.remove("Subscripto");
         return;
     }
@@ -181,15 +182,171 @@ formBoton.addEventListener('click', () => {
                 Modal de login
         =============================*/
 
-  const dialog = document.getElementById('loginModal');
-  const openLogin = document.getElementById('btnLogin');
-  const closeLogin = document.getElementById('closeLogin');
+const dialog = document.getElementById('loginModal');
+const openLogin = document.getElementById('btnLogin');
+const closeLogin = document.getElementById('closeLogin');
+const submitLogin = document.getElementById('ingresar');
 
-  openLogin.addEventListener('click', () => {
+const usuarioEmail = document.getElementById('LoginEmail');
+const usuarioContra = document.getElementById('LoginPassword');
+
+const errorEmailLogin = document.getElementById('errorEmailLogin');
+const errorPassword = document.getElementById('errorPasswordLogin');
+
+const loginForm = document.getElementById('LoginForm');
+const resumenLogin = document.getElementById('resumenLogin');
+
+let estadoInvalido = false;
+
+
+
+//Abrir modal
+openLogin.addEventListener('click', () => {
     dialog.showModal();
-  });
+});
 
-  // Cerrar modal
-  closeLogin.addEventListener('click', () => {
+
+
+// Cerrar modal
+closeLogin.addEventListener('click', () => {
+    errorEmailLogin.textContent = "";
+    errorPassword.textContent = "";
+
+    loginForm.reset();
+
+    usuarioEmail.classList.remove("invalidoLogin");
+    usuarioContra.classList.remove("invalidoLogin");
+
+    errorEmailLogin.style.display = "none";
+    errorPassword.style.display = "none";
+
+
+
     dialog.close();
-  });
+});
+
+//Validacion de login
+loginForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const email = usuarioEmail.value.trim();
+    const contra = usuarioContra.value;
+    errorEmailLogin.textContent = "";
+
+    //=========Validacion email===========
+
+    if (email === "") {
+        usuarioEmail.classList.add("invalidoLogin");
+        errorEmailLogin.textContent = "Debes ingresar un correo electronico.";
+        estadoInvalido = true;
+        errorEmailLogin.style.display = "flex";
+    } else {
+        errorEmailLogin.textContent = "";
+        usuarioEmail.classList.remove("invalidoLogin");
+        errorEmailLogin.style.display = "none";
+    }
+
+    const expresionEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!expresionEmail.test(email)) {
+        usuarioEmail.classList.add("invalidoLogin");
+        errorEmailLogin.textContent = "Ingresá un correo válido.";
+        estadoInvalido = true;
+        errorEmailLogin.style.display = "flex";
+    } else {
+        errorEmailLogin.textContent = "";
+        usuarioEmail.classList.remove("invalidoLogin");
+        errorEmailLogin.style.display = "none";
+    }
+
+    //=========Validacion contraseña===========
+
+    if (contra.value === "") {
+        usuarioContra.classList.add("invalidoLogin");
+        errorPassword.textContent = "Debes ingresar una contraseña";
+        estadoInvalido = true;
+        errorPassword.style.display = "flex";
+    } else {
+        errorPassword.textContent = "";
+        usuarioContra.classList.remove("invalidoLogin");
+        errorPassword.style.display = "none";
+    }
+
+    const expresionPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,30}$/;
+
+    if (!expresionPassword.test(contra)) {
+        usuarioContra.classList.add("invalidoLogin");
+        errorPassword.textContent = "La contraseña debe tener entre 10 a 30 caracteres, una mayúscula, una minúscula y un número.";
+        estadoInvalido = true;
+        errorPassword.style.display = "flex";
+    } else {
+        errorPassword.textContent = "";
+        usuarioContra.classList.remove("invalidoLogin");
+        errorPassword.style.display = "none";
+    }
+
+    if (estadoInvalido === true) {
+        return;
+    }
+
+    const divLog = document.createElement("div");
+    const tituloLog = document.createElement("h3");
+    const emailLog = document.createElement("p");
+    const passLog = document.createElement("p");
+
+    tituloLog.textContent = "Ingreso exitoso";
+    emailLog.textContent = "Correo: " + email;
+    passLog.textContent = "Contraseña: " + contra;
+
+    divLog.appendChild(tituloLog);
+    divLog.appendChild(emailLog);
+    divLog.appendChild(passLog);
+    resumenLogin.classList.add("ingresoValido");
+    resumenLogin.prepend(divLog);
+
+
+    dialog.close();
+    document.getElementById('btnLogin').style.display = "none";
+    resumenLogin.style.display = "flex";
+
+});
+
+
+// ============= Mostrar iconos password =============
+
+const iconoMostrar = document.getElementById('mostrarIcono');
+const iconoOcultar = document.getElementById('ocultarIcono');
+const iconoDiv = document.getElementById('iconosDiv');
+//const usuarioContra
+
+
+iconoDiv.addEventListener('click', function () {
+
+    if (getComputedStyle(iconoMostrar).display === "block") {
+
+        usuarioContra.type = "text";
+
+        iconoMostrar.style.display = "none";
+
+        iconoOcultar.style.display = "block";
+
+    } else {
+
+        usuarioContra.type = "password";
+
+        iconoMostrar.style.display = "block";
+
+        iconoOcultar.style.display = "none";
+
+    }
+
+
+
+});
+
+
+
+
+/* ===========================
+                Modal de login [END]
+        =============================*/

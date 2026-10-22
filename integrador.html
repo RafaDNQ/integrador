@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./carrito/carritoStyle.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +41,8 @@
                                 id="LoginPassword" required>
                             <!-- Mostrar Contraseña -->
                             <div class="iconosMostrar" id="iconosDiv">
-                                <img src="./img/nav/iconosMostrarModal/ojo.png" alt="mostrarIcono"
-                                    class="mostrarIcono" id="mostrarIcono">
+                                <img src="./img/nav/iconosMostrarModal/ojo.png" alt="mostrarIcono" class="mostrarIcono"
+                                    id="mostrarIcono">
                                 <img src="./img/nav/iconosMostrarModal/cerrar-ojo.png" alt="ocultarIcono"
                                     class="ocultarIcono" id="ocultarIcono">
                             </div>
@@ -63,7 +64,32 @@
         <div id="carrito" class="carritoCompras">
             <img src="./img/nav/carrito-de-compras.png" alt="carritoComprasIcon">
         </div>
+
     </header>
+
+    <!-- Modal de carrito -->
+
+    <dialog id="carritoModal" class="carritoModal">
+        <div class="mainCarrito" id="mainCarrito">
+            <div class="headerCarrito" id="headerCarrito">
+                <div class="tituloCarrito"><h2>Carrito de compras</h2></div>
+                <div class="divButton"><button type="button" id="cerrarCarrito" class="cerrarCarrito"><img src="./img/nav/cerrar.png" alt="btnCerrar"></button></div>
+            </div>
+
+            <div class="contenidoCarrito" id="contenidoCarrito">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div carritoEnd>
+
+            </div>
+        </div>
+
+    </dialog>
 
     <!-- Main -->
 
@@ -146,7 +172,7 @@
                 <div class="articuloTarjeta genericoProd" id="artPerro1">
                     <div class="articuloContenedorImg">
                         <a href="./itemPerros/item1.html">
-                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="correa_retractil1">
+                            <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="correa_retractil1">
                         </a>
                     </div>
                     <div class="articuloContenedor">
@@ -578,6 +604,7 @@
 
 
     <script src="script.js"></script>
+    <script src="./carrito/carrito.js"></script>
 </body>
 
 </html>

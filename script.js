@@ -221,7 +221,6 @@ closeLogin.addEventListener('click', () => {
     errorPassword.style.display = "none";
 
 
-
     dialog.close();
 });
 

@@ -74,11 +74,11 @@
 
 
 
-.itemarticulo {
+.articuloperro {
     flex: 1;
 }
 
-.itemarticuloContenedorImg {
+.articuloperroContenedorImg {
     align-self: center;
     display: flex;
     height: 100%;
@@ -89,13 +89,13 @@
 
 }
 
-.itemarticuloContenedorImg img {
+.articuloperroContenedorImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.itemarticuloContenedorImg:hover {
+.articuloperroContenedorImg:hover {
     background-color: #dde5ec;
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
@@ -107,44 +107,39 @@
         =============================*/
 
 
-.imagsugeridos {
+.articuloperrosugeridos {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    /* Animación suave al deslizar */
     background-color: rgb(115, 191, 184);
-
-
+    margin: 5px;
+    gap: 10px;
 }
 
-.imagsugeridos img {
-    /* Cada imagen ocupa el 25% del contenedor menos el espacio del gap, para que entren exactamente 4 */
-    width: calc(25% - 11.25px);
+.articuloperrosugeridos img {
+
+    width: calc(25% - 7.5px);
     flex-shrink: 0;
-    /* Evita que las imágenes se reduzcan de tamaño a la fuerza */
     height: 200px;
-    /* Altura fija para todas las imágenes */
     object-fit: cover;
     border-radius: 8px;
-    margin: 5px;
+    
 }
 
-.imagsugeridos img:hover {
+.articuloperrosugeridos img:hover {
     background-color: #dde5ec;
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
-
 }
 
 
-.carrusel-contenedor {
+.carrusel-contenedor-perros {
     display: flex;
     width: 100%;
     max-width: 900px;
-    /* Ajusta según el ancho que quieras darle a tu sección */
     overflow: hidden;
-    /* Oculta las imágenes que pasen del límite de 4 */
+    /* Oculta lo que sobra fuera de los 4 elementos */
     background-color: rgb(115, 191, 184);
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
+    margin: 0 auto;
+    /* Centra el contenedor en la página */
+
 }

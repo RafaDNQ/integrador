@@ -18,11 +18,13 @@ btnAumentar.addEventListener('click', () => {
     let valorActual = parseInt(inputCantidad.value) || 0;
     inputCantidad.value = valorActual + 1;
 });
-
+/*--------------------------
+     Casrrusel
+     -------------------- */
 document.addEventListener("DOMContentLoaded", () => {
-    const track = document.querySelector('.imagsugeridos');
+    const track = document.querySelector('.articuloperrosugeridos');
     const imagenes = track.querySelectorAll('img');
-    
+
     let indiceActual = 0;
     const totalImagenes = imagenes.length;
     const imagenesVisibles = 4; // Límite máximo de imágenes visibles a la vez

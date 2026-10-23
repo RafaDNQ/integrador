@@ -15,7 +15,7 @@ btnDisminuir.addEventListener('click', () => {
 
 // Evento para aumentar (flecha derecha)
 btnAumentar.addEventListener('click', () => {
-    let valorActual = parseInt(inputCantidad.value) || 0;
+    let valorActual = parseInt(inputCantidad.value) || 1;
     inputCantidad.value = valorActual + 1;
 });
 /*--------------------------
@@ -34,15 +34,22 @@ document.addEventListener("DOMContentLoaded", () => {
         // Incrementamos el índice
         indiceActual++;
 
-        // Si llegamos al final y ya no quedan grupos completos de 4 para mostrar, volvemos al inicio (0)
+        // Si llegamos al final, volvemos al inicio (0)
         if (indiceActual > totalImagenes - imagenesVisibles) {
             indiceActual = 0;
         }
 
-        // Calculamos cuánto debe desplazarse el contenedor en porcentaje
-        // Como cada imagen ocupa un 25% aprox, multiplicamos por el índice actual
-        const desplazamiento = indiceActual * (100 / imagenesVisibles);
-        track.style.transform = `translateX(-${desplazamiento}%)`;
+        // MEDIDA EXACTA: Obtenemos el ancho real de una imagen en píxeles
+        const anchoImagen = imagenes[0].getBoundingClientRect().width;
+        
+        // El espacio (gap) en píxeles que definiste en tu CSS
+        const gap = 10; 
+
+        // Calculamos el desplazamiento exacto en píxeles (ancho de la foto + su espacio) por el índice
+        const desplazamiento = indiceActual * (anchoImagen + gap);
+        
+        // Aplicamos la transformación en píxeles (px) en lugar de porcentajes (%)
+        track.style.transform = `translateX(-${desplazamiento}px)`;
     }
 
     // Solo activamos el intervalo automático si hay más de 4 imágenes

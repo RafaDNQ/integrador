@@ -1,0 +1,206 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style-gatos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+
+
+<body>
+    <header class="div1">
+        <div class="barraImg"><img src="../img/logotipo/garritas2.png" alt="garritas logotipo"></div>
+        <div class="barra">
+            <ul>
+                <a href="../integrador.html">
+                    <li> Home </li>
+                </a>
+                <a href="">
+                    <li> Catalogo </li>
+                </a>
+                <a href="">
+                    <li> Contacto </li>
+                </a>
+                <button id="btnLogin" class="btnLogin">Login</button>
+
+                <dialog id="loginModal" class="loginModal">
+                    <h2>Login / Ingresar</h2>
+                    <form action="" novalidate class="LoginForm">
+                        <input type="text" placeholder="Ingresá tu email aquí..." class="LoginEmail">
+                        <input type="password" placeholder="***************" class="LoginPassword">
+                    </form>
+                    <div class="modalBotones">
+                        <button id="closeLogin" class="cancelar">Cancelar</button>
+                        <button id="ingresar" class="ingresar">Ingresar</button>
+                    </div>
+                </dialog>
+            </ul>
+        </div>
+        <div id="carrito" class="carritoCompras">
+            <img src="../img/nav/carrito-de-compras.png" alt="carritoComprasIcon">
+        </div>
+    </header>
+
+
+    <div class="contenedoritem">
+
+        <div class="articuloperro" id="artPerro1">
+            <div class="articuloperroContenedorImg">
+                <img src="../img/cosas de gatos/droga.jpg" alt="correa_retractil1">
+            </div>
+
+        </div>
+        <div class="divitemcolum">
+            <div class="itemdescripcion">
+                <p>
+                    joder que buen articulo
+                    aca escribimos una descripcion
+                    y vemos como queda de feo
+                    si queda re feo
+                </p>
+
+            </div>
+
+            <div class="itemprecio">
+                <span class="titulo">Correa retractil</span>
+                <span class="precio">$23000</span>
+            </div>
+
+            <div class="itemcontComprar">
+                <div class="itemcontAcumular">
+                    <button class="btn-flecha-izq">◄</button>
+                    <input type="number" value="1" min="1" class="input-cantidad" readonly>
+                    <button class="btn-flecha-der">►</button>
+                </div>
+                <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
+                        Comprar</button></div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="carrusel-contenedor-perros">
+        <div class="articuloperrosugeridos">
+            <img src="../img/cosas de gatos/cama_rascador1.jpg" alt="">
+            <img src="../img/cosas de gatos/cama_rascador2.jpg" alt="">
+            <img src="../img/cosas de gatos/conjunto_de_camas.jpg" alt="">
+            <img src="../img/cosas de gatos/conjunto_de_pelotas.jpg" alt="">
+            <img src="../img/cosas de gatos/cama1.jpg" alt="">
+            <img src="../img/cosas de gatos/juguete_interactivo1.jpg" alt="">
+            <img src="../img/cosas de gatos/palo_con_raton.jpg" alt="">
+            <img src="../img/cosas de gatos/racador1.jpg" alt="">
+            <img src="../img/cosas de gatos/racador2.jpg" alt="">
+            <img src="../img/cosas de gatos/rascador3.jpg" alt="">
+            <img src="../img/cosas de gatos/ratones_chillones.jpg" alt="">
+
+            <!-- Puedes agregar más imágenes y el script las irá rotando de 4 en 4 -->
+        </div>
+    </div>
+
+    <section class="marcasDestacadas">
+        <div class="contenedorTituloMarcas">
+            <h2>Conoce nuestras Marcas Destacadas</h2>
+        </div>
+        <div class="contenedorMarcas">
+            <div class="marcaTarjeta" id="purinaProPlan"><img src="../img/marcas/purinaProPlan/purinaProPlanLogo.png"
+                    alt="purinaProPlanLogo"></div>
+            <div class="marcaTarjeta" id="royalCanin"><img src="../img/marcas/royalCanin/royalCaninLogo.png"
+                    alt="royalCaninLogo">
+            </div>
+            <div class="marcaTarjeta" id="monAmi"><img src="../img/marcas/MonAmi/monAmiLogo.png" alt="monAmiLogo">
+            </div>
+            <div class="marcaTarjeta" id="Old Prince"><img src="../img/marcas/oldPrince/oldPrinceLogo.png"
+                    alt="OldPrinceLogo">
+            </div>
+            <div class="marcaTarjeta" id="puppis"><img src="../img/marcas/puppis/puppisLogo.png" alt="PuppisLogo">
+            </div>
+            <div class="marcaTarjeta" id="Eukanuba"><img src="../img/marcas/eukanuba/eukanubaLogo.png"
+                    alt="EukanubaLogo"></div>
+        </div>
+    </section>
+
+
+    <section class="seccionNewsletter">
+        <div contenedorNL class="contenedorNL">
+            <div class="textoNL">
+                <h2>¡Sumate a la comunidad perruna y gatuna! 🐾</h2>
+                <p>Suscribite para recibir novedades, promociones exclusivas y obtené un <strong>3% OFF</strong> en
+                    tu primera compra.</p>
+            </div>
+            <form action="" class="formNL" id="formNL" novalidate>
+                <div class="grupoInput">
+                    <input type="text" placeholder="Ingresá tu email aquí..." class="inputEmail">
+                    <button type="submit" id="submit" class="botonSuscripcion">Conseguir mi 3% OFF</button>
+                </div>
+                <div class="divError">
+                    <p id="errorEmail"></p>
+                </div>
+                <div id="resumenNewsletter"></div>
+
+                <span class="leyendaCupon">* Te enviaremos el código del cupón a tu casilla de correo.</span>
+
+
+            </form>
+
+
+
+
+        </div>
+
+
+    </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="contactoFooter divFooter">
+            <div class="contContact divContacto">
+                <div class="divContact">
+                    <p>Atención Telefónica <br> 0810-221-2443</p>
+                </div>
+                <div class="divContact">
+                    <p>Atención Whatsapp <br> 2657-505348 </p>
+                </div>
+                <div class="divContact">
+                    <p>Lunes a Sábados de 9 a 21 hs <br>
+                        Domingos de 10 a 20 hs</p>
+                </div>
+            </div>
+            <div class="divContactText divContacto">
+                <p>Como contactarnos</p>
+            </div>
+
+        </div>
+        <div class="footerLogo divFooter">
+            <img src="../img/logotipo/garritasRectangular.pbg.jpg" alt="petshop.jpg">
+        </div>
+        <div class="redesFooter divFooter">
+            <div class="redTexto divRedInner">
+                <p>Conoce nuestras redes!</p>
+            </div>
+            <div class="contRedesIcons divRedInner">
+                <div class="divRed"><img src="../img/footer/facebook.png" alt="facebook.png"></div>
+                <div class="divRed"><img src="../img/footer/instagram.png" alt="instagram.png"></div>
+                <div class="divRed"><img src="../img/footer/tik-tok.png" alt="tik-tok.png"></div>
+                <div class="divRed"><img src="../img/footer/youtube.png" alt="youtube.png"></div>
+            </div>
+
+
+    </footer>
+    <script src="./scrip-gatos.js"></script>
+
+
+</body>
+
+</html>

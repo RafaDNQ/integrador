@@ -315,6 +315,11 @@ a {
     padding: 5px;
 }
 
+.articuloContenedorImg a {
+    display: block; /* Hace que el enlace ocupe todo el contenedor de la imagen */
+    width: 100%;
+    height: 100%;
+}
 
 .articuloContenedorImg {
     align-self: center;

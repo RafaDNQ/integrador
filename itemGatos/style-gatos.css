@@ -110,9 +110,9 @@
     display: flex;
     width: 100%;
     max-width: 900px;
-    overflow: hidden; /* Oculta lo que sobra fuera de los 4 elementos */
+    overflow: hidden;
     background-color: rgb(115, 191, 184);
-    margin: 0 auto; /* Centra el contenedor en la página */
+    margin: 0 auto; 
 }
 
 .articuloperrosugeridos {

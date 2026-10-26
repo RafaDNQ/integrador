@@ -1,0 +1,19 @@
+.fondoArticulo {
+    /* background-color: rgba(252, 197, 0, 0.582); */
+    background-color: var(--school-bus-yellow, #fec701);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    height: fit-content;
+}
+
+.subtitulo {
+    font-size: 30px;
+    font-display: block;
+    text-align: center;
+    background-color: rgb(56, 110, 226);
+    border: 5px double;
+}

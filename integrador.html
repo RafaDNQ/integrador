@@ -71,21 +71,27 @@
 
     <dialog id="carritoModal" class="carritoModal">
         <div class="mainCarrito" id="mainCarrito">
-            <div class="headerCarrito" id="headerCarrito">
-                <div class="tituloCarrito"><h2>Carrito de compras</h2></div>
-                <div class="divButton"><button type="button" id="cerrarCarrito" class="cerrarCarrito"><img src="./img/nav/cerrar.png" alt="btnCerrar"></button></div>
+            <div class="carritoHeader" id="headerCarrito">
+                <div class="tituloCarrito">
+                    <h2>Carrito de compras</h2>
+                </div>
+                <div class="divCerrar" id="divCerrar"><img src="./img/nav/cerrar.png" alt="btnCerrar"></div>
             </div>
 
             <div class="contenidoCarrito" id="contenidoCarrito">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                
             </div>
-            <div carritoEnd>
-
+            <div class="carritoFooter">
+                <div class="totalCont">
+                    <div class="endTexto">
+                        <h2>Total</h2>
+                    </div>
+                    <div class="Total" >
+                        <p id="totalCarrito"></p>
+                    </div>
+                </div>
+                <div class="comprarCont"><button type="button" class="comprarCarritoButton" id="comprarCarritoButton">
+                    Comprar</button></div>
             </div>
         </div>
 
@@ -166,25 +172,25 @@
 
 
 
-            <div class="contenedorArticulo">
+            <div class="contenedorArticulo" id="contenedorArticulo">
 
                 <!-- Tarjeta perro -->
                 <div class="articuloTarjeta genericoProd" id="artPerro1">
                     <div class="articuloContenedorImg">
                         <a href="./itemPerros/Articulo1.html">
-                        <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="correa_retractil1">
+                            <img src="./img/cosas de perros/bolas-huesos-goma.jpg" alt="correa_retractil1">
                         </a>
                     </div>
                     <div class="articuloContenedor">
                         <div class="contprecio">
-                            <span class="titulo">Correa retractil</span>
-                            <span class="precio">$23000</span>
+                            <span class="titulo" id="tituloArtperro">Correa retractil</span>
+                            <span class="precio" id="precioArtPerro">$23000</span>
                         </div>
 
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
@@ -208,7 +214,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
@@ -230,7 +236,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
@@ -253,7 +259,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
@@ -275,7 +281,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
@@ -297,7 +303,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
@@ -319,7 +325,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton"><button type="button" class="botonComprar" id="botonComprar">
@@ -341,7 +347,7 @@
                 <h2 class="tituloTarjeta">Nuestros más vendidos para los gatunos</h2>
             </div>
 
-            <div class="contenedorArticulo">
+            <div class="contenedorArticulo contenedorArticuloGatos">
                 <!-- Tarjeta Gato -->
                 <div class="articuloTarjeta purinaProPlanProd" id="artGato1">
                     <div class="articuloContenedorImg">
@@ -356,7 +362,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton">
@@ -381,7 +387,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton">
@@ -404,7 +410,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton">
@@ -427,7 +433,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton">
@@ -450,7 +456,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton">
@@ -473,7 +479,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton">
@@ -496,7 +502,7 @@
                         <div class="contComprar">
                             <div class="contAcumular">
                                 <button class="btn-flecha-izq">◄</button>
-                                <input type="number" value="1" min="0" class="input-cantidad" readonly>
+                                <input type="number" value="1" min="1" class="input-cantidad" readonly>
                                 <button class="btn-flecha-der">►</button>
                             </div>
                             <div class="contenedorBoton">

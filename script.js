@@ -4,16 +4,16 @@
         =============================*/
 
 
-// Seleccionamos todas las tarjetas de productos que existan en la página
+/*-----Seleccionamos todas las tarjetas de productos que existan en la página----*/
 const tarjetas = document.querySelectorAll('.articuloTarjeta');
 
 tarjetas.forEach(tarjeta => {
-    // Buscamos los elementos INTERNOS de cada tarjeta en particular
+    /*----Buscamos los elementos INTERNOS de cada tarjeta en particular----*/
     const btnDisminuir = tarjeta.querySelector('.btn-flecha-izq');
     const btnAumentar = tarjeta.querySelector('.btn-flecha-der');
     const inputCantidad = tarjeta.querySelector('.input-cantidad');
 
-    // Evento para disminuir
+    /*-------Evento para disminuir-------*/
     btnDisminuir.addEventListener('click', () => {
         let valorActual = parseInt(inputCantidad.value);
         let valorMinimo = parseInt(inputCantidad.getAttribute('min')) || 0;
@@ -23,7 +23,7 @@ tarjetas.forEach(tarjeta => {
         }
     });
 
-    // Evento para aumentar
+    /*-------Evento para aumentar--------*/
     btnAumentar.addEventListener('click', () => {
         let valorActual = parseInt(inputCantidad.value);
         inputCantidad.value = valorActual + 1;
@@ -44,17 +44,17 @@ const totalImagenes = imagenes.length;
 let intervalo;
 const tiempoEspera = 4000; // 4 segundos
 
-// Función para cambiar de imagen usando clases
+/*-----Función para cambiar de imagen usando clases-----*/
 function mostrarImagen(nuevoIndice) {
     imagenes[indiceActual].classList.remove('activa');
 
     indiceActual = (nuevoIndice + totalImagenes) % totalImagenes;
 
-    // Agregamos la clase 'activa' a la nueva imagen
+    /*-----Agregamos la clase 'activa' a la nueva imagen-----*/
     imagenes[indiceActual].classList.add('activa');
 }
 
-// Funciones de avance
+
 function siguienteImagen() {
     mostrarImagen(indiceActual + 1);
 }
@@ -63,7 +63,7 @@ function anteriorImagen() {
     mostrarImagen(indiceActual - 1);
 }
 
-// Eventos de los botones
+/*-----Eventos de los botones----*/
 btnDer.addEventListener('click', () => {
     siguienteImagen();
     reiniciarAutoplay();
@@ -74,9 +74,9 @@ btnIzq.addEventListener('click', () => {
     reiniciarAutoplay();
 });
 
-// Control de Autoplay
+/*-----Control de Autoplay------*/
 function iniciarAutoplay() {
-    detenerAutoplay(); //agregado para evitar stackeo de intervalos
+    detenerAutoplay();
     intervalo = setInterval(siguienteImagen, tiempoEspera);
 
 }
@@ -93,14 +93,15 @@ function reiniciarAutoplay() {
     iniciarAutoplay();
 }
 
-// Pausar al poner el mouse encima
+/*--------Pausar al poner el mouse encima---------*/
 carrusel.addEventListener('mouseenter', detenerAutoplay);
 carrusel.addEventListener('mouseleave', iniciarAutoplay);
 
 
 
-// Iniciar al cargar
-imagenes[0].classList.add('activa'); //Inicia como activada para evitar una imagen vacia por 4seg al entrar a la pagina
+/*-------Iniciar al cargar----------*/
+//Inicia como activada para evitar una imagen vacia por 4seg al entrar a la pagina
+imagenes[0].classList.add('activa');
 iniciarAutoplay();
 
 /* ===========================

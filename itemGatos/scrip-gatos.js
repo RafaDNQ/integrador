@@ -29,31 +29,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalImagenes = imagenes.length;
     const imagenesVisibles = 4; // Límite máximo de imágenes visibles a la vez
     const tiempoIntervalo = 3000; // 3 segundos
+    let intervalo; // Variable para almacenar el temporizador
 
     function moverCarrusel() {
-        // Incrementamos el índice
         indiceActual++;
-
-        // Si llegamos al final, volvemos al inicio (0)
         if (indiceActual > totalImagenes - imagenesVisibles) {
             indiceActual = 0;
         }
 
         // MEDIDA EXACTA: Obtenemos el ancho real de una imagen en píxeles
         const anchoImagen = imagenes[0].getBoundingClientRect().width;
-        
         // El espacio (gap) en píxeles que definiste en tu CSS
         const gap = 10; 
-
-        // Calculamos el desplazamiento exacto en píxeles (ancho de la foto + su espacio) por el índice
+        // Calculamos el desplazamiento exacto en píxeles
         const desplazamiento = indiceActual * (anchoImagen + gap);
-        
-        // Aplicamos la transformación en píxeles (px) en lugar de porcentajes (%)
+        // Aplicamos la transformación en píxeles (px)
         track.style.transform = `translateX(-${desplazamiento}px)`;
     }
-
-    // Solo activamos el intervalo automático si hay más de 4 imágenes
     if (totalImagenes > imagenesVisibles) {
-        setInterval(moverCarrusel, tiempoIntervalo);
+        function iniciarIntervalo() {
+            intervalo = setInterval(moverCarrusel, tiempoIntervalo);
+        }
+        function detenerIntervalo() {
+            clearInterval(intervalo);
+        }
+        iniciarIntervalo();
+        track.addEventListener('mouseenter', detenerIntervalo);
+        track.addEventListener('mouseleave', iniciarIntervalo);
     }
 });

@@ -1026,3 +1026,42 @@ a {
 
 
 }
+
+/* resumen compra */
+
+#resumenCompra{
+    display: none;
+    flex-direction: column;
+    background-color: #2364aaff;
+    color: black;
+    padding: 10px;
+    gap: 10px;
+}
+
+.compraDiv{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    color: black;
+}
+
+.resumenCompra{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    gap: 10px;
+}
+
+.totalDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    gap: 10px;
+}
+
+

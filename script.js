@@ -384,7 +384,9 @@ document.addEventListener('click', function (e) {
         divArtTitulo.className = "artTitulo";
 
         const pTitulo = document.createElement("p");
+        pTitulo.className = "pTitulo";
         pTitulo.textContent = titulo;
+
 
         const divArtCant = document.createElement("div");
         divArtCant.className = "artCant";

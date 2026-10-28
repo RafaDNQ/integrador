@@ -64,6 +64,67 @@ contenidoCarrito.addEventListener('click', (e) => {
 
 });
 
+const comprarCarritoButton = document.getElementById('comprarCarritoButton');
+
+comprarCarritoButton.addEventListener('click', (e) => {
+    const contenedorArticulos = e.target.closest('.mainCarrito');
+    const total = contenedorArticulos.querySelector("#totalCarrito");
+    const totalTexto = total.textContent.trim();
+    console.log(totalTexto);
+
+    if (!contenedorArticulos) {
+        console.error('No se encontró el contenedor .contenidoCarrito');
+        return;
+    }
+
+    
+    const articulos = contenedorArticulos.querySelectorAll('.carritoArt');
+    const divResumen = document.getElementById('resumenCompra');
+
+    divResumen.style.display="flex";
+
+    divResumen.innerHTML = '';
+
+    articulos.forEach((articulo) => {
+        const titulo = articulo.querySelector('.pTitulo')?.textContent.trim();
+        const cantidad = articulo.querySelector('.input-cantidad')?.value;
+        const precio = articulo.querySelector('.precio')?.textContent.trim();
+
+        const resumenCompra = document.createElement('div');
+        resumenCompra.className = "resumenCompra";
+        const tituloSpan = document.createElement('span');
+        tituloSpan.className = "tituloSpan";
+        tituloSpan.textContent = titulo;
+        const cantidadSpan = document.createElement('span');
+        cantidadSpan.className = "cantidadSpan";
+        cantidadSpan.textContent = `Cant: ${cantidad}`;
+        const precioSpan = document.createElement('span');
+        precioSpan.className = "precioSpan";
+        precioSpan.textContent = precio;
+
+        resumenCompra.appendChild(tituloSpan);
+        resumenCompra.appendChild(cantidadSpan);
+        resumenCompra.appendChild(precioSpan);
+        divResumen.prepend(resumenCompra);
+    })
+
+
+    const totalDiv = document.createElement('div');
+    totalDiv.className = "totalDiv";
+
+    const totalCompra = document.createElement('span');
+    totalCompra.className = "totalSpan";
+    totalCompra.textContent = `Total: ${totalTexto}`;
+
+    totalDiv.appendChild(totalCompra);
+    divResumen.appendChild(totalDiv);
+
+
+
+
+
+});
+
 
 
 function actualizarTotalCompra() {
@@ -81,9 +142,7 @@ function actualizarTotalCompra() {
     elementoTotalGeneral.textContent = `$${precioGeneral.toFixed(2)}`;
 }
 
-function eliminar() {
 
-}
 
 
 

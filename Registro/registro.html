@@ -37,7 +37,7 @@
                 <p>Necesitarás usar este email para conectarte a Garritas en el futuro y asi poder tener un registro de
                     tus compras y cupones. <br>Por favor, utiliza un email que sea válido.</p>
                 <input type="email" id="registroEmail" placeholder="Ingresá tu email aquí..." name="registroEmail"
-                    class="inputTxt" required>
+                    class="inputTxt inputW" required>
                 <p id="emailError" class="error"></p>
             </div>
             <div class="registroContraseñaCont contenedor">
@@ -45,20 +45,33 @@
                 <p>La contraseña debe tener entre <b>10 a 30 caracteres, una mayúscula, una minúscula, caracter especial
                         y un número</b>.</p>
                 <div class="contPsw">
+                    <input type="password" placeholder="***************" class="inputTxt" id="registroContraseña"
+                        required>
+                    <!-- Mostrar Contraseña -->
+                    <div class="iconosMostrar" id="iconosDiv">
+                        <img src="../img/nav/iconosMostrarModal/ojo.png" alt="mostrarIcono" class="mostrarIcono"
+                            id="mostrarIcono">
+                        <img src="../img/nav/iconosMostrarModal/cerrar-ojo.png" alt="ocultarIcono" class="ocultarIcono"
+                            id="ocultarIcono">
+                    </div>
+                    <!-- ============ -->
+                </div>
+                <!-- <div class="contPsw">
                     <input type="password" id="registroContraseña" placeholder="***************"
                         name="registroContraseña" class="inputTxt">
                     <img src="../img/nav/iconosMostrarModal/ojo.png" alt="mostrarPsw">
                     <img src="../img/nav/iconosMostrarModal/cerrar-ojo.png" alt="ocultarPsw">
-                </div>
+                </div> -->
                 <p id="contraseñaError" class="error"></p>
             </div>
             <div class="registroCumpleañosCont contenedor">
                 <label for="registroCumpleaños">Cumpleaños</label>
                 <p>Por favor, introduce tu fecha de nacimiento real. Usaremos esa información para devolverte la cuenta
                     si alguna vez pierdes el acceso. <br><b>Recuerda que tienes que tener al menos 16 años.</b></p>
-                <input type="date" placeholder=" " id="registroCumpleaños" name="registroCumpleaños" class="inputTxt">
+                <input type="date" placeholder=" " id="registroCumpleaños" name="registroCumpleaños" class="inputTxt inputW">
                 <p id="cumpleError" class="error"></p>
             </div>
+            <div class="registroResumen"></div>
             <input type="submit" value="Registrarse" id="registroBtn" class="registroBtn">
 
         </form>
@@ -126,8 +139,9 @@
     </footer>
 
 
-    <!-- <script src="../script.js"></script>
-    <script src="../carrito/carritoStyle.css"></script> -->
+    <!-- <script src="../script.js"></script> -->
+    <!-- <script src="../carrito/carritoStyle.css"></script> -->
+     <script src="../newsletter.js"></script>
     <script src="../Registro/registro.js"></script>
 
 </body>

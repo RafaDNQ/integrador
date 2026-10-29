@@ -2,7 +2,7 @@ const iconoCarrito = document.getElementById('carrito');
 const dialogCarrito = document.getElementById('carritoModal');
 const cerrarCarrito = document.getElementById('divCerrar');
 
-
+document.addEventListener('DOMContentLoaded', actualizarEstadoCarrito());
 
 //abrir carrito
 iconoCarrito.addEventListener('click', () => {
@@ -166,6 +166,13 @@ function borrarArticulos() {
     });
 }
 
+function actualizarEstadoCarrito() {
+  if (estadoLogin) {
+    iconoCarrito.classList.remove('inhabilitado');
+  } else {
+    iconoCarrito.classList.add('inhabilitado');
+  }
+}
 
 
 

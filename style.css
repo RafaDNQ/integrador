@@ -996,6 +996,16 @@ a {
     width: 303px;
 }
 
+.loginModalRegistro{
+    text-align: center;
+    color: aliceblue;
+}
+
+.loginModalRegistro a{
+    color: #e5b300;
+    font-weight: bold;
+}
+
 /* ======== Mostrar contraseña ============ */
 
 .divContra {
@@ -1039,11 +1049,13 @@ a {
 }
 
 .compraDiv{
-    display: flex;
+    display: none;
     width: 100%;
     height: 100%;
     background-color: aliceblue;
     color: black;
+    justify-content: center;
+    font-size: 2rem;
 }
 
 .resumenCompra{
@@ -1062,6 +1074,19 @@ a {
     height: 100%;
     background-color: aliceblue;
     gap: 10px;
+}
+
+@keyframes sacudirError {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+.errorCompra {
+  animation: sacudirError 0.4s ease-in-out;
 }
 
 

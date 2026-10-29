@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garritas - registro</title>
+    <link rel="stylesheet" href="./registro.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="div1">
+        <div class="barraImg"><img src="../img/garritas.jpg" alt="garritas logotipo"></div>
+        <div class="barra">
+            <ul>
+                <a href="../integrador.html">
+                    <li> Home </li>
+                </a>
+                <a href="../Catalogo/catalogo.html">
+                    <li> Catalogo </li>
+                </a>
+                <a href="">
+                    <li> Contacto </li>
+                </a>
+    </header>
+    <main class="main">
+
+
+        <form action="" class="registroContenedor" novalidate>
+            <div class="registroEmail contenedor">
+                <label for="registroEmail">Email</label>
+                <p>Necesitarás usar este email para conectarte a Garritas en el futuro y asi poder tener un registro de
+                    tus compras y cupones. <br>Por favor, utiliza un email que sea válido.</p>
+                <input type="email" id="registroEmail" placeholder="Ingresá tu email aquí..." name="registroEmail"
+                    class="inputTxt" required>
+                <p id="emailError" class="error"></p>
+            </div>
+            <div class="registroContraseñaCont contenedor">
+                <label for="registroContraseña">Contraseña</label>
+                <p>La contraseña debe tener entre <b>10 a 30 caracteres, una mayúscula, una minúscula, caracter especial
+                        y un número</b>.</p>
+                <div class="contPsw">
+                    <input type="password" id="registroContraseña" placeholder="***************"
+                        name="registroContraseña" class="inputTxt">
+                    <img src="../img/nav/iconosMostrarModal/ojo.png" alt="mostrarPsw">
+                    <img src="../img/nav/iconosMostrarModal/cerrar-ojo.png" alt="ocultarPsw">
+                </div>
+                <p id="contraseñaError" class="error"></p>
+            </div>
+            <div class="registroCumpleañosCont contenedor">
+                <label for="registroCumpleaños">Cumpleaños</label>
+                <p>Por favor, introduce tu fecha de nacimiento real. Usaremos esa información para devolverte la cuenta
+                    si alguna vez pierdes el acceso. <br><b>Recuerda que tienes que tener al menos 16 años.</b></p>
+                <input type="date" placeholder=" " id="registroCumpleaños" name="registroCumpleaños" class="inputTxt">
+                <p id="cumpleError" class="error"></p>
+            </div>
+            <input type="submit" value="Registrarse" id="registroBtn" class="registroBtn">
+
+        </form>
+        <section class="seccionNewsletter">
+            <div contenedorNL class="contenedorNL">
+                <div class="textoNL">
+                    <h2>¡Sumate a la comunidad perruna y gatuna! 🐾</h2>
+                    <p>Suscribite para recibir novedades, promociones exclusivas y obtené un <strong>3% OFF</strong> en
+                        tu primera compra.</p>
+                </div>
+                <form class="formNL" id="formNL" novalidate>
+                    <div class="grupoInput">
+                        <input type="text" placeholder="Ingresá tu email aquí..." class="inputEmail"
+                            id="emailNewsletter">
+                        <button type="submit" id="submit" class="botonSuscripcion">Conseguir mi 3% OFF</button>
+                    </div>
+                    <div class="errirDiv">
+                        <p id="errorEmail"></p>
+                    </div>
+                    <div id="resumenNewsletter"></div>
+
+                    <span class="leyendaCupon">* Te enviaremos el código del cupón a tu casilla de correo.</span>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="contactoFooter divFooter">
+            <div class="contContact divContacto">
+                <div class="divContact">
+                    <p>Atención Telefónica <br> 0810-221-2443</p>
+                </div>
+                <div class="divContact">
+                    <p>Atención Whatsapp <br> 2657-505348 </p>
+                </div>
+                <div class="divContact">
+                    <p>Lunes a Sábados de 9 a 21 hs <br>
+                        Domingos de 10 a 20 hs</p>
+                </div>
+            </div>
+            <div class="divContactText divContacto">
+                <p>Como contactarnos</p>
+            </div>
+
+        </div>
+        <div class="footerLogo divFooter">
+            <img src="../img/logotipo/garritasRectangular.pbg.jpg" alt="petshop.jpg">
+        </div>
+        <div class="redesFooter divFooter">
+            <div class="redTexto divRedInner">
+                <p>Conoce nuestras redes!</p>
+            </div>
+            <div class="contRedesIcons divRedInner">
+                <div class="divRed"><img src="../img/footer/facebook.png" alt="facebook.png"></div>
+                <div class="divRed"><img src="../img/footer/instagram.png" alt="instagram.png"></div>
+                <div class="divRed"><img src="../img/footer/tik-tok.png" alt="tik-tok.png"></div>
+                <div class="divRed"><img src="../img/footer/youtube.png" alt="youtube.png"></div>
+            </div>
+    </footer>
+
+
+    <!-- <script src="../script.js"></script>
+    <script src="../carrito/carritoStyle.css"></script> -->
+    <script src="../Registro/registro.js"></script>
+
+</body>
+
+</html>

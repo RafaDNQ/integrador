@@ -1,0 +1,554 @@
+html * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    background-color: #f2f5fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*======================================
+  Sección Newsletter
+  ======================================*/
+.seccionNewsletter {
+    background-color: var(--ocean-deep, #2364aa);
+    color: #ffffff;
+    padding: 40px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenidoNewsletter {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contenedorNL {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.textoNL h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.textoNL p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.formNL {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupoInput {
+    display: flex;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.inputEmail {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.botonSuscripcion {
+    background-color: var(--school-bus-yellow, #fec601);
+    color: #1a1a1a;
+    font-weight: bold;
+    border: none;
+    padding: 14px 24px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.botonSuscripcion:hover {
+    background-color: #e5b300;
+}
+
+.leyendaCupon {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.errorDiv {
+    display: flex;
+}
+
+.invalido {
+    width: fit-content;
+    padding: 5px;
+    color: black;
+    text-align: center;
+    justify-self: center;
+    background-color: rgb(218, 37, 37);
+    border-radius: 0px 0px 20px 20px;
+    margin-bottom: 10px;
+}
+
+.Subscripto {
+    height: fit-content;
+    width: 60%;
+    padding: 3px;
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    background-color: #e5b300;
+    /* border-radius: 30px; */
+    border-radius: 0px 0px 30px 30px;
+}
+
+.Subscripto h3 {
+    margin-left: 1.3rem;
+}
+
+.Subscripto p {
+    margin-left: 1.3rem;
+}
+
+
+
+/*======================================
+  Sección Newsletter End
+  ======================================*/
+
+
+/*================ Footer ================*/
+
+.footer {
+    display: flex;
+    height: 220px;
+    flex-direction: row;
+    background-color: var(--ocean-deep, #2364aa);
+    bottom: 0;
+}
+
+.footer .divFooter {
+    display: flex;
+    flex: 25%;
+
+}
+
+.contactoFooter {
+    background-color: var(--school-bus-yellow, #fec601);
+    border-radius: 0 100px 100px 0;
+    display: flex;
+}
+
+.contContact {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-weight: 500;
+    color: white;
+}
+
+.contContact .divContact {
+    display: flex;
+    flex: 25%;
+    align-items: center;
+    justify-content: left;
+}
+
+.divContact p {
+    background-color: var(--ocean-deep, #2364aa);
+    border-radius: 0 2rem 2rem 0;
+    padding: 7px;
+    border: solid 2px var(--ocean-deep, #2364aa);
+}
+
+.divContactText {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.redesFooter {
+    background-color: var(--school-bus-yellow, #fec601);
+    border-radius: 100px 0 0 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.footerLogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerLogo img {
+    height: 80%;
+    width: 70%;
+    border-radius: 20px;
+    border: #fec601 10px solid;
+}
+
+.contRedesIcons {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+}
+
+.contRedesIcons .divRed {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex: 25%;
+    align-items: center;
+    justify-content: center;
+}
+
+.redTexto {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.divRed img {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+/* ==================
+        Nav
+=================== */
+
+.div1 {
+    position: sticky;
+    top: 0;
+    display: flex;
+    background-color: var(--ocean-deep, #2364aa);
+    z-index: 100;
+    align-items: center;
+    gap: 2rem;
+    height: 100px;
+    padding: 0 1.5rem;
+    border-bottom: 10px solid #3da5d9ff;
+}
+
+.barra{
+    width: 100%;
+}
+
+.barraImg {
+    height: 85px;
+    display: flex;
+    align-items: center;
+}
+
+.barraImg img {
+    height: 100%;
+    width: auto;
+    border-radius: 100px;
+    object-fit: contain;
+}
+
+.barra ul {
+    list-style-type: none;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.barra li {
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fec601;
+    transition: transform 0.2s ease,  0.2s ease, background-color 0.2s ease;
+}
+
+
+.btnLogin {
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fec601;
+    transition: transform 0.2s ease,  0.2s ease, background-color 0.2s ease;
+    border: none;
+    cursor: pointer;
+
+}
+
+.btnLogin:hover {
+    transform: translateY(-8px) scale(1.03);
+    background-color: #fec601;
+    border-radius: 5px;
+    color: #ffffff;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+}
+
+.barra a {
+    color: black;
+}
+
+.barra li:hover {
+    transform: translateY(-8px) scale(1.03);
+    background-color: #fec601;
+    border-radius: 5px;
+    color: #ffffff;
+
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.carritoCompras {
+    float: right;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.carritoCompras img {
+    height: 45px;
+    width: 45px;
+    object-fit: contain;
+}
+
+
+
+.divitemcolum {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
+
+}
+
+.itemdescripcion {
+    display: flex;
+    flex: 1;
+
+}
+
+.contenedoritem {
+    padding: 15px;
+    background-color: rgb(115, 191, 184);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    max-width: 1000px;
+    margin: 20px auto;
+
+}
+
+.itemprecio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 70%;
+    padding: 3px;
+    flex: 2;
+}
+
+.itemprecio span {
+    font-size: 16px;
+}
+
+.itemcontComprar {
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+
+
+}
+
+
+.itemcontAcumular {
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+.itemarticulo {
+    flex: 1;
+}
+
+.itemarticuloContenedorImg {
+    align-self: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.itemarticuloContenedorImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.itemarticuloContenedorImg:hover {
+    background-color: #dde5ec;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* ==================
+        Registro
+=================== */
+
+.registroContenedor {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.registroContenedor .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+
+    text-align: center;
+    background-color: #2364aa;
+    padding: 20px;
+    border-radius: 15px;
+    color: aliceblue;
+    box-shadow: 0px 5px 10px #535353;
+}
+
+.registroContenedor label{
+    cursor: pointer;
+    background-color: #e5b300;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bolder;
+}
+
+.inputTxt {
+    margin-top: 20px;
+    flex: 1;
+    padding: 5px 5px;
+    outline: none;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: text;
+}
+
+
+.registroBtn{
+    font-size: 2rem;
+    background-color: #e5b300;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px #535353;
+}
+
+.error{
+    display: none;
+}
+
+.invalidoReg{
+display: inline-block;
+}
+
+.errorInput{
+    border: 2px solid red;
+    background-color: rgb(250, 195, 195);
+}
+
+/* ocultar y mostrar */
+
+.contPsw{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+.contPsw input{
+    height: 100%;
+    width: 185px;
+}
+
+.contPsw img{
+    display: flex;
+    height: 20px;
+    width: 20px;
+}
+
+
+/* ==================== */
+
+@keyframes sacudirError {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+.errorCompra {
+  animation: sacudirError 0.4s ease-in-out;
+}

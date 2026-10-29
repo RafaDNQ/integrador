@@ -70,18 +70,26 @@ comprarCarritoButton.addEventListener('click', (e) => {
     const contenedorArticulos = e.target.closest('.mainCarrito');
     const total = contenedorArticulos.querySelector("#totalCarrito");
     const totalTexto = total.textContent.trim();
-    console.log(totalTexto);
 
     if (!contenedorArticulos) {
         console.error('No se encontró el contenedor .contenidoCarrito');
         return;
     }
 
-    
+    if (!contenedorArticulos.querySelector('.carritoArt')) {
+        comprarCarritoButton.addEventListener('click', () => {
+            comprarCarritoButton.classList.add('errorCompra');
+
+            setTimeout(() => {
+                comprarCarritoButton.classList.remove('errorCompra');
+            }, 400);
+        });
+        return;
+    }
+
     const articulos = contenedorArticulos.querySelectorAll('.carritoArt');
     const divResumen = document.getElementById('resumenCompra');
 
-    divResumen.style.display="flex";
 
     divResumen.innerHTML = '';
 
@@ -108,6 +116,8 @@ comprarCarritoButton.addEventListener('click', (e) => {
         divResumen.prepend(resumenCompra);
     })
 
+    //verificamos que la compra no este vacia
+
 
     const totalDiv = document.createElement('div');
     totalDiv.className = "totalDiv";
@@ -116,10 +126,15 @@ comprarCarritoButton.addEventListener('click', (e) => {
     totalCompra.className = "totalSpan";
     totalCompra.textContent = `Total: ${totalTexto}`;
 
+    const mensajeCompra = document.querySelector('.compraDiv');
+    mensajeCompra.style.display = "flex";
+    divResumen.style.display = "flex"
+
     totalDiv.appendChild(totalCompra);
     divResumen.appendChild(totalDiv);
-
-
+    borrarArticulos()
+    total.textContent = "";
+    dialogCarrito.close();
 
 
 
@@ -140,6 +155,15 @@ function actualizarTotalCompra() {
 
     const elementoTotalGeneral = document.getElementById('totalCarrito');
     elementoTotalGeneral.textContent = `$${precioGeneral.toFixed(2)}`;
+}
+
+function borrarArticulos() {
+    const contenidoCarrito = document.getElementById('contenidoCarrito');
+    const listaArticulos = contenidoCarrito.querySelectorAll('.carritoArt');
+
+    listaArticulos.forEach(articulo => {
+        articulo.remove();
+    });
 }
 
 

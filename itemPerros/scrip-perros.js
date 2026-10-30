@@ -5,8 +5,8 @@ const inputCantidad = document.querySelector('.input-cantidad');
 
 // Evento para disminuir (flecha izquierda)
 btnDisminuir.addEventListener('click', () => {
-    let valorActual = parseInt(inputCantidad.value) || 0;
-    let valorMinimo = parseInt(inputCantidad.getAttribute('min')) || 0;
+    let valorActual = parseInt(inputCantidad.value) || 1;
+    let valorMinimo = parseInt(inputCantidad.getAttribute('min')) || 1;
 
     if (valorActual > valorMinimo) {
         inputCantidad.value = valorActual - 1;

@@ -554,7 +554,7 @@ a {
     color: black;
     text-align: center;
     justify-self: center;
-    background-color: rgb(218, 37, 37);
+    background-color: #ea7317ff;
     border-radius: 0px 0px 20px 20px;
     margin-bottom: 10px;
 }
@@ -978,7 +978,8 @@ a {
 }
 
 .invalidoLogin {
-    border: 3px solid rgb(207, 16, 16);
+    border: 3px solid #ea7317ff;
+    background-color: #fff0f0;
 }
 
 .resumenLogin {
@@ -1082,31 +1083,35 @@ a {
 }
 
 @keyframes sacudirError {
-    0% {
-        transform: translateX(0);
-    }
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
 
-    20% {
-        transform: translateX(-6px);
-    }
-
-    40% {
-        transform: translateX(6px);
-    }
-
-    60% {
-        transform: translateX(-4px);
-    }
-
-    80% {
-        transform: translateX(4px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+@keyframes saltarCompraKF {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
 .errorCompra {
     animation: sacudirError 0.4s ease-in-out;
+}
+
+.saltarCompra {
+    animation: saltarCompraKF 0.4s ease-in-out;
+}
+
+
+/* Al dar error, cambia el fondo de forma suave */
+.errorCompra {
+    background-color: #ea7317ff !important;
+    color: #ffffff !important;
+    animation: sacudirError 0.4s ease-in-out;
+}
+
+/* Al comprar, cambia a verde de forma suave */
+.saltarCompra {
+    background-color: #28a745 !important;
+    color: #ffffff !important;
+    animation: saltarCompraKF 0.4s ease-in-out;
 }

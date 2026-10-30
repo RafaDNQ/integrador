@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garritas - Contacto</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../carrito/carritoStyle.css">
+    <link rel="stylesheet" href="../Contacto/contacto.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="div1">
+        <div class="barraImg"><img src="../img/logotipo/garritas2.png" alt="garritas logotipo"></div>
+        <div class="barra">
+            <ul>
+                <a href="../integrador.html">
+                    <li> Home </li>
+                </a>
+                <a href="../Catalogo/catalogo.html">
+                    <li> Catalogo </li>
+                </a>
+                <a href="../Contacto/contacto.html">
+                    <li> Contacto </li>
+                </a>
+                <button id="btnLogin" class="btnLogin">Login</button>
+
+                <dialog id="loginModal" class="loginModal">
+                    <h2 class="tituloModal">Login / Ingresar</h2>
+                    <form class="LoginForm" id="LoginForm" novalidate>
+                        <input type="text" placeholder="Ingresá tu email aquí..." class="LoginEmail" id="LoginEmail"
+                            required>
+                        <div class="divContra">
+                            <input type="password" placeholder="***************" class="LoginPassword"
+                                id="LoginPassword" required>
+                            <!-- Mostrar Contraseña -->
+                            <div class="iconosMostrar" id="iconosDiv">
+                                <img src="../img/nav/iconosMostrarModal/ojo.png" alt="mostrarIcono" class="mostrarIcono"
+                                    id="mostrarIcono">
+                                <img src="../img/nav/iconosMostrarModal/cerrar-ojo.png" alt="ocultarIcono"
+                                    class="ocultarIcono" id="ocultarIcono">
+                            </div>
+                            <!-- ============ -->
+                        </div>
+                        <div class="loginModalRegistro">
+                            <p>No tienes cuenta? registrate <a href="../integrador/Registro/registro.html">aqui</a></p>
+                        </div>
+                        <div class="modalBotones">
+                            <button type="button" id="closeLogin" class="cancelar">Cancelar</button>
+                            <button type="submit" id="ingresar" class="ingresar">Ingresar</button>
+                        </div>
+                    </form>
+                    <!-- Errores -->
+                    <p id="errorEmailLogin" class="mensajeError"></p>
+                    <p id="errorPasswordLogin" class="mensajeError"></p>
+                    <!-- ================= -->
+                </dialog>
+                <div id="resumenLogin" class="resumenLogin"></div>
+            </ul>
+        </div>
+        <div id="carrito" class="carritoCompras">
+            <img src="../img/nav/carrito-de-compras.png" alt="carritoComprasIcon">
+        </div>
+
+    </header>
+
+    <!-- Modal de carrito -->
+
+    <dialog id="carritoModal" class="carritoModal">
+        <div class="mainCarrito" id="mainCarrito">
+            <div class="carritoHeader" id="headerCarrito">
+                <div class="tituloCarrito">
+                    <h2>Carrito de compras</h2>
+                </div>
+                <div class="divCerrar" id="divCerrar"><img src="../img/nav/cerrar.png" alt="btnCerrar"></div>
+            </div>
+
+            <div class="contenidoCarrito" id="contenidoCarrito">
+
+            </div>
+            <div class="carritoFooter">
+                <div class="totalCont">
+                    <div class="endTexto">
+                        <h2>Total</h2>
+                    </div>
+                    <div class="Total">
+                        <p id="totalCarrito"></p>
+                    </div>
+                </div>
+                <div class="comprarCont"><button type="button" class="comprarCarritoButton" id="comprarCarritoButton">
+                        Comprar</button></div>
+            </div>
+        </div>
+
+    </dialog>
+
+    <!-- Main -->
+
+    <main class="main">
+        <!-- Resumen de compra -->
+        <div class="compraDiv">
+            <p>Compra exitosa!</p>
+        </div>
+        <div id="resumenCompra">
+
+        </div>
+
+        <!-- ========================== -->
+
+        <!-- Form quejas -->
+
+        <div class="consultaTitulo">
+            <h1>¿Tienes un problema?</h1>
+            <h3>Haznos saber que ocurre.</h3>
+        </div>
+
+        <form id="form-consulta" novalidate>
+            <label for="motivo_consulta">Motivo de la consulta:  </label>
+            <select name="motivo_consulta" id="motivo_consulta" class="inputs" required>
+                <option value="" disabled selected>Selecciona el motivo de tu consulta...</option>
+                <option value="estado_pedido">Estado o demora del envío</option>
+                <option value="producto_dañado">Producto incompleto, dañado o defectuoso</option>
+                <option value="error_pedido">Recibí un producto equivocado</option>
+                <option value="problema_pago">Problemas con el pago o la facturación</option>
+                <option value="cambio_devolucion">Solicitud de cambio o devolución</option>
+                <option value="stock_disponibilidad">Consulta sobre stock o disponibilidad de productos</option>
+                <option value="asesoramiento_alimento">Asesoramiento sobre alimento o accesorios</option>
+                <option value="otra_queja">Sugerencias u otros reclamos generales</option>
+            </select>
+
+            <!-- Contenedor que estará oculto al inicio -->
+            <div id="detalle-consulta" class="inactivo">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="emailMotivo" name="email" class="inputs" placeholder="Ingresá tu email aquí...">
+                <div id="motivoError"></div>
+
+                <label for="mensaje">Detalle de tu consulta:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" class="inputs" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <small id="contador">0 / 200 caracteres</small>
+                <div id="textareaVacio"></div>
+
+                <div class="divBotonConsulta"><button type="submit" id="botonConsulta">Enviar</button></div>
+            </div>
+        </form>
+        
+        <div id="resultadoConsulta"></div>
+
+
+        <!-- Newsletter -->
+        <section class="seccionNewsletter">
+            <div contenedorNL class="contenedorNL">
+                <div class="textoNL">
+                    <h2>¡Sumate a la comunidad perruna y gatuna! 🐾</h2>
+                    <p>Suscribite para recibir novedades, promociones exclusivas y obtené un <strong>3% OFF</strong> en
+                        tu primera compra.</p>
+                </div>
+                <form class="formNL" id="formNL" novalidate>
+                    <div class="grupoInput">
+                        <input type="text" placeholder="Ingresá tu email aquí..." class="inputEmail"
+                            id="emailNewsletter">
+                        <button type="submit" id="submit" class="botonSuscripcion">Conseguir mi 3% OFF</button>
+                    </div>
+                    <div class="errirDiv">
+                        <p id="errorEmail"></p>
+                    </div>
+                    <div id="resumenNewsletter"></div>
+
+                    <span class="leyendaCupon">* Te enviaremos el código del cupón a tu casilla de correo.</span>
+                </form>
+            </div>
+        </section>
+        <!-- ================================= -->
+    </main>
+
+
+    <footer class="footer">
+        <div class="contactoFooter divFooter">
+            <div class="contContact divContacto">
+                <div class="divContact">
+                    <p>Atención Telefónica <br> 0810-221-2443</p>
+                </div>
+                <div class="divContact">
+                    <p>Atención Whatsapp <br> 2657-505348 </p>
+                </div>
+                <div class="divContact">
+                    <p>Lunes a Sábados de 9 a 21 hs <br>
+                        Domingos de 10 a 20 hs</p>
+                </div>
+            </div>
+            <div class="divContactText divContacto">
+                <p>Como contactarnos</p>
+            </div>
+
+        </div>
+        <div class="footerLogo divFooter">
+            <img src="../img/logotipo/garritasRectangular.pbg.jpg" alt="petshop.jpg">
+        </div>
+        <div class="redesFooter divFooter">
+            <div class="redTexto divRedInner">
+                <p>Conoce nuestras redes!</p>
+            </div>
+            <div class="contRedesIcons divRedInner">
+                <div class="divRed"><img src="../img/footer/facebook.png" alt="facebook.png"></div>
+                <div class="divRed"><img src="../img/footer/instagram.png" alt="instagram.png"></div>
+                <div class="divRed"><img src="../img/footer/tik-tok.png" alt="tik-tok.png"></div>
+                <div class="divRed"><img src="../img/footer/youtube.png" alt="youtube.png"></div>
+            </div>
+
+
+    </footer>
+
+
+    <script src="../script.js"></script>
+    <script src="../Contacto/contacto.js"></script>
+    <script src="../carrito/carrito.js"></script>
+    <script src="../newsletter.js"></script>
+</body>
+
+</html>

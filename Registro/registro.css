@@ -114,7 +114,8 @@ a {
     color: black;
     text-align: center;
     justify-self: center;
-    background-color: rgb(218, 37, 37);
+    background-color: #fff0f0;
+    border: #ea7317ff;
     border-radius: 0px 0px 20px 20px;
     margin-bottom: 10px;
 }
@@ -517,8 +518,8 @@ display: inline-block;
 }
 
 .errorInput{
-    border: 2px solid red;
-    background-color: rgb(250, 195, 195);
+    border: 2px solid ea7317ff;
+    background-color: #fff0f0;
 }
 
 /* ocultar y mostrar */

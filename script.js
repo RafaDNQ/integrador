@@ -230,7 +230,6 @@ document.addEventListener('click', function (e) {
         if (!tarjeta) return;
 
         boton.addEventListener('click', () => {
-            // Definimos la clase según el estado actual
             const claseAnimacion = !estadoLogin ? 'errorCompra' : 'saltarCompra';
 
             boton.classList.add(claseAnimacion);

@@ -88,7 +88,7 @@
     overflow-y: auto;       
     overflow-x: visible; 
     padding-left: 0;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-end;
 }
 

@@ -22,13 +22,13 @@
         <div class="barra">
             <ul>
                 <a href="../integrador.html">
-                    <li> Home </li>
+                    <li id="home"> Home </li>
                 </a>
                 <a href="../Catalogo/catalogo.html">
-                    <li> Catalogo </li>
+                    <li id="catalogo"> Catalogo </li>
                 </a>
                 <a href="../Contacto/contacto.html">
-                    <li> Contacto </li>
+                    <li id="contacto"> Contacto </li>
                 </a>
                 <button id="btnLogin" class="btnLogin">Login</button>
 
@@ -140,6 +140,9 @@
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="emailMotivo" name="email" class="inputs" placeholder="Ingresá tu email aquí...">
                 <div id="motivoError"></div>
+
+                <label for="telefono">Telefono:</label>
+                <input type="tel" name="telefono" id="telefono">
 
                 <label for="mensaje">Detalle de tu consulta:</label>
                 <textarea id="mensaje" name="mensaje" rows="4" class="inputs" placeholder="Escribe tu mensaje aquí..."></textarea>

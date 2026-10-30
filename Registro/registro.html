@@ -32,6 +32,7 @@
 
 
         <form action="" class="registroContenedor" novalidate>
+            <!-- Email -->
             <div class="registroEmail contenedor">
                 <label for="registroEmail">Email</label>
                 <p>Necesitarás usar este email para conectarte a Garritas en el futuro y asi poder tener un registro de
@@ -40,6 +41,7 @@
                     class="inputTxt inputW" required>
                 <p id="emailError" class="error"></p>
             </div>
+            <!-- Contraseña -->
             <div class="registroContraseñaCont contenedor">
                 <label for="registroContraseña">Contraseña</label>
                 <p>La contraseña debe tener entre <b>10 a 30 caracteres, una mayúscula, una minúscula, caracter especial
@@ -56,14 +58,23 @@
                     </div>
                     <!-- ============ -->
                 </div>
-               
+
                 <p id="contraseñaError" class="error"></p>
             </div>
+            <!-- Telefono -->
+             <div class="registroTelefono contenedor">
+                <label for="telefonoReg">Telefono</label>
+                <input type="tel" name="telefonoReg" id="telefonoReg" class="inputTxt" placeholder="+54 9 11 1234-5678">
+                <p id="telefonoError" class="error" ></p>
+             </div>
+
+            <!-- Cumpleaños -->
             <div class="registroCumpleañosCont contenedor">
                 <label for="registroCumpleaños">Cumpleaños</label>
                 <p>Por favor, introduce tu fecha de nacimiento real. Usaremos esa información para devolverte la cuenta
                     si alguna vez pierdes el acceso. <br><b>Recuerda que tienes que tener al menos 16 años.</b></p>
-                <input type="date" placeholder=" " id="registroCumpleaños" name="registroCumpleaños" class="inputTxt inputW">
+                <input type="date" placeholder=" " id="registroCumpleaños" name="registroCumpleaños"
+                    class="inputTxt inputW">
                 <p id="cumpleError" class="error"></p>
             </div>
             <div class="registroResumen"></div>
@@ -136,7 +147,7 @@
 
     <!-- <script src="../script.js"></script> -->
     <!-- <script src="../carrito/carritoStyle.css"></script> -->
-     <script src="../newsletter.js"></script>
+    <script src="../newsletter.js"></script>
     <script src="../Registro/registro.js"></script>
 
 </body>

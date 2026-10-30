@@ -230,6 +230,7 @@ document.addEventListener('click', function (e) {
         if (!tarjeta) return;
 
         boton.addEventListener('click', () => {
+            // Definimos la clase según el estado actual
             const claseAnimacion = !estadoLogin ? 'errorCompra' : 'saltarCompra';
 
             boton.classList.add(claseAnimacion);
@@ -333,3 +334,25 @@ document.addEventListener('click', function (e) {
 
     }
 });
+
+
+
+/*=======================================
+       NAV - verificar y marca pestaña
+       ================================*/
+
+
+    const ruta = window.location.pathname;
+
+    const nombreArchivo = ruta.substring(ruta.lastIndexOf('/') + 1);
+    console.log(nombreArchivo);
+
+    const home = document.getElementById('home');
+    const catalogo = document.getElementById('catalogo');
+    const contacto = document.getElementById('contacto');
+
+    home.classList.toggle('activoNav', nombreArchivo === 'integrador.html');
+    catalogo.classList.toggle('activoNav', nombreArchivo === 'catalogo.html');
+    contacto.classList.toggle('activoNav', nombreArchivo === 'contacto.html');
+
+

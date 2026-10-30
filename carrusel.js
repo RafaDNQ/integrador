@@ -2,51 +2,62 @@
                 CARRUSEL
         =============================*/
 
-const carrusel = document.querySelector('.carruselOfertas');
-const imagenes = carrusel.querySelectorAll('.imagenCarrusel');
-const btnIzq = carrusel.querySelector('.btnCarruIzq');
-const btnDer = carrusel.querySelector('.btnCarruDer');
+const imagenes = [
+    './img/Carrusel/PurinaBanner.jpg',
+    './img/Carrusel/beepaw juguetes banner.jpg',
+    './img/Carrusel/carru bonelo.jpg',
+    './img/Carrusel/carru sieger.jpg',
+    './img/Carrusel/eukanuba banner.jpg',
+    './img/Carrusel/oferta eukanauba.jpg',
+    './img/Carrusel/oldPrinceNewProdBanner.jpg'
+];
 
 let indiceActual = 0;
-const totalImagenes = imagenes.length;
 let intervalo;
-const tiempoEspera = 4000; // 4 segundos
+let tiempoEspera = 4000;
 
-/*-----Función para cambiar de imagen usando clases-----*/
-function mostrarImagen(nuevoIndice) {
-    imagenes[indiceActual].classList.remove('activa');
+const carrusel = document.querySelector('.carrusel');
+const imgElemento = document.querySelector('.imagen-carrusel');
 
-    indiceActual = (nuevoIndice + totalImagenes) % totalImagenes;
+const contIzqCarru = document.querySelector('.contIzqCarru');
+const contDerCarru = document.querySelector('.contDerCarru');
 
-    /*-----Agregamos la clase 'activa' a la nueva imagen-----*/
-    imagenes[indiceActual].classList.add('activa');
+const btnIzq = contIzqCarru ? contIzqCarru.querySelector('.btnCarruIzq') : null;
+const btnDer = contDerCarru ? contDerCarru.querySelector('.btnCarruDer') : null;
+
+function actualizarImagen() {
+    if (imgElemento) {
+        imgElemento.src = imagenes[indiceActual];
+    }
 }
 
-
 function siguienteImagen() {
-    mostrarImagen(indiceActual + 1);
+    indiceActual++;
+    if (indiceActual >= imagenes.length) {
+        indiceActual = 0;
+    }
+    actualizarImagen();
 }
 
 function anteriorImagen() {
-    mostrarImagen(indiceActual - 1);
+    indiceActual--;
+    if (indiceActual < 0) {
+        indiceActual = imagenes.length - 1;
+    }
+    actualizarImagen();
 }
 
-/*-----Eventos de los botones----*/
-btnDer.addEventListener('click', () => {
-    siguienteImagen();
-    reiniciarAutoplay();
-});
+if (btnDer) {
+    btnDer.addEventListener('click', siguienteImagen);
+}
 
-btnIzq.addEventListener('click', () => {
-    anteriorImagen();
-    reiniciarAutoplay();
-});
+if (btnIzq) {
+    btnIzq.addEventListener('click', anteriorImagen);
+}
 
-/*-----Control de Autoplay------*/
 function iniciarAutoplay() {
     detenerAutoplay();
     intervalo = setInterval(siguienteImagen, tiempoEspera);
-
 }
 
 function detenerAutoplay() {
@@ -56,22 +67,10 @@ function detenerAutoplay() {
     }
 }
 
-function reiniciarAutoplay() {
-    detenerAutoplay();
-    iniciarAutoplay();
+if (carrusel) {
+    carrusel.addEventListener('mouseenter', detenerAutoplay);
+    carrusel.addEventListener('mouseleave', iniciarAutoplay);
 }
 
-/*--------Pausar al poner el mouse encima---------*/
-carrusel.addEventListener('mouseenter', detenerAutoplay);
-carrusel.addEventListener('mouseleave', iniciarAutoplay);
-
-
-
-/*-------Iniciar al cargar----------*/
-//Inicia como activada para evitar una imagen vacia por 4seg al entrar a la pagina
-imagenes[0].classList.add('activa');
+actualizarImagen();
 iniciarAutoplay();
-
-
-
-

@@ -5,10 +5,10 @@
 const imagenes = [
     './img/Carrusel/PurinaBanner.jpg',
     './img/Carrusel/beepaw juguetes banner.jpg',
-    './img/Carrusel/carru bonelo.jpg',
-    './img/Carrusel/carru sieger.jpg',
+    // './img/Carrusel/carru bonelo.jpg',
+    // './img/Carrusel/carru sieger.jpg',
     './img/Carrusel/eukanuba banner.jpg',
-    './img/Carrusel/oferta eukanauba.jpg',
+    // './img/Carrusel/oferta eukanauba.jpg',
     './img/Carrusel/oldPrinceNewProdBanner.jpg'
 ];
 

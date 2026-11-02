@@ -83,7 +83,7 @@ a {
 .imagen-carrusel {
     display: block;
     width: 100%;
-    height: clamp(180px, 50vw, 700px);
+    /* height: clamp(180px, 50vw, 700px); */
     object-fit: cover;
     object-position: center;
 }
@@ -94,7 +94,7 @@ a {
     }
 
     .imagen-carrusel {
-        height: clamp(180px, 50vw, 700px);
+        height: 100%;
     }
 
     
@@ -106,7 +106,7 @@ a {
     }
 
     .imagen-carrusel {
-        height: 180px;
+        height: 100%;
     }
 
     
@@ -807,6 +807,16 @@ a {
     width: 45px;
     object-fit: contain;
 }
+
+/* cerrar sesion */
+#cerrarSesion{
+    display: none;
+    height: 45px;
+    width: 45px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
 
 
 

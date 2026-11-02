@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="./img/logotipo/garritas2.png">
 </head>
 
 <body>
@@ -26,7 +28,7 @@
                 <a href="Catalogo/catalogo.html">
                     <li id="catalogo"> Catalogo </li>
                 </a>
-                <a href="../integrador/Contacto/contacto.html">
+                <a href="./Contacto/contacto.html">
                     <li id="contacto"> Contacto </li>
                 </a>
                 <button id="btnLogin" class="btnLogin">Login</button>
@@ -49,7 +51,7 @@
                             <!-- ============ -->
                         </div>
                         <div class="loginModalRegistro">
-                            <p>No tienes cuenta? registrate <a href="../integrador/Registro/registro.html">aqui</a></p>
+                            <p>No tienes cuenta? registrate <a href="./Registro/registro.html">aqui</a></p>
                         </div>
                         <div class="modalBotones">
                             <button type="button" id="closeLogin" class="cancelar">Cancelar</button>
@@ -62,6 +64,7 @@
                     <!-- ================= -->
                 </dialog>
                 <div id="resumenLogin" class="resumenLogin"></div>
+                <div id="cerrarSesion"><img src="./img/nav/cerrar-sesion.png" alt="cerrar.png"></div>
             </ul>
         </div>
         <div id="carrito" class="carritoCompras">
@@ -121,16 +124,18 @@
             <div class="carrusel">
 
                 <img class="imagen-carrusel" src="./img/Carrusel/PurinaBanner.jpg" alt="Carrusel">
-               
+
             </div>
             <!-- Botones afuera para poder posicionarlos bien -->
             <div class="contIzqCarru">
-                <button class="btnCarruIzq" type="button"><img src="./img/izq.png" alt="izq" height="50" width="50"></button>
-                
+                <button class="btnCarruIzq" type="button"><img src="./img/izq.png" alt="izq" height="50"
+                        width="50"></button>
+
             </div>
 
             <div class="contDerCarru">
-                <button class="btnCarruDer" type="button"><img src="./img/der.png" alt="der" height="50" width="50"></button>
+                <button class="btnCarruDer" type="button"><img src="./img/der.png" alt="der" height="50"
+                        width="50"></button>
             </div>
 
         </div>
@@ -616,8 +621,8 @@
 
 
     <script src="script.js"></script>
-    <script src="../integrador/carrusel.js"></script>
-    <script src="../integrador/newsletter.js"></script>
+    <script src="./carrusel.js"></script>
+    <script src="./newsletter.js"></script>
     <script src="./carrito/carrito.js"></script>
 </body>
 

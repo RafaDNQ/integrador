@@ -31,89 +31,89 @@
     });
 
     regForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+        event.preventDefault();
 
-    const emailVal = registroEmail.value.trim();
-    const contraVal = registroContraseña.value.trim();
-    const cumpleVal = registroCumpleaños.value.trim();
-    const telefonoVal = registroTelefono.value.trim();
+        const emailVal = registroEmail.value.trim();
+        const contraVal = registroContraseña.value.trim();
+        const cumpleVal = registroCumpleaños.value.trim();
+        const telefonoVal = registroTelefono.value.trim();
 
-    let todoOk = true;
+        let todoOk = true;
 
-    //Validar Email
-    const expresionEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (emailVal === '') {
-        errorEmail.textContent = 'El email es obligatorio';
-        errorEmail.classList.add('invalidoReg');
-        registroEmail.classList.add('errorInput');
-        todoOk = false;
-    } else if (!expresionEmail.test(emailVal)) {
-        errorEmail.textContent = 'Ingresá un correo válido.';
-        errorEmail.classList.add('invalidoReg');
-        registroEmail.classList.add('errorInput');
-        todoOk = false;
-    } else {
-        errorEmail.textContent = '';
-        errorEmail.classList.remove('invalidoReg');
-        registroEmail.classList.remove('errorInput');
-    }
+        //Validar Email
+        const expresionEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailVal === '') {
+            errorEmail.textContent = 'El email es obligatorio';
+            errorEmail.classList.add('invalidoReg');
+            registroEmail.classList.add('errorInput');
+            todoOk = false;
+        } else if (!expresionEmail.test(emailVal)) {
+            errorEmail.textContent = 'Ingresá un correo válido.';
+            errorEmail.classList.add('invalidoReg');
+            registroEmail.classList.add('errorInput');
+            todoOk = false;
+        } else {
+            errorEmail.textContent = '';
+            errorEmail.classList.remove('invalidoReg');
+            registroEmail.classList.remove('errorInput');
+        }
 
-    //Validar Contraseña
-    const expresionPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,30}$/;
-    if (contraVal === '') {
-        errorContra.textContent = 'La contraseña es obligatoria';
-        errorContra.classList.add('invalidoReg');
-        registroContraseña.classList.add('errorInput');
-        todoOk = false;
-    } else if (!expresionPassword.test(contraVal)) {
-        errorContra.textContent = 'Ingrese una contraseña válida.';
-        errorContra.classList.add('invalidoReg');
-        registroContraseña.classList.add('errorInput');
-        todoOk = false;
-    } else {
-        errorContra.textContent = '';
-        errorContra.classList.remove('invalidoReg');
-        registroContraseña.classList.remove('errorInput');
-    }
+        //Validar Contraseña
+        const expresionPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,30}$/;
+        if (contraVal === '') {
+            errorContra.textContent = 'La contraseña es obligatoria';
+            errorContra.classList.add('invalidoReg');
+            registroContraseña.classList.add('errorInput');
+            todoOk = false;
+        } else if (!expresionPassword.test(contraVal)) {
+            errorContra.textContent = 'Ingrese una contraseña válida.';
+            errorContra.classList.add('invalidoReg');
+            registroContraseña.classList.add('errorInput');
+            todoOk = false;
+        } else {
+            errorContra.textContent = '';
+            errorContra.classList.remove('invalidoReg');
+            registroContraseña.classList.remove('errorInput');
+        }
 
-    // Validar Teléfono
-    const expresionTel = /^(?:(?:\+?54\s?9?)?|0)?(?:\d{2,4})[\s-.]?(?:15)?[\s-.]?\d{6,8}$/;
-    if (telefonoVal === '') {
-        errorTel.textContent = 'El teléfono es obligatorio';
-        errorTel.classList.add('invalidoReg');
-        registroTelefono.classList.add('errorInput');
-        todoOk = false;
-    } else if (!expresionTel.test(telefonoVal)) {
-        errorTel.textContent = 'Ingrese un teléfono válido.';
-        errorTel.classList.add('invalidoReg');
-        registroTelefono.classList.add('errorInput');
-        todoOk = false;
-    } else {
-        errorTel.textContent = '';
-        errorTel.classList.remove('invalidoReg');
-        registroTelefono.classList.remove('errorInput');
-    }
+        // Validar Teléfono
+        const expresionTel = /^(?:(?:\+?54\s?9?)?|0)?(?:\d{2,4})[\s-.]?(?:15)?[\s-.]?\d{6,8}$/;
+        if (telefonoVal === '') {
+            errorTel.textContent = 'El teléfono es obligatorio';
+            errorTel.classList.add('invalidoReg');
+            registroTelefono.classList.add('errorInput');
+            todoOk = false;
+        } else if (!expresionTel.test(telefonoVal)) {
+            errorTel.textContent = 'Ingrese un teléfono válido.';
+            errorTel.classList.add('invalidoReg');
+            registroTelefono.classList.add('errorInput');
+            todoOk = false;
+        } else {
+            errorTel.textContent = '';
+            errorTel.classList.remove('invalidoReg');
+            registroTelefono.classList.remove('errorInput');
+        }
 
-    //Validar Cumpleaños
-    const fechaLimite = new Date();
-    fechaLimite.setFullYear(fechaLimite.getFullYear() - 16);
-    const fechaNacimiento = new Date(cumpleVal + 'T00:00:00');
+        //Validar Cumpleaños
+        const fechaLimite = new Date();
+        fechaLimite.setFullYear(fechaLimite.getFullYear() - 16);
+        const fechaNacimiento = new Date(cumpleVal + 'T00:00:00');
 
-    if (cumpleVal === '') {
-        errorCumple.textContent = 'El cumpleaños es obligatorio';
-        errorCumple.classList.add('invalidoReg');
-        registroCumpleaños.classList.add('errorInput');
-        todoOk = false;
-    } else if (fechaNacimiento > fechaLimite) {
-        errorCumple.textContent = 'Debes tener al menos 16 años';
-        errorCumple.classList.add('invalidoReg');
-        registroCumpleaños.classList.add('errorInput');
-        todoOk = false;
-    } else {
-        errorCumple.textContent = '';
-        errorCumple.classList.remove('invalidoReg');
-        registroCumpleaños.classList.remove('errorInput');
-    }
+        if (cumpleVal === '') {
+            errorCumple.textContent = 'El cumpleaños es obligatorio';
+            errorCumple.classList.add('invalidoReg');
+            registroCumpleaños.classList.add('errorInput');
+            todoOk = false;
+        } else if (fechaNacimiento > fechaLimite) {
+            errorCumple.textContent = 'Debes tener al menos 16 años';
+            errorCumple.classList.add('invalidoReg');
+            registroCumpleaños.classList.add('errorInput');
+            todoOk = false;
+        } else {
+            errorCumple.textContent = '';
+            errorCumple.classList.remove('invalidoReg');
+            registroCumpleaños.classList.remove('errorInput');
+        }
 
         if (todoOk === false) {
             console.log("No esta todo ok. Se cancela el registro")
@@ -122,6 +122,7 @@
 
             regResumen.innerHTML = "";
 
+            guardarRegistro();
             console.log("Registro exitoso");
 
             const resumenRegistro = document.createElement('div');
@@ -197,6 +198,21 @@
             }
         }
     });
+
+    //guardar en localStorage el registro
+
+    function guardarRegistro() {
+        const emailVal = registroEmail.value.trim();
+        const contraVal = registroContraseña.value.trim();
+        const telefonoVal = registroTelefono.value.trim();
+        const cumpleVal = registroCumpleaños.value.trim();
+
+        const registros = JSON.parse(localStorage.getItem("registros")) || [];
+        const objRegistro = { regEmail: emailVal, regContra: contraVal, regTel: telefonoVal, regCumple: cumpleVal };
+        registros.push(objRegistro);
+
+        localStorage.setItem("registros",JSON.stringify(registros));
+    }
 
 }
 

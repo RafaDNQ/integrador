@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/png" href="../img/logotipo/garritas2.png">
 </head>
 
 <body>
@@ -63,6 +64,7 @@
                     <!-- ================= -->
                 </dialog>
                 <div id="resumenLogin" class="resumenLogin"></div>
+                <div id="cerrarSesion"><img src="../img/nav/cerrar-sesion.png" alt="cerrar.png"></div>
             </ul>
         </div>
         <div id="carrito" class="carritoCompras">
@@ -122,7 +124,7 @@
         </div>
 
         <form id="form-consulta" novalidate>
-            <label for="motivo_consulta">Motivo de la consulta:  </label>
+            <label for="motivo_consulta">Motivo de la consulta: </label>
             <select name="motivo_consulta" id="motivo_consulta" class="inputs" required>
                 <option value="" disabled selected>Selecciona el motivo de tu consulta...</option>
                 <option value="estado_pedido">Estado o demora del envío</option>
@@ -145,14 +147,15 @@
                 <input type="tel" name="telefono" id="telefono">
 
                 <label for="mensaje">Detalle de tu consulta:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" class="inputs" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <textarea id="mensaje" name="mensaje" rows="4" class="inputs"
+                    placeholder="Escribe tu mensaje aquí..."></textarea>
                 <small id="contador">0 / 200 caracteres</small>
                 <div id="textareaVacio"></div>
 
                 <div class="divBotonConsulta"><button type="submit" id="botonConsulta">Enviar</button></div>
             </div>
         </form>
-        
+
         <div id="resultadoConsulta"></div>
 
 

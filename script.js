@@ -1,4 +1,8 @@
 
+
+
+
+
 /* ===========================
                DIV PRODUCTOS
         =============================*/
@@ -32,6 +36,9 @@ tarjetas.forEach(tarjeta => {
 
 
 
+
+
+
 /* ===========================
                 Modal de login
         =============================*/
@@ -40,6 +47,7 @@ const dialog = document.getElementById('loginModal');
 const openLogin = document.getElementById('btnLogin');
 const closeLogin = document.getElementById('closeLogin');
 const submitLogin = document.getElementById('ingresar');
+const cerrarSesion = document.getElementById('cerrarSesion');
 
 const usuarioEmail = document.getElementById('LoginEmail');
 const usuarioContra = document.getElementById('LoginPassword');
@@ -80,7 +88,6 @@ closeLogin.addEventListener('click', () => {
     errorEmailLogin.style.display = "none";
     errorPassword.style.display = "none";
 
-
     dialog.close();
 });
 
@@ -88,12 +95,26 @@ closeLogin.addEventListener('click', () => {
 loginForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
+    let estadoInvalido = false;
+
     const email = usuarioEmail.value.trim();
     const contra = usuarioContra.value;
+
+    // Limpiar errores previos
     errorEmailLogin.textContent = "";
+    errorPassword.textContent = "";
+    errorEmailLogin.style.display = "none";
+    errorPassword.style.display = "none";
+    usuarioEmail.classList.remove("invalidoLogin");
+    usuarioContra.classList.remove("invalidoLogin");
+
+    //localStorage de usuarios registrados
+    const usuarios = JSON.parse(localStorage.getItem("registros")) || [];
+    console.log(usuarios);
+    const usuarioEncontrado = usuarios.find(u => u.regEmail === email && u.regContra === contra);
+    console.log(usuarioEncontrado);
 
     //=========Validacion email===========
-
     if (email === "") {
         usuarioEmail.classList.add("invalidoLogin");
         errorEmailLogin.textContent = "Debes ingresar un correo electronico.";
@@ -104,9 +125,7 @@ loginForm.addEventListener('submit', function (event) {
         usuarioEmail.classList.remove("invalidoLogin");
         errorEmailLogin.style.display = "none";
     }
-
     const expresionEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if (!expresionEmail.test(email)) {
         usuarioEmail.classList.add("invalidoLogin");
         errorEmailLogin.textContent = "Ingresá un correo válido.";
@@ -117,10 +136,8 @@ loginForm.addEventListener('submit', function (event) {
         usuarioEmail.classList.remove("invalidoLogin");
         errorEmailLogin.style.display = "none";
     }
-
     //=========Validacion contraseña===========
-
-    if (contra.value === "") {
+    if (contra === "") {
         usuarioContra.classList.add("invalidoLogin");
         errorPassword.textContent = "Debes ingresar una contraseña";
         estadoInvalido = true;
@@ -130,9 +147,7 @@ loginForm.addEventListener('submit', function (event) {
         usuarioContra.classList.remove("invalidoLogin");
         errorPassword.style.display = "none";
     }
-
     const expresionPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,30}$/;
-
     if (!expresionPassword.test(contra)) {
         usuarioContra.classList.add("invalidoLogin");
         errorPassword.textContent = "La contraseña debe tener entre 10 a 30 caracteres, una mayúscula, una minúscula, caracter especial y un número.";
@@ -148,6 +163,20 @@ loginForm.addEventListener('submit', function (event) {
         return;
     }
 
+
+
+    //luego de todas las validaciones, verificamos que el usuario y contraseña coincidan con los datos de un usuario registrado
+    if (!usuarioEncontrado) {
+        console.log("Usuario o contraseña incorrectos.");
+        errorEmailLogin.textContent = "El correo o la contraseña no coinciden.";
+        errorEmailLogin.style.display = "flex";
+        return;
+    }
+
+    console.log("Inicio de sesión exitoso.");
+    resumenLogin.innerHTML = "";
+
+    //creamos el resumen de logeo
     const divLog = document.createElement("div");
     const tituloLog = document.createElement("h3");
     const emailLog = document.createElement("p");
@@ -165,9 +194,15 @@ loginForm.addEventListener('submit', function (event) {
 
     iniciarSesionExitoso();
 
+    //guardamos los datos del logeo para mantener la persistencia
+    const objUltLogin = { logEmail: usuarioEncontrado.regEmail, logContra: usuarioEncontrado.regContra }
+    const ultLoginJSON = JSON.stringify(objUltLogin);
+
+    sessionStorage.setItem("ultimaConeccion", ultLoginJSON);
     dialog.close();
     document.getElementById('btnLogin').style.display = "none";
     resumenLogin.style.display = "flex";
+
 
 });
 
@@ -199,21 +234,39 @@ iconoDiv.addEventListener('click', function () {
         iconoOcultar.style.display = "none";
 
     }
-
-
-
 });
 
 function iniciarSesionExitoso() {
     estadoLogin = true;
-    actualizarEstadoCarrito(); // El carrito se habilita de inmediato
+    sessionStorage.setItem("estadoLogin", estadoLogin);
+    actualizarEstadoCarrito();
+    cerrarSesion.style.display = "flex";
 }
 
 
-function cerrarSesion() {
+cerrarSesion.addEventListener('click',function () {
+    cerrarSesionFunction();
+    cerrarSesion.style.display = "none";
+});
+
+function cerrarSesionFunction() {
     estadoLogin = false;
-    actualizarEstadoCarrito(); // El carrito se bloquea de nuevo
+    
+    sessionStorage.removeItem("estadoLogin");
+    sessionStorage.removeItem("ultimaConeccion");
+
+    if (typeof actualizarEstadoCarrito === "function") {
+        actualizarEstadoCarrito();
+    }
+
+    document.getElementById('btnLogin').style.display = "flex";
+    resumenLogin.style.display = "none";
+    resumenLogin.innerHTML = "";
+    
+    loginForm.reset();
 }
+
+
 
 
 
@@ -307,7 +360,7 @@ document.addEventListener('click', function (e) {
         eliminar.className = "eliminarDiv";
         const eliminarImg = document.createElement("img");
         eliminarImg.className = "eliminarImg";
-        eliminarImg.src = "./img/nav/trash-can.png";
+        eliminarImg.src = "../img/nav/trash-can.png";
         eliminarImg.alt = "Icono Eliminar";
 
         // armado de la estructura DOM
@@ -342,17 +395,62 @@ document.addEventListener('click', function (e) {
        ================================*/
 
 
-    const ruta = window.location.pathname;
+const ruta = window.location.pathname;
 
-    const nombreArchivo = ruta.substring(ruta.lastIndexOf('/') + 1);
-    console.log(nombreArchivo);
+const nombreArchivo = ruta.substring(ruta.lastIndexOf('/') + 1);
+console.log(nombreArchivo);
 
-    const home = document.getElementById('home');
-    const catalogo = document.getElementById('catalogo');
-    const contacto = document.getElementById('contacto');
+const home = document.getElementById('home');
+const catalogo = document.getElementById('catalogo');
+const contacto = document.getElementById('contacto');
 
-    home.classList.toggle('activoNav', nombreArchivo === 'integrador.html');
-    catalogo.classList.toggle('activoNav', nombreArchivo === 'catalogo.html');
-    contacto.classList.toggle('activoNav', nombreArchivo === 'contacto.html');
+home.classList.toggle('activoNav', nombreArchivo === 'integrador.html');
+catalogo.classList.toggle('activoNav', nombreArchivo === 'catalogo.html');
+contacto.classList.toggle('activoNav', nombreArchivo === 'contacto.html');
 
+/*=======================================
+       Verificar estado de login (persistencia)
+       ================================*/
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    resumenLogin.innerHTML = ""
+
+    //leemos estadoLogin para habilitar o no el carrito
+    const estaLogeado = sessionStorage.getItem("estadoLogin") === "true";
+    if (estaLogeado) {
+        console.log("esta logeado");
+        //obtenemos los datos que guardamos del ultimo logeo
+        const ultLog = sessionStorage.getItem("ultimaConeccion");
+        const usuarioUltLog = ultLog ? JSON.parse(ultLog) : null;
+
+        //si no es null se imprime los datos
+        if (usuarioUltLog) {
+            console.log("usuarioUltLog no es null");
+
+            const divLog = document.createElement("div");
+            const tituloLog = document.createElement("h3");
+            const emailLog = document.createElement("p");
+            const passLog = document.createElement("p");
+            tituloLog.textContent = "Ingreso exitoso";
+            emailLog.textContent = "Correo: " + usuarioUltLog.logEmail;
+            passLog.textContent = "Contraseña: " + usuarioUltLog.logContra;
+            divLog.appendChild(tituloLog);
+            divLog.appendChild(emailLog);
+            divLog.appendChild(passLog);
+            resumenLogin.classList.add("ingresoValido");
+            resumenLogin.prepend(divLog);
+
+            iniciarSesionExitoso();
+
+            document.getElementById('btnLogin').style.display = "none";
+            resumenLogin.style.display = "flex";
+        } else {
+            console.log("usuarioUltLog es null")
+            return;
+        }
+    } else {
+        return;
+    }
+});
 

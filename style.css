@@ -473,6 +473,14 @@ a {
     margin: 0;
 }
 
+
+@media (max-width: 768px) {
+    .marcaTarjeta {
+        height: clamp(100px, 50vw, 150px);
+        width: clamp(150px, 50vw, 220px);
+    }
+}
+
 /*======================================
   Mas vendidos End
   ======================================*/
@@ -596,6 +604,30 @@ a {
 
 
 
+@media (max-width: 768px) {
+    .seccionNewsletter {
+        padding: 30px 15px;
+    }
+
+    .contenidoNewsletter {
+        gap: 15px;
+    }
+
+    .textoNL h2 {
+        font-size: 1.5rem;
+    }
+
+    .textoNL p {
+        font-size: 0.9rem;
+    }
+
+    .formNL {
+        max-width: 100%;
+    }
+}
+
+
+
 /*======================================
   Sección Newsletter End
   ======================================*/
@@ -705,6 +737,34 @@ a {
     height: 40px;
     width: 40px;
     cursor: pointer;
+}
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 15px;
+    gap: 30px;
+  }
+
+
+  .contactoFooter, 
+  .redesFooter {
+    align-items: center;
+  }
+
+ 
+  .footerLogo {
+    order: -1; 
+  }
+
+  .contContact {
+    gap: 15px;
+  }
+
+  .divRed img {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 /* ==================

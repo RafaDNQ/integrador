@@ -860,6 +860,77 @@ a {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
+@media (max-width: 480px) {
+    .div1 {
+        height: auto;
+        padding: 0.5rem 1rem;
+        flex-wrap: wrap; /* Permite que el desplegable baje a la siguiente línea */
+        justify-content: space-between;
+    }
+
+    .barraImg {
+        order: 1;
+        height: 50px;
+    }
+
+    .carritoCompras {
+        order: 2;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .carritoCompras img {
+        height: 35px;
+        width: 35px;
+    }
+
+    .barra {
+        order: 3;
+        position: relative;
+    }
+
+    /*Convertir el ul en el desplegable */
+    .barra ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--ocean-deep, #2364aa);
+        flex-direction: column;
+        width: 180px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+        z-index: 200;
+        gap: 0.5rem;
+    }
+
+    .barra:hover ul,
+    .barra:focus-within ul {
+        display: flex;
+    }
+
+    .barra::before {
+        content: "☰ Menú";
+        display: inline-block;
+        background-color: #fec601;
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .barra li, 
+    .btnLogin {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
 
 .btnLogin {
     display: inline-block;

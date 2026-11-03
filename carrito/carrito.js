@@ -50,6 +50,7 @@ contenidoCarrito.addEventListener('click', (e) => {
             const nuevoTotal = precioUnitario * valorActual;
             precioVariable.textContent = `$${nuevoTotal.toFixed(2)}`;
             actualizarTotalCompra();
+            guardarCarrito() //guardamos carrito para persistencia
         }
     }
 
@@ -58,7 +59,10 @@ contenidoCarrito.addEventListener('click', (e) => {
         if (contenedorArt) {
             contenedorArt.remove();
         }
+
         actualizarTotalCompra();
+
+        guardarCarrito() //guardamos carrito para persistencia
     }
 
 
@@ -132,7 +136,9 @@ comprarCarritoButton.addEventListener('click', (e) => {
 
     totalDiv.appendChild(totalCompra);
     divResumen.appendChild(totalDiv);
+
     borrarArticulos()
+    guardarCarrito()
     total.textContent = "";
     dialogCarrito.close();
 
@@ -167,13 +173,133 @@ function borrarArticulos() {
 }
 
 function actualizarEstadoCarrito() {
-  if (estadoLogin) {
-    iconoCarrito.classList.remove('inhabilitado');
-  } else {
-    iconoCarrito.classList.add('inhabilitado');
-  }
+    if (estadoLogin) {
+        iconoCarrito.classList.remove('inhabilitado');
+    } else {
+        iconoCarrito.classList.add('inhabilitado');
+    }
 }
 
+
+function guardarCarrito() {
+    const contenidoCarrito = document.getElementById('contenidoCarrito');
+
+    if (!contenidoCarrito) return;
+
+    const listaArticulos = contenidoCarrito.querySelectorAll('.carritoArt');
+    const carritoParaGuardar = [];
+
+    listaArticulos.forEach(articulo => {
+        const precioElemento = articulo.querySelector('.precio');
+        const tituloElemento = articulo.querySelector('.pTitulo');
+        const cantidadInput = articulo.querySelector('.input-cantidad');
+
+        const titulo = tituloElemento ? tituloElemento.textContent.trim() : '';
+        const precioTexto = precioElemento ? precioElemento.textContent.trim() : '0';
+        const precioNumerico = parseFloat(precioTexto.replace(/[^0-9.-]+/g, '')) || 0;
+        const cantidad = cantidadInput ? parseInt(cantidadInput.value) || 1 : 1;
+
+        const articuloInfo = {
+            tituloArt: titulo,
+            precioArt: precioNumerico,
+            cantidadArt: cantidad
+        };
+
+        carritoParaGuardar.push(articuloInfo);
+    });
+
+    sessionStorage.setItem("carritoActual", JSON.stringify(carritoParaGuardar));
+    console.log("Carrito guardado exitosamente:", carritoParaGuardar);
+}
+
+function construirCarrito() {
+    const contenidoCarrito = document.getElementById('contenidoCarrito');
+    if (!contenidoCarrito) return;
+
+    const carritoJSON = sessionStorage.getItem("carritoActual");
+    const carritoActual = carritoJSON ? JSON.parse(carritoJSON) : [];
+
+    contenidoCarrito.innerHTML = "";
+
+    carritoActual.forEach(articulo => {
+        const titulo = articulo.tituloArt;
+        const precio = articulo.precioArt;
+        const cantidad = articulo.cantidadArt;
+
+        const divCarritoArt = document.createElement("div");
+        divCarritoArt.className = "carritoArt";
+
+        const divArtTitulo = document.createElement("div");
+        divArtTitulo.className = "artTitulo";
+
+        const pTitulo = document.createElement("p");
+        pTitulo.className = "pTitulo";
+        pTitulo.textContent = titulo;
+
+        const divArtCant = document.createElement("div");
+        divArtCant.className = "artCant";
+
+        const contButtons = document.createElement("div");
+        contButtons.className = "contAcumular";
+
+        const btnCarritoIzq = document.createElement("button");
+        btnCarritoIzq.className = "btn-flecha-izq";
+        btnCarritoIzq.textContent = "◄";
+
+        const inputCantCarrito = document.createElement("input");
+        inputCantCarrito.type = 'number';
+        inputCantCarrito.value = cantidad;
+        inputCantCarrito.min = '1';
+        inputCantCarrito.className = "input-cantidad";
+        inputCantCarrito.readOnly = true;
+
+        const btnCarritoDer = document.createElement("button");
+        btnCarritoDer.className = "btn-flecha-der";
+        btnCarritoDer.textContent = "►";
+
+        const divArtTotal = document.createElement("div");
+        divArtTotal.className = "artTotal";
+
+        const pArtTotal = document.createElement("p");
+        pArtTotal.className = "precio";
+        pArtTotal.textContent = `$${(precio * cantidad).toFixed(2)}`;
+
+        const pArtPrecioSingle = document.createElement("p");
+        pArtPrecioSingle.className = "precioSingle";
+        pArtPrecioSingle.textContent = `$${(precio / cantidad).toFixed(2)}`;
+        pArtPrecioSingle.style.display = "none";
+
+        const eliminar = document.createElement("div");
+        eliminar.className = "eliminarDiv";
+        const eliminarImg = document.createElement("img");
+        eliminarImg.className = "eliminarImg";
+        eliminarImg.src = "../img/nav/trash-can.png";
+        eliminarImg.alt = "Icono Eliminar";
+
+        // Armado de la estructura DOM
+        divArtTitulo.appendChild(pTitulo);
+        divArtTitulo.appendChild(eliminar);
+        eliminar.appendChild(eliminarImg);
+
+        contButtons.appendChild(btnCarritoIzq);
+        contButtons.appendChild(inputCantCarrito);
+        contButtons.appendChild(btnCarritoDer);
+        divArtCant.appendChild(contButtons);
+
+        divArtTotal.appendChild(pArtTotal);
+        divArtTotal.appendChild(pArtPrecioSingle);
+
+        divCarritoArt.appendChild(divArtTitulo);
+        divCarritoArt.appendChild(divArtCant);
+        divCarritoArt.appendChild(divArtTotal);
+
+        contenidoCarrito.prepend(divCarritoArt);
+    });
+
+    if (typeof actualizarTotalCompra === "function") {
+        actualizarTotalCompra();
+    }
+}
 
 
 

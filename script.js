@@ -279,23 +279,36 @@ document.addEventListener('click', function (e) {
     if (e.target.classList.contains('botonComprar')) {
         const boton = e.target;
         const tarjeta = e.target.closest('.articuloTarjeta');
+        const aviso = document.querySelector('.agregarError');
 
         if (!tarjeta) return;
 
-        boton.addEventListener('click', () => {
-            // Definimos la clase según el estado actual
-            const claseAnimacion = !estadoLogin ? 'errorCompra' : 'saltarCompra';
+        const claseAnimacion = !estadoLogin ? 'errorCompra' : 'saltarCompra';
+        boton.classList.add(claseAnimacion);
 
-            boton.classList.add(claseAnimacion);
+        aviso.style.display = "block";
 
-            setTimeout(() => {
-                boton.classList.remove(claseAnimacion);
-            }, 400);
-        });
+
+        setTimeout(() => {
+            boton.classList.remove(claseAnimacion);
+            
+        }, 400);
+
+        setTimeout(() => {
+            aviso.style.display = "none";
+            
+        }, 3000);
+
+        
+
+        if (!estadoLogin) {
+            return;
+        }
 
         const tituloElemento = tarjeta.querySelector('.titulo');
         const precioElemento = tarjeta.querySelector('.precio');
         const cantidadElemento = tarjeta.querySelector('.input-cantidad');
+        
 
         const titulo = tituloElemento ? tituloElemento.textContent.trim() : '';
         const precioTexto = precioElemento ? precioElemento.textContent.trim() : '0';
@@ -384,6 +397,7 @@ document.addEventListener('click', function (e) {
 
 
         actualizarTotalCompra();
+        guardarCarrito() //guardamos carrito para persistencia
 
     }
 });
@@ -420,6 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const estaLogeado = sessionStorage.getItem("estadoLogin") === "true";
     if (estaLogeado) {
         console.log("esta logeado");
+        construirCarrito();
         //obtenemos los datos que guardamos del ultimo logeo
         const ultLog = sessionStorage.getItem("ultimaConeccion");
         const usuarioUltLog = ultLog ? JSON.parse(ultLog) : null;

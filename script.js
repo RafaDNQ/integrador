@@ -279,7 +279,9 @@ document.addEventListener('click', function (e) {
     if (e.target.classList.contains('botonComprar')) {
         const boton = e.target;
         const tarjeta = e.target.closest('.articuloTarjeta');
-        const aviso = document.querySelector('.agregarError');
+        const masVendido = e.target.closest('.masVendido');
+        const aviso = masVendido.querySelector('.agregarError');
+
 
         if (!tarjeta) return;
 
@@ -287,6 +289,7 @@ document.addEventListener('click', function (e) {
         boton.classList.add(claseAnimacion);
 
         aviso.style.display = "block";
+        aviso.focus();
 
 
         setTimeout(() => {

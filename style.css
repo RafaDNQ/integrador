@@ -97,7 +97,7 @@ a {
         height: 100%;
     }
 
-    
+
 }
 
 @media (max-width: 480px) {
@@ -109,7 +109,7 @@ a {
         height: 100%;
     }
 
-    
+
 }
 
 
@@ -640,6 +640,7 @@ a {
     height: 220px;
     flex-direction: row;
     background-color: var(--ocean-deep, #2364aa);
+    font-size: 0.8rem;
 }
 
 .footer .divFooter {
@@ -738,33 +739,78 @@ a {
     width: 40px;
     cursor: pointer;
 }
+
 @media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-    text-align: center;
-    padding: 25px 15px;
-    gap: 30px;
-  }
+    .footer {
+        flex-direction: column;
+    }
 
 
-  .contactoFooter, 
-  .redesFooter {
-    align-items: center;
-  }
+    .contactoFooter,
+    .redesFooter {
 
- 
-  .footerLogo {
-    order: -1; 
-  }
+        border-radius: 0px;
+    }
 
-  .contContact {
-    gap: 15px;
-  }
+    .divContactText {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-self: center;
+        text-align: center;
+    }
 
-  .divRed img {
-    width: 36px;
-    height: 36px;
-  }
+    .contContact {
+        width: 100%;
+    }
+
+    .divContact p {
+        border-radius: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .contactoFooter {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .redesFooter {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .redTexto {
+        margin-top: 10px;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .contRedesIcons {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: row;
+        margin-top: 10px;
+        justify-content: space-around;
+    }
+
+    .footerLogo {
+        display: none;
+    }
+
+    .footerLogo img {
+        display: none;
+    }
+
+    .contContact {
+        gap: 15px;
+    }
+
+    .divRed img {
+        width: 36px;
+        height: 36px;
+    }
 }
 
 /* ==================
@@ -869,7 +915,7 @@ a {
 }
 
 /* cerrar sesion */
-#cerrarSesion{
+#cerrarSesion {
     display: none;
     height: 45px;
     width: 45px;
@@ -1168,14 +1214,33 @@ a {
 }
 
 @keyframes sacudirError {
-    0%, 100% { transform: translateX(0); }
-    20%, 60% { transform: translateX(-6px); }
-    40%, 80% { transform: translateX(6px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-6px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(6px);
+    }
 }
 
 @keyframes saltarCompraKF {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .errorCompra {
@@ -1200,11 +1265,11 @@ a {
     animation: saltarCompraKF 0.4s ease-in-out;
 }
 
-.activoNav{
+.activoNav {
     border: 2px solid #ea7317ff;
 }
 
-.agregarError{
+.agregarError {
     display: none;
     text-align: center;
     color: aliceblue;
@@ -1215,6 +1280,13 @@ a {
 }
 
 @keyframes saltarAviso {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }

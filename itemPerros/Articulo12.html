@@ -6,6 +6,7 @@
     <title>Tienda</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./style-perros.css">
+    <link rel="stylesheet" href="../carrito/carritoStyle.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,34 +24,55 @@
         <div class="barra">
             <ul>
                 <a href="../integrador.html">
-                    <li> Home </li>
-                </a>
-                <a href="">
-                    <li> Catalogo </li>
+                    <li id="home"> Home </li>
                 </a>
                 <a href="../Catalogo/catalogo.html">
-                    <li> Contacto </li>
+                    <li id="catalogo"> Catalogo </li>
+                </a>
+                <a href="../Contacto/contacto.html">
+                    <li id="contacto"> Contacto </li>
                 </a>
                 <button id="btnLogin" class="btnLogin">Login</button>
 
                 <dialog id="loginModal" class="loginModal">
-                    <h2>Login / Ingresar</h2>
-                    <form action="" novalidate class="LoginForm">
-                        <input type="text" placeholder="Ingresá tu email aquí..." class="LoginEmail">
-                        <input type="password" placeholder="***************" class="LoginPassword">
+                    <h2 class="tituloModal">Login / Ingresar</h2>
+                    <form class="LoginForm" id="LoginForm" novalidate>
+                        <input type="text" placeholder="Ingresá tu email aquí..." class="LoginEmail" id="LoginEmail"
+                            required>
+                        <div class="divContra">
+                            <input type="password" placeholder="***************" class="LoginPassword"
+                                id="LoginPassword" required>
+                            <!-- Mostrar Contraseña -->
+                            <div class="iconosMostrar" id="iconosDiv">
+                                <img src="../img/nav/iconosMostrarModal/ojo.png" alt="mostrarIcono" class="mostrarIcono"
+                                    id="mostrarIcono">
+                                <img src="../img/nav/iconosMostrarModal/cerrar-ojo.png" alt="ocultarIcono"
+                                    class="ocultarIcono" id="ocultarIcono">
+                            </div>
+                            <!-- ============ -->
+                        </div>
+                        <div class="loginModalRegistro">
+                            <p>No tienes cuenta? registrate <a href="../Registro/registro.html">aqui</a></p>
+                        </div>
+                        <div class="modalBotones">
+                            <button type="button" id="closeLogin" class="cancelar">Cancelar</button>
+                            <button type="submit" id="ingresar" class="ingresar">Ingresar</button>
+                        </div>
                     </form>
-                    <div class="modalBotones">
-                        <button id="closeLogin" class="cancelar">Cancelar</button>
-                        <button id="ingresar" class="ingresar">Ingresar</button>
-                    </div>
+                    <!-- Errores -->
+                    <p id="errorEmailLogin" class="mensajeError"></p>
+                    <p id="errorPasswordLogin" class="mensajeError"></p>
+                    <!-- ================= -->
                 </dialog>
+                <div id="resumenLogin" class="resumenLogin"></div>
+                <div id="cerrarSesion"><img src="../img/nav/cerrar-sesion.png" alt="cerrar.png"></div>
             </ul>
         </div>
         <div id="carrito" class="carritoCompras">
             <img src="../img/nav/carrito-de-compras.png" alt="carritoComprasIcon">
         </div>
-    </header>
 
+    </header>
 
     <div class="contenedoritem">
 
@@ -207,7 +229,10 @@
 
     </footer>
     <script src="./scrip-perros.js"></script>
-
+        <script src="../script.js"></script>
+    <script src="../Catalogo/catalogo.js"></script>
+    <script src="../carrito/carrito.js"></script>
+    <script src="../newsletter.js"></script>
 
 </body>
 

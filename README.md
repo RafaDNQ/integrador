@@ -13,6 +13,6 @@ Instrucciones de Uso
 4. Finalizar Compra: Confirmar la orden para generar el resumen interactivo de la compra en la pantalla.
 
 Sitio Publicado
-* URL del Sitio (GitHub Pages): [Reemplazar con el link de GitHub Pages]
+* URL del Sitio (GitHub Pages): https://rafadnq.github.io/integrador/
 
   

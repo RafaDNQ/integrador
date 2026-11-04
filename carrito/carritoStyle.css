@@ -18,6 +18,9 @@
     /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); */
 }
 
+
+
+
 .carritoModal:focus-visible {
     outline: cornflowerblue;
 }
@@ -251,4 +254,20 @@
 
 .comprarCarritoButton {
     color: white;
+}
+
+@media (max-width: 480px){
+    .carritoModal{
+        width: 100%;
+        height: 100%;
+    }
+
+    .comprarCont button {
+    border: none;
+    height: 100%;
+    width: 30%;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
 }

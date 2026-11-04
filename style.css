@@ -1476,11 +1476,12 @@ a {
     }
 }
 
+
 @media (max-width: 480px) {
     .contenedorArticulo {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-wrap: wrap;
         padding: 1rem 0.5rem;
         gap: 0.8rem;
         justify-content: center;
@@ -1488,14 +1489,16 @@ a {
     }
 
     .articuloTarjeta {
-        width: 150px;
-        height: fit-content;
+        flex: 1 1 calc(50% - 0.8rem);
+        max-width: calc(50% - 0.4rem);
+        height: auto;
     }
 
     .contComprar {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 0.4rem;
     }
 
     .contAcumular {
@@ -1508,48 +1511,30 @@ a {
 
     .btn-flecha-izq,
     .btn-flecha-der {
-        color: black;
-        background-color: aliceblue;
-        border: none;
-        padding: 0 10px;
         height: 100%;
-        cursor: pointer;
-        font-size: 14px;
+        padding: 0 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-    .btn-flecha-izq {
-        border-radius: 10px 0 0 10px;
-    }
-
-    .btn-flecha-der {
-        border-radius: 0 10px 10px 0;
+        font-size: 13px;
     }
 
     .input-cantidad {
-        background-color: aliceblue;
-        width: 36px;
         height: 100%;
+        width: 32px;
         text-align: center;
-        border: none;
-        font-size: 16px;
-        outline: none;
         line-height: 32px;
-        -moz-appearance: textfield;
-        appearance: textfield;
+        font-size: 15px;
     }
 
     .contenedorBoton {
-        margin-top: 0.5rem;
+        margin-top: 0.2rem;
         width: 100%;
-        height: 2rem;
+        height: 32px;
     }
 
-    .articuloContenedor .precio{
-        font-weight: bold;
-        font-size: larger;
-        margin-top: 5px;
+    .botonComprar {
+        height: 100%;
+        width: 100%;
     }
 }

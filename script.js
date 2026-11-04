@@ -431,7 +431,7 @@ const home = document.getElementById('home');
 const catalogo = document.getElementById('catalogo');
 const contacto = document.getElementById('contacto');
 
-home.classList.toggle('activoNav', nombreArchivo === 'integrador.html');
+home.classList.toggle('activoNav', nombreArchivo === 'index.html');
 catalogo.classList.toggle('activoNav', nombreArchivo === 'catalogo.html');
 contacto.classList.toggle('activoNav', nombreArchivo === 'contacto.html');
 

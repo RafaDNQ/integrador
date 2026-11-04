@@ -1,5 +1,5 @@
-.main{
-    
+.main {
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,42 +32,42 @@
 }
 
 .articuloTarjeta {
-  background-color: rgba(0, 0, 0, 0.538);
-  background-color: rgba(240, 248, 255, 0.449);
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  width: 200px;
-  border-radius: 10px;
-  padding: 5px;
+    background-color: rgba(0, 0, 0, 0.538);
+    background-color: rgba(240, 248, 255, 0.449);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(25% - 0.8rem);
+    max-width: calc(25% - 0.4rem);
+    height: auto;
+    width: 200px;
+    border-radius: 10px;
+    padding: 5px;
 }
 
-.divError{
+.divError {
     display: flex;
 }
 
 
 @media (max-width: 480px) {
-    
+
     .fondoArticulo {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-wrap: wrap;
         padding: 1rem 0.5rem;
         gap: 0.8rem;
         justify-content: center;
-        align-items: center;
     }
 
-    
+
     .articuloTarjeta {
-        width: 100%;
-        max-width: 160px;
+        flex: 1 1 calc(50% - 0.8rem);
+        max-width: calc(50% - 0.4rem);
         height: auto;
-        justify-self: center;
     }
 
-    
+
     .contComprar {
         flex-direction: column;
         justify-content: center;
@@ -75,16 +75,15 @@
         gap: 0.4rem;
     }
 
-    
+
     .contAcumular {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 32px; 
+        height: 32px;
     }
 
-    
     .btn-flecha-izq,
     .btn-flecha-der {
         height: 100%;
@@ -103,7 +102,6 @@
         font-size: 15px;
     }
 
-    
     .contenedorBoton {
         margin-top: 0.2rem;
         width: 100%;

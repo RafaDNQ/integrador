@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garritas - registro</title>
     <link rel="stylesheet" href="./registro.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../carrito/carritoStyle.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,19 +18,91 @@
 
 <body>
     <header class="div1">
-        <div class="barraImg"><img src="../img/garritas.jpg" alt="garritas logotipo"></div>
+        <div class="barraImg"><img src="../img/logotipo/garritas2.png" alt="garritas logotipo"></div>
         <div class="barra">
             <ul>
                 <a href="../integrador.html">
-                    <li> Home </li>
+                    <li id="home"> Home </li>
                 </a>
                 <a href="../Catalogo/catalogo.html">
-                    <li> Catalogo </li>
+                    <li id="catalogo"> Catalogo </li>
                 </a>
-                <a href="">
-                    <li> Contacto </li>
+                <a href="../Contacto/contacto.html">
+                    <li id="contacto"> Contacto </li>
                 </a>
+                <button id="btnLogin" class="btnLogin">Login</button>
+
+                <dialog id="loginModal" class="loginModal">
+                    <h2 class="tituloModal">Login / Ingresar</h2>
+                    <form class="LoginForm" id="LoginForm" novalidate>
+                        <input type="text" placeholder="Ingresá tu email aquí..." class="LoginEmail" id="LoginEmail"
+                            required>
+                        <div class="divContra">
+                            <input type="password" placeholder="***************" class="LoginPassword"
+                                id="LoginPassword" required>
+                            <!-- Mostrar Contraseña -->
+                            <div class="iconosMostrar" id="iconosDiv">
+                                <img src="../img/nav/iconosMostrarModal/ojo.png" alt="mostrarIcono" class="mostrarIcono"
+                                    id="mostrarIcono">
+                                <img src="../img/nav/iconosMostrarModal/cerrar-ojo.png" alt="ocultarIcono"
+                                    class="ocultarIcono" id="ocultarIcono">
+                            </div>
+                            <!-- ============ -->
+                        </div>
+                        <div class="loginModalRegistro">
+                            <p>No tienes cuenta? registrate <a href="../Registro/registro.html">aqui</a></p>
+                        </div>
+                        <div class="modalBotones">
+                            <button type="button" id="closeLogin" class="cancelar">Cancelar</button>
+                            <button type="submit" id="ingresar" class="ingresar">Ingresar</button>
+                        </div>
+                    </form>
+                    <!-- Errores -->
+                    <p id="errorEmailLogin" class="mensajeError"></p>
+                    <p id="errorPasswordLogin" class="mensajeError"></p>
+                    <!-- ================= -->
+                </dialog>
+                <div id="resumenLogin" class="resumenLogin"></div>
+                <div id="cerrarSesion"><img src="../img/nav/cerrar-sesion.png" alt="cerrar.png"></div>
+            </ul>
+        </div>
+        <div id="carrito" class="carritoCompras">
+            <img src="../img/nav/carrito-de-compras.png" alt="carritoComprasIcon">
+        </div>
+
     </header>
+
+    <!-- Modal de carrito -->
+
+    <dialog id="carritoModal" class="carritoModal">
+        <div class="mainCarrito" id="mainCarrito">
+            <div class="carritoHeader" id="headerCarrito">
+                <div class="tituloCarrito">
+                    <h2>Carrito de compras</h2>
+                </div>
+                <div class="divCerrar" id="divCerrar"><img src="../img/nav/cerrar.png" alt="btnCerrar"></div>
+            </div>
+
+            <div class="contenidoCarrito" id="contenidoCarrito">
+
+            </div>
+            <div class="carritoFooter">
+                <div class="totalCont">
+                    <div class="endTexto">
+                        <h2>Total</h2>
+                    </div>
+                    <div class="Total">
+                        <p id="totalCarrito"></p>
+                    </div>
+                </div>
+                <div class="comprarCont"><button type="button" class="comprarCarritoButton" id="comprarCarritoButton">
+                        Comprar</button></div>
+            </div>
+        </div>
+
+    </dialog>
+
+    <!-- Main -->
     <main class="main">
 
 
@@ -150,6 +224,8 @@
     <!-- <script src="../carrito/carritoStyle.css"></script> -->
     <script src="../newsletter.js"></script>
     <script src="../Registro/registro.js"></script>
+    <script src="../script.js"></script>
+    <script src="../carrito/carrito.js"></script>
 
 </body>
 

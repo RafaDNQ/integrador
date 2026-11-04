@@ -215,27 +215,27 @@ a {
 }
 
 @media (max-width: 480px) {
-    
+
     .contenedorEnvios {
         flex-direction: column;
-        width: 100%;             
-        height: auto;            
+        width: 100%;
+        height: auto;
         padding: 1.5rem 0.8rem;
-        box-sizing: border-box;  
-        border: 0.5rem solid #3da5d9ff; 
+        box-sizing: border-box;
+        border: 0.5rem solid #3da5d9ff;
 
     }
 
-    
+
     .contcontEnvios {
         flex-direction: column;
         align-items: center;
-        width: 100%;             
+        width: 100%;
         height: auto;
-        gap: 1.2rem;             
+        gap: 1.2rem;
     }
 
-    
+
     .contenedorEnvios .envDiv {
         display: flex;
         justify-content: flex-start;
@@ -243,23 +243,23 @@ a {
         background-color: #0d3a75;
         padding: 0.8rem 1rem;
         border-radius: 50px;
-        width: 100%;             
-        max-width: 360px;        
+        width: 100%;
+        max-width: 360px;
         box-sizing: border-box;
     }
 
-    
+
     .envDivLogo {
         height: 60px;
         width: 60px;
-        min-width: 60px;        
+        min-width: 60px;
     }
 
-    
+
     .envDivTexto {
         width: auto;
         margin-left: 0.8rem;
-        font-size: 13px;        
+        font-size: 13px;
         line-height: 1.3;
     }
 }
@@ -326,7 +326,8 @@ a {
     .contenedorMarcas {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas, cada una con una fraccion (fr) equitativa */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas, cada una con una fraccion (fr) equitativa */
         gap: 0.8rem;
         justify-items: center;
         align-items: center;
@@ -1457,6 +1458,7 @@ a {
     text-align: center;
     color: aliceblue;
     background-color: #ea7317;
+    margin-top: 10px;
     border-radius: 15px;
     padding: 5px;
     animation: saltarAviso 0.4s ease-in-out;
@@ -1471,5 +1473,83 @@ a {
 
     50% {
         transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedorArticulo {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem 0.5rem;
+        gap: 0.8rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .articuloTarjeta {
+        width: 150px;
+        height: fit-content;
+    }
+
+    .contComprar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contAcumular {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 32px;
+    }
+
+    .btn-flecha-izq,
+    .btn-flecha-der {
+        color: black;
+        background-color: aliceblue;
+        border: none;
+        padding: 0 10px;
+        height: 100%;
+        cursor: pointer;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-flecha-izq {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .btn-flecha-der {
+        border-radius: 0 10px 10px 0;
+    }
+
+    .input-cantidad {
+        background-color: aliceblue;
+        width: 36px;
+        height: 100%;
+        text-align: center;
+        border: none;
+        font-size: 16px;
+        outline: none;
+        line-height: 32px;
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+
+    .contenedorBoton {
+        margin-top: 0.5rem;
+        width: 100%;
+        height: 2rem;
+    }
+
+    .articuloContenedor .precio{
+        font-weight: bold;
+        font-size: larger;
+        margin-top: 5px;
     }
 }

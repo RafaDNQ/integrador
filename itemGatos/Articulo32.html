@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,20 +7,20 @@
     <title>Tienda</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="./style-gatos.css">
-     <link rel="stylesheet" href="../carrito/carritoStyle.css">
+    <link rel="stylesheet" href="../carrito/carritoStyle.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-
+    <link rel="icon" type="image/png" href="../img/logotipo/garritas2.png">
 </head>
 
 
 
 
 <body>
-       <header class="div1">
+    <header class="div1">
         <div class="barraImg"><img src="../img/logotipo/garritas2.png" alt="garritas logotipo"></div>
         <div class="barra">
             <ul>
@@ -52,7 +53,7 @@
                             <!-- ============ -->
                         </div>
                         <div class="loginModalRegistro">
-                            <p>No tienes cuenta? registrate <a href="../Registro/registro.html">aqui</a></p>
+                            <p>No tienes cuenta? registrate <a href="../integrador/Registro/registro.html">aqui</a></p>
                         </div>
                         <div class="modalBotones">
                             <button type="button" id="closeLogin" class="cancelar">Cancelar</button>
@@ -73,6 +74,37 @@
         </div>
 
     </header>
+
+    <!-- Modal de carrito -->
+
+    <dialog id="carritoModal" class="carritoModal">
+        <div class="mainCarrito" id="mainCarrito">
+            <div class="carritoHeader" id="headerCarrito">
+                <div class="tituloCarrito">
+                    <h2>Carrito de compras</h2>
+                </div>
+                <div class="divCerrar" id="divCerrar"><img src="../img/nav/cerrar.png" alt="btnCerrar"></div>
+            </div>
+
+            <div class="contenidoCarrito" id="contenidoCarrito">
+
+            </div>
+            <div class="carritoFooter">
+                <div class="totalCont">
+                    <div class="endTexto">
+                        <h2>Total</h2>
+                    </div>
+                    <div class="Total">
+                        <p id="totalCarrito"></p>
+                    </div>
+                </div>
+                <div class="comprarCont"><button type="button" class="comprarCarritoButton" id="comprarCarritoButton">
+                        Comprar</button></div>
+            </div>
+        </div>
+
+    </dialog>
+
 
 
     <div class="contenedoritem">
@@ -113,6 +145,8 @@
         </div>
 
     </div>
+        <p class="agregarError" tabindex="-1">Debe logearse para poder agregar articulos al carrito</p>
+
     <div class="carrusel-contenedor-perros">
         <div class="articuloperrosugeridos">
             <a href="Articulo21.html"> <img src="../img/cosas de gatos/cama_rascador1.jpg" alt=""> </a>

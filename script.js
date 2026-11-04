@@ -192,6 +192,7 @@ loginForm.addEventListener('submit', function (event) {
     resumenLogin.classList.add("ingresoValido");
     resumenLogin.prepend(divLog);
 
+    borrarArticulos();
     iniciarSesionExitoso();
 
     //guardamos los datos del logeo para mantener la persistencia
@@ -244,14 +245,15 @@ function iniciarSesionExitoso() {
 }
 
 
-cerrarSesion.addEventListener('click',function () {
+cerrarSesion.addEventListener('click', function () {
     cerrarSesionFunction();
     cerrarSesion.style.display = "none";
 });
 
 function cerrarSesionFunction() {
     estadoLogin = false;
-    
+    borrarArticulos();
+
     sessionStorage.removeItem("estadoLogin");
     sessionStorage.removeItem("ultimaConeccion");
 
@@ -262,7 +264,7 @@ function cerrarSesionFunction() {
     document.getElementById('btnLogin').style.display = "flex";
     resumenLogin.style.display = "none";
     resumenLogin.innerHTML = "";
-    
+
     loginForm.reset();
 }
 
@@ -278,9 +280,13 @@ function cerrarSesionFunction() {
 document.addEventListener('click', function (e) {
     if (e.target.classList.contains('botonComprar')) {
         const boton = e.target;
-        const tarjeta = e.target.closest('.articuloTarjeta');
-        const masVendido = e.target.closest('.masVendido');
-        const aviso = masVendido.querySelector('.agregarError');
+        const tarjeta = e.target.closest('.articuloTarjeta, .itemcontComprar');
+        const masVendido = e.target.closest('.masVendido, .fondoArticulo, .contenedoritem, .articuloContenedor');
+        let aviso = masVendido.querySelector('.agregarError');
+
+        // if (aviso === null) {
+        //     aviso = document.querySelector('.agregarError');
+        // }
 
 
         if (!tarjeta) return;
@@ -288,21 +294,25 @@ document.addEventListener('click', function (e) {
         const claseAnimacion = !estadoLogin ? 'errorCompra' : 'saltarCompra';
         boton.classList.add(claseAnimacion);
 
-        aviso.style.display = "block";
-        aviso.focus();
+
+        if (!estadoLogin) {
+            aviso.style.display = "block";
+            aviso.focus();
+        }
+
 
 
         setTimeout(() => {
             boton.classList.remove(claseAnimacion);
-            
+
         }, 400);
 
         setTimeout(() => {
             aviso.style.display = "none";
-            
+            return;
         }, 3000);
 
-        
+
 
         if (!estadoLogin) {
             return;
@@ -311,7 +321,7 @@ document.addEventListener('click', function (e) {
         const tituloElemento = tarjeta.querySelector('.titulo');
         const precioElemento = tarjeta.querySelector('.precio');
         const cantidadElemento = tarjeta.querySelector('.input-cantidad');
-        
+
 
         const titulo = tituloElemento ? tituloElemento.textContent.trim() : '';
         const precioTexto = precioElemento ? precioElemento.textContent.trim() : '0';

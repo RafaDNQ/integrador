@@ -214,6 +214,33 @@ a {
     color: white;
 }
 
+@media (max-width: 480px) {
+
+    .contenedorEnvios {
+        flex-direction: column;
+        width: 100vh;
+        scale: 0.7;
+        height: fit-content;
+        padding: 20px;
+        border: 1rem solid #3da5d9ff;
+    }
+
+    .contcontEnvios {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 3rem;
+    }
+
+    .envDiv {
+        justify-content: center;
+        background-color: #0d3a75;
+        padding: 15px;
+        border-radius: 70px;
+        width: 60vh;
+    }
+}
+
 
 
 /* ===========================
@@ -262,7 +289,50 @@ a {
     overflow: hidden;
 }
 
+@media (max-width: 480px) {
+    .marcasDestacadas {
+        padding: 1rem 0.5rem;
+        gap: 1.2rem;
+    }
 
+    .contenedorTituloMarcas h2 {
+        font-size: 1.3rem;
+    }
+
+
+    .contenedorMarcas {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas, cada una con una fraccion (fr) equitativa */
+        gap: 0.8rem;
+        justify-items: center;
+        align-items: center;
+        padding: 0 0.5rem;
+    }
+
+
+    .marcaTarjeta {
+        width: 100%;
+        max-width: 160px;
+        height: 100px;
+        scale: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+
+
+    .marcaTarjeta img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 15px;
+    }
+}
 
 
 
@@ -864,7 +934,8 @@ a {
     .div1 {
         height: auto;
         padding: 0.5rem 1rem;
-        flex-wrap: wrap; /* Permite que el desplegable baje a la siguiente línea */
+        flex-wrap: wrap;
+        /* Permite que el desplegable baje a la siguiente línea */
         justify-content: space-between;
     }
 
@@ -921,7 +992,7 @@ a {
         cursor: pointer;
     }
 
-    .barra li, 
+    .barra li,
     .btnLogin {
         display: block;
         width: 100%;
@@ -1212,6 +1283,25 @@ a {
 .loginModalRegistro a {
     color: #e5b300;
     font-weight: bold;
+}
+
+@media (max-width: 480px) {
+
+    .loginModal {
+        max-width: 350px;
+        width: 90%;
+        background-color: #2364aa;
+        border: none;
+        border-radius: 30px;
+        padding: 24px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        position: absolute;
+        transform: translateX(50);
+        top: 2vh;
+        left: 2vh;
+    }
+
+
 }
 
 /* ======== Mostrar contraseña ============ */

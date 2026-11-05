@@ -48,6 +48,38 @@
     display: flex;
 }
 
+.enlaces ul {
+    list-style-type: none;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    margin-left: 15rem;
+}
+
+.enlaces li {
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fec601;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.enlaces a {
+    color: black;
+}
+
+.enlaces li:hover {
+    transform: translateY(-8px) scale(1.03);
+    background-color: #fec601;
+    border-radius: 5px;
+    color: #ffffff;
+
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
 
 @media (max-width: 480px) {
 
@@ -111,5 +143,64 @@
     .botonComprar {
         height: 100%;
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .enlaces {
+        order: 4;
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .enlaces::before {
+        content: "Categorías";
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #fec601;
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .enlaces ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 30%;
+        box-sizing: border-box;
+        background-color: var(--ocean-deep, #2364aa);
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+        z-index: 190;
+        gap: 0.5rem;
+    }
+
+    .enlaces:hover ul,
+    .enlaces:focus-within ul {
+        display: flex;
+    }
+
+    .enlaces li {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        padding: 8px 0;
+        color: #ffffff;
+    }
+
+    .enlaces a {
+        text-decoration: none;
+        color: inherit;
     }
 }
